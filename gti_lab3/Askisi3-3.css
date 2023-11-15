@@ -1,0 +1,66 @@
+/* style for the "body" tag */
+body {
+	font: 12px Arial,sans-serif;
+	margin: 0px;
+}
+/* Global style change - by panos*/
+* {
+	font-size: small;
+	text-transform: capitalize;
+
+}
+/* span elemnts style - by Panos */
+span {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: x-large;
+	color: blue;
+
+}
+/* style for the CSS class "container" */
+.container {
+	background: white;
+	width: 100%;
+}
+/* style for buttons in container - by Panos*/
+.container input {
+	background-color: lightblue;
+}
+/* style for the CSS class "header" */
+.header {
+	background: #667BB4;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+/* style for the "h1" tag used inside an element of the CSS class "header" */
+.header h1 {
+	color: yellow;
+	font-size: 24px;
+}
+/* style for the CSS class "nav" */
+.nav {           
+	background: #DA251C;
+	width: 20%;            
+}
+/* style for the CSS class "section" */
+.section {
+	background: #BAB3D5;
+	width: 80%;
+}
+/* style that applies to both CSS classes "nav" and "section" */
+.nav, .section {
+	float: left;
+	padding: 20px;
+	min-height: 170px;
+	box-sizing: border-box;
+}
+/* style for the "h2" tag used inside an element of the CSS class "section" */
+.section h2 {
+	color: black;
+	font-size: 20px;
+}
+/* style for the CSS class "footer" */
+.footer {
+	background: #E67817;           
+	text-align: center;
+	padding-bottom: 10px;
+}

@@ -1,0 +1,20 @@
+.datatable table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border: 22x solid lightgray;
+}
+.datatable th {
+    color: white;
+    background-color: green;
+    width: 40%;
+}
+.datatable td, th {
+    padding: 5px;
+    
+}
+.datatable  tr:nth-child(odd) {
+    background-color: lightgray;
+}
+.datatable tr:hover {
+    background-color: blue;
+}

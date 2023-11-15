@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Άσκηση 5.6</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+</head>
+<body>
+    <script>
+        function ClearFields() {
+            document.getElementById("usedBrowser").value = "";
+            document.getElementById("usedBrowserLanguage").value = "";
+			document.body.style.backgroundColor = "white";
+        }
+        function btnShow() {
+			let selectionID = document.getElementById("mySelect").selectedIndex;
+			let domain = location.hostname;
+			let path = location.pathname;
+			if (selectionID == 0)
+				alert("Domain: " + domain);
+			if (selectionID == 1)
+				alert("Path: " + path);
+		}
+    </script>
+    <label style="font-family: Arial, Helvetica, sans-serif;">Domain or path? </label>
+	<form id="myForm">
+	<select id="mySelect" size="2">
+		<option id="domain">Domain</option>
+		<option id="path">Path</option>
+	</select>
+	</form>
+	
+    <br>
+    <input type="button" onclick="btnShow()" value="Show"> 
+    <br>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 6 - Άσκηση 6.1</title>
+  <script>
+    function getFocus(obj){
+      obj.style.backgroundColor ="yellow"
+    }
+
+    function looseFocus(obj){
+      if (obj.value.length== 0){
+        obj.style.backgroundColor ="red"
+      } else {
+        obj.style.backgroundColor ="white"
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>
+    <input type="text" name="text1" onfocus="getFocus(this)" onblur="looseFocus(this)">
+  </p>
+  <p>
+    <input type="text" name="text2" onfocus="getFocus(this)" onblur="looseFocus(this)">
+  </p>
+  <p>
+    <input type="text" name="text3" onfocus="getFocus(this)" onblur="looseFocus(this)">
+  </p>
+  <p>
+    <input type="text" name="text4" onfocus="getFocus(this)" onblur="looseFocus(this)">
+  </p>
+
+  <span style="width:300; background-color:blue; color:white;" oncontextmenu="return false">
+  <p>The context menu never displays when you right-click in this box.</p>
+  </span> 
+</body>
+</html>

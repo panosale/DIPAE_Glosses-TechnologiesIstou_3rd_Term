@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Άσκηση 5.1</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    </head>
+<body>
+    <script>
+        function ClearFields() {
+            document.getElementById("arithmos").value = "";
+            document.getElementById("apotelesma").value = "0";
+        }
+        function Athrisma() {
+            var m1 = document.getElementById("arithmos").value;
+            var m2 = document.getElementById("apotelesma").value;
+            if (m1 != "") {
+                var sum = parseInt(m1) +  parseInt(m2);
+    //            alert("m1 = " + m1 + ", m2 = " +  + m2 + ", sum = " + sum);
+                if (sum > 1000) {
+                    alert("Το άθροισμα είναι μεγαλύτερο από 1000");
+                    ClearFields();
+                } 
+                else
+                    document.getElementById("apotelesma").value = sum;
+            }
+            else
+                alert("Κενό πεδίο.")
+    }
+        
+    </script>
+    <input id="arithmos" type="text"><br>
+    <input type="button" onclick="Athrisma()" value="+"> <br>
+    <input id="apotelesma" type="text" value="0"><br>
+    <input type="button" onclick="ClearFields()" value="Clear"> 
+</body>
+</html>

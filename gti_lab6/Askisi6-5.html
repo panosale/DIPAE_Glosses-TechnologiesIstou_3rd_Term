@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> Διαχείριση λαθών</title>
+        <script>
+            function imageNotFound() {
+                document.getElementById("Img2").src = "Sunset.jpg";
+            }
+        </script>
+    </head>
+    
+    <body>
+        <h1>Διαχείριση λαθών</h1>
+        <p>
+            Image χωρίς διαχείριση λαθών.
+            <img id="Img1" src="1.jpg" name="Img1">
+        </p>
+        <p>
+            Image με διαχείριση λαθών.
+            <img id="Img2" src="1.jpg" name="Img2" onerror="imageNotFound()">
+        </p>
+    </body>
+</html>
+    

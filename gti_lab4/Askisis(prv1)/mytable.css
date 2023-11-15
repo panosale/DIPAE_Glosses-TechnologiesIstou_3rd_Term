@@ -1,0 +1,13 @@
+body
+{
+    
+    table-layout: auto;
+}
+.datatable th {
+    color: white;
+    background-color: green;
+}
+.datatable td, th {
+    border: 1px solid black;
+}
+.datatable tr::

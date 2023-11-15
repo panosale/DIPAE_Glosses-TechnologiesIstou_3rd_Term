@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Άσκηση 5.2</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    </head>
+<body>
+    <script>
+        function ClearFields() {
+            document.getElementById("givenURL").value = "";
+            document.getElementById("apotelesma").value = "0";
+        }
+        function VisitURL() {
+            var url2visit = document.getElementById("givenURL").value;
+            if (url2visit != "") {
+                window.location.href = "http://" + url2visit;
+                
+
+                //            alert("m1 = " + m1 + ", m2 = " +  + m2 + ", sum = " + sum);
+            }
+            else
+                alert("Δεν δόθηκε URL.")
+    }
+        
+    </script>
+    <label style="font-family: Arial, Helvetica, sans-serif;">Δώσε ένα URL:</label>
+    <input id="givenURL" type="text" style="font-size: large; font-family: Arial, Helvetica, sans-serif;">
+    <input type="button" onclick="VisitURL()" value="GO"> <br>
+    <br>
+    <input type="button" onclick="ClearFields()" value="Clear"> 
+</body>
+</html>

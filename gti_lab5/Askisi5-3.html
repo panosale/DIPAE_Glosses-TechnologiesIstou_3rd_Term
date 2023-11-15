@@ -1,0 +1,49 @@
+<html><head>
+        <title>Άσκηση 5.3</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    </head>
+<body>
+    <script>
+        function ClearFields() {
+            document.getElementById("windowWidth").value = "";
+            document.getElementById("windowHeight").value = "";
+            document.getElementById("givenURL").value = "";
+        }
+        function OpenURLInNewWindow() {
+            var w = document.getElementById("windowWidth").value;
+            var h = document.getElementById("windowHeight").value;
+            var url2visit = document.getElementById("givenURL").value;
+            if (url2visit != "") {
+                alert("w = " + w + ", h = " +  + h);
+                var win = window.open (url2visit, 100, 100);
+            }
+            else
+                alert("Δεν δόθηκε URL.")
+        }
+        function OpenURLOnSameWindow() {
+            var w = document.getElementById("windowWidth").value;
+            var h = document.getElementById("windowHeight").value;
+            var url2visit = document.getElementById("givenURL").value;
+            if (url2visit != "") {
+                var win = window.open (url2visit);
+                //alert("w = " + w + ", h = " +  + h);
+            }
+            else
+                alert("Δεν δόθηκε URL.")
+        }
+        
+    </script>
+    <label style="font-family: Arial, Helvetica, sans-serif;">Δώσε το μήκος του παραθύρου:</label>
+    <input id="windowWidth" type="text" style="font-size: large; font-family: Arial, Helvetica, sans-serif;"> <br>
+    <label style="font-family: Arial, Helvetica, sans-serif;">Δώσε το ύψος του παραθύρου:</label>
+    <input id="windowHeight" type="text" style="font-size: large; font-family: Arial, Helvetica, sans-serif;"> <br>
+    <label style="font-family: Arial, Helvetica, sans-serif;">Δώσε ένα URL:</label>
+    <input id="givenURL" type="text" style="font-size: large; font-family: Arial, Helvetica, sans-serif;" ,="" value="https://www.in.gr">
+    <input type="button" onclick="OpenURLInNewWindow()" value="Open URL in new Window"> 
+    <input type="button" onclick="OpenURLOnSameWindow()" value="Open URL on same Window">
+    <br>
+    <br>
+    <input type="button" onclick="ClearFields()" value="Clear"> 
+
+
+</body></html>
