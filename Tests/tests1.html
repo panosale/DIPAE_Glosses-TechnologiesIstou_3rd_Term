@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test #1</title>
+    </head>
+    <script type="application/javascript">
+        function ChangeText() {
+            document.getElementById("element2Change").innerText = document.getElementById("newText").value;
+        }
+    </script>
+    <body>
+        <h1>Test #1</h1>
+        <p id="element2Change">Click the button below to change text</p>
+        <input id="newText" type="text">
+        <button onclick="ChangeText()">Change Text</button>
+    </body>
+</html>
