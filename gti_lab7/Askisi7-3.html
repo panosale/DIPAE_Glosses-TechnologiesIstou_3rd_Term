@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 7 - Άσκηση 7.3</title>
+  <script>
+    function myMouseOut(){
+      document.getElementById("img").src = "A.png";
+    }
+    function myMouseMove(){
+      document.getElementById("img").src = "B.jpg";
+    }
+    function myMouseMoveAndClick(){
+      document.getElementById("img").src = "C.png";
+    }
+  </script>
+</head>
+<body>
+  <p>
+    <img id="img" src="A.png" name="Img1" onmouseout="myMouseOut()" onmousedown="myMouseMoveAndClick()" onmousemove="myMouseMove()">
+    <br>
+  </p>
+</body>
+</html>
