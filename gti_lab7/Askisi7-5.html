@@ -1,52 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Lab 7 - Άσκηση 7.5</title>
   <script>
-    function gotFocus(box){
-      let myElement
-      switch (box){  
+    function gotFocus(selectedBox){ // Ο αριθμός του textBox περνιέται με παράμετρο ώστε να γίνεται ο έλεγχος με μια function
+      let myElement;
+      switch (selectedBox){  
         case 1:
             myElement = document.getElementById("textBox1");
-          break
-          case 2:
+            break;
+        case 2:
             myElement = document.getElementById("textBox2");
-          break
-          case 3:
-            element = document.getElementById("textBox3");
-          break
-          case 4:
-            element = document.getElementById("textBox4");
-          break
+            break;
+        case 3:
+            myElement = document.getElementById("textBox3");
+            break;
+        case 4:
+            myElement = document.getElementById("textBox4");
+            break;
         }
         myElement.style.backgroundColor = "yellow";
     }
-    function lostFocus(box) {
-      switch (box){
+    function lostFocus(selectedBox) { // Ο αριθμός του textBox περνιέται με παράμετρο ώστε να γίνεται ο έλεγχος με μια function
+      switch (selectedBox){
           case 1:
             if (document.getElementById("textBox1").value == "")
               document.getElementById("textBox1").style.backgroundColor ="white";
             else
               document.getElementById("textBox1").style.backgroundColor ="red";
-          break
+          break;
           case 2:
           if (document.getElementById("textBox2").value == "")
               document.getElementById("textBox2").style.backgroundColor ="white";
             else
               document.getElementById("textBox2").style.backgroundColor ="red";
-          break
+          break;
           case 3:
           if (document.getElementById("textBox3").value == "")
               document.getElementById("textBox3").style.backgroundColor ="white";
             else
               document.getElementById("textBox3").style.backgroundColor ="red";
-          break
+          break;
           case 4:
           if (document.getElementById("textBox4").value == "")
               document.getElementById("textBox4").style.backgroundColor ="white";
             else
               document.getElementById("textBox4").style.backgroundColor ="red";
-          break
+          break;
         }
     }
   </script>

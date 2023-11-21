@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 7 - Άσκηση 7.6</title>
+  <script>
+    function gotFocus(selectedBox){ // Ο αριθμός του textBox περνιέται με την παράμετρο this ώστε να γίνεται ο έλεγχος με μια function και με ελάχιστες γραμμές
+      selectedBox.style.backgroundColor = "yellow"
+    }
+    function lostFocus(selectedBox) { // Το αντκείμεινο textBox περνιέται με την παράμετρο this ώστε να γίνεται ο έλεγχος με μια function και με ελάχιστες γραμμές
+      if (selectedBox.value == "")
+              selectedBox.style.backgroundColor ="white";
+            else
+              selectedBox.style.backgroundColor ="red";
+    }
+  </script>
+</head>
+<body>
+  <p>
+    <input id="textBox1" type="text" name="text1" onfocus="gotFocus(this)" onblur="lostFocus(this)">
+    <br>
+    <br>
+    <input id="textBox2" type="text" name="text2" onfocus="gotFocus(this)" onblur="lostFocus(this)">
+    <br>
+    <br>
+    <input id="textBox3" type="text" name="text3" onfocus="gotFocus(this)" onblur="lostFocus(this)">
+    <br>
+    <br>
+    <input id="textBox4" type="text" name="text4" onfocus="gotFocus(this)" onblur="lostFocus(this)">
+  </p>
+</body>
+</html>
