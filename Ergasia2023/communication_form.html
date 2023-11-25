@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>ΓΤΙ - Εργασία</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="globalFormat.css">
     <script src="globalBehaviour.js"></script>
-    <title>ΓΤΙ - Εργασία</title>
   <script>
   </script>
   </head>
   <body>
-    <p class="inputLabelFormat"> Ονοματεπώνυμο:
-      <span class="requiredField">*</span>
-      <input class="smallInputBoxFormat" id="name" type="text">
-      
+    <p>
+      <span class="requiredFieldEmpty" id="lbl_name">* Ονοματεπώνυμο:</span>
+      <input class="smallInputBoxFormat" id="inp_name" type="text" onkeyup="checkRequiredField(lbl_name, this)">
     </p>
-    <p class="inputLabelFormat">email:
-      <span class="requiredField">*</span>
-      <input class="smallInputBoxFormat" id="email" type="text">
+    <p>
+      <span class="requiredFieldEmpty" id="lbl_email">* email:</span>
+      <input class="smallInputBoxFormat" id="inp_email" type="email" onkeyup="checkRequiredField(lbl_email, this)">
     </p>
-    <p class="inputLabelFormat">Message:
-      <span class="requiredField">*</span>
-      <input class="largeInputBoxFormat" id="message" type="text">
-    </p>
+    <p>
+      <span class="requiredFieldEmpty" id="lbl_message">* Μήνυμα: </span>
+      <textarea type="textarea" id="inp_message" maxlength="100" rows="3" cols="50" onkeyup="messageWriting(lbl_message, this)"></textarea>
       <br>
-      <br>
-      <p>Copied text</p>
-      <input id="copiedTextBox" type="text">
+      <label id="lbl_messageLength" type="text">0</label>
+      <label type="text">/100</label>
     </p>
+    <br>
+    <input type="button" value="Υποβολή" onclick="btn_submit(inp_email)">
   </body>
 </html>
