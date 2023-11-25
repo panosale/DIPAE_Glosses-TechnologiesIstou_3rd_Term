@@ -1,17 +1,55 @@
-body {
-    width: 100%;
-    word-break: break-all;
+/* Διαμόρφωση φόρμας Επικοινωνίας (form)*/
+.communicationForm {
+    width: 50ch;  /* Σταθερό μήκος σε χαρακτήρες */
+    height: 30ch;  /* Σταθερό ύψος σε χαρακτήρες */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
 }
+
+/* Διαμόρφωση Κεφαλίδας3  (h3)*/
+.communicationForm h3 {
+    text-align: center;
+}
+
+/* Διαμόρφωση γενικών ετικετών (label)*/
 .communicationForm label {
+    position: relative;
     color: red;
 }
 
+/* Διαμόρφωση πλαισίων Εισαγωγής (input)*/
 .communicationForm input {
-    width: 30%;
+    position: absolute;
+    width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
+    left: 20ch; /* Σταθερή θέση από αριστερά του form */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
 }
 
+/* Διαμόρφωση πλαισίου Εισαγωγής Μηνύματος (textarea)*/
+.communicationForm textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    position: absolute;
+    width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
+    left: 20ch; /* Σταθερή θέση από αριστερά του form */
+    resize: none;
+}
+
+/* Διαμόρφωση πλαισίου (span)*/
+.communicationForm span {
+    font-size: small;
+    position: relative;
+    left: 47ch; /* Σταθερή θέση από αριστερά του form */
+    top: 14ch; /* Σταθερή θέση από την κορυφή του form */
+}
+
+/* Διαμόρφωση κουμπιού Υποβολής (submit)*/
 .communicationForm input[type=submit] {
-    width:20ch;
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 13ch;
 }
 
 /*  ΤΑ ΠΑΡΑΚΑΤΩ ΕΙΝΑΙ ΓΙΑ ΔΙΑΓΡΑΦΗ

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ΓΤΙ - Εργασία</title>
+    <title>Επικοινωνία</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="globalFormat.css">
     <script src="globalBehaviour.js"></script>
@@ -10,22 +10,19 @@
   </head>
   <body>
     <form class="communicationForm" onsubmit="btn_submit(inp_email)">
-        <label id="lbl_name">* Ονοματεπώνυμο:</label>
-        <input id="inp_name" type="text" required onkeyup="checkRequiredField(lbl_name, this)">
-        <br>
-        <br>
-        <label id="lbl_email">* email:</label>
-        <input id="inp_email" type="email" required onkeyup="checkRequiredField(lbl_email, this)">
-        <br>
-        <br>
-        <label id="lbl_message">* Μήνυμα: </label>
-        <textarea id="inp_message" type="textarea" maxlength="100" rows="3" cols="50" required onkeyup="messageWriting(lbl_message, this)"></textarea>
-        <br>
-        <span id="lbl_messageLength" type="text">0</span>
-        <span type="text">/100</span>
-        <br>
-        <br>
-        <input type="submit" value="Υποβολή">
+      <h3>Καταχωρήστε τα στοιχεία επικοινωνίας</h3>
+      <label id="lbl_name">* Ονοματεπώνυμο:</label>
+      <input id="inp_name" type="text" required onkeyup="checkRequiredField(lbl_name, this)">
+      <br>
+      <br>
+      <label id="lbl_email">* email:</label>
+      <input id="inp_email" type="email" required onkeyup="checkRequiredField(lbl_email, this)">
+      <br>
+      <br>
+      <label id="lbl_message">* Μήνυμα: </label>
+      <textarea id="inp_message" type="textarea" maxlength="100" rows="4" cols="50" required onkeyup="messageWriting(lbl_message, this)"></textarea>
+      <span id="lbl_messageLength" type="text">0/100</span>
+      <input type="submit" inherits="inp_message" value="Υποβολή">
     </form>
   </body>
 </html>
