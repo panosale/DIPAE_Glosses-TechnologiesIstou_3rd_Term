@@ -1,0 +1,16 @@
+.smallInputBoxFormat {
+    width: 100%;
+}
+.largeInputBoxFormat {
+    width: 100%;
+    height: 50ch;
+    break-inside:avoid-column;
+    line-break: auto;
+}
+.inputLabelFormat {
+    text-align: left;
+    width: 30%;
+}
+.requiredField {
+    color: red;
+}
