@@ -6,10 +6,11 @@ function messageWriting(labelName, messageFieldName){
   }
   document.getElementById("lbl_messageLength").innerText = messageFieldName.value.length;
 }
+
 function btn_submit(inputFieldName) {
-  alert("*** ΜΗΝΥΜΑ ΠΡΟΣΩΜΕΙΩΣΗΣ ***\n\nΤο μήνυμα σας στάλθηκε με επιτυχία στη διεύθυνση: " + document.getElementById(inputFieldName.id).value);
-//  alert("*** ΜΗΝΥΜΑ ΠΡΟΣΩΜΕΙΩΣΗΣ ***\n\nΤο μήνυμα σας στάλθηκε με επιτυχία στη διεύθυνση: " + document.getElementById("inp_email").value);
+  alert("*** ΜΗΝΥΜΑ ΠΡΟΣΩΜΕΙΩΣΗΣ ***\n\nΤο μήνυμα σας στάλθηκε με επιτυχία στη διεύθυνση: " + document.getElementById("inp_email").value);
 }
+
 function checkRequiredField(labelName, inputFieldName) {
   switch (labelName.id) {
     case ("lbl_name"):

@@ -9,22 +9,23 @@
   </script>
   </head>
   <body>
-    <p>
-      <span class="requiredFieldEmpty" id="lbl_name">* Ονοματεπώνυμο:</span>
-      <input class="smallInputBoxFormat" id="inp_name" type="text" onkeyup="checkRequiredField(lbl_name, this)">
-    </p>
-    <p>
-      <span class="requiredFieldEmpty" id="lbl_email">* email:</span>
-      <input class="smallInputBoxFormat" id="inp_email" type="email" onkeyup="checkRequiredField(lbl_email, this)">
-    </p>
-    <p>
-      <span class="requiredFieldEmpty" id="lbl_message">* Μήνυμα: </span>
-      <textarea type="textarea" id="inp_message" maxlength="100" rows="3" cols="50" onkeyup="messageWriting(lbl_message, this)"></textarea>
-      <br>
-      <label id="lbl_messageLength" type="text">0</label>
-      <label type="text">/100</label>
-    </p>
-    <br>
-    <input type="button" value="Υποβολή" onclick="btn_submit(inp_email)">
+    <form class="communicationForm" onsubmit="btn_submit(inp_email)">
+        <label id="lbl_name">* Ονοματεπώνυμο:</label>
+        <input id="inp_name" type="text" required onkeyup="checkRequiredField(lbl_name, this)">
+        <br>
+        <br>
+        <label id="lbl_email">* email:</label>
+        <input id="inp_email" type="email" required onkeyup="checkRequiredField(lbl_email, this)">
+        <br>
+        <br>
+        <label id="lbl_message">* Μήνυμα: </label>
+        <textarea id="inp_message" type="textarea" maxlength="100" rows="3" cols="50" required onkeyup="messageWriting(lbl_message, this)"></textarea>
+        <br>
+        <span id="lbl_messageLength" type="text">0</span>
+        <span type="text">/100</span>
+        <br>
+        <br>
+        <input type="submit" value="Υποβολή">
+    </form>
   </body>
 </html>

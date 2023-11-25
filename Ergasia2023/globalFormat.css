@@ -2,6 +2,19 @@ body {
     width: 100%;
     word-break: break-all;
 }
+.communicationForm label {
+    color: red;
+}
+
+.communicationForm input {
+    width: 30%;
+}
+
+.communicationForm input[type=submit] {
+    width:20ch;
+}
+
+/*  ΤΑ ΠΑΡΑΚΑΤΩ ΕΙΝΑΙ ΓΙΑ ΔΙΑΓΡΑΦΗ
 .smallInputBoxEmptyFormat {
     width: 30%;
     color: red;
@@ -14,10 +27,7 @@ body {
 .inputLabelFormat {
     text-align: left;
     width: 30%;
-}
-.requiredFieldEmpty {
-    color: red;
-}
-.requiredFieldFilled {
+} 
+.communicationForm .requiredFieldFilled {
     color: black;
-}
+} */
