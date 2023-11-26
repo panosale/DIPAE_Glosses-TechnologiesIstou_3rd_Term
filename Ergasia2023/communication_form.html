@@ -10,21 +10,25 @@
   </head>
   <body>
     <form class="communicationForm" onsubmit="btn_submit(inp_email)">
-      <h3>Καταχωρήστε τα στοιχεία επικοινωνίας</h3>
-      <p>
-        <label for="inp_name" id="lbl_name">Ονοματεπώνυμο: *</label>
-        <input id="inp_name" name="inp_name" type="text" placeholder="Ονοματεπώνυμο" required onkeyup="checkRequiredField(lbl_name, this)">
-      </p>
-      <p>
-        <label for="inp_email" id="lbl_email">email: *</label>
-        <input id="inp_email" name="inp_email" type="email" placeholder="email" required onkeyup="checkRequiredField(lbl_email, this)">
-      </p>
-      <p>
-        <label for="inp_message" id="lbl_message">Μήνυμα: *</label>
-        <textarea id="inp_message" name="inp_message" type="textarea" maxlength="100" rows="4" cols="50" placeholder="Μήνυμα" required onkeyup="messageWriting(lbl_message, this)"></textarea>
-        <span id="lbl_messageLength" type="text">0/100</span>
-      </p>
-      <input type="submit" inherits="inp_message" value="Υποβολή">
+      <div id="fieldsFilled">
+        <h3>Επικοινωνία</h3>
+        <p>
+          <label for="inp_name" id="lbl_name">Ονοματεπώνυμο: *</label><br>
+          <input id="inp_name" name="inp_name" type="text" placeholder="Ονοματεπώνυμο" required onkeyup="checkRequiredField(lbl_name, this)">
+        </p>
+        <p>
+          <label for="inp_email" id="lbl_email">email: *</label><br>
+          <input id="inp_email" name="inp_email" type="email" placeholder="email" required onkeyup="checkRequiredField(lbl_email, this)">
+        </p>
+        <p>
+          <label for="inp_message" id="lbl_message">Μήνυμα: *</label><br>
+          <textarea id="inp_message" name="inp_message" type="textarea" maxlength="100" rows="4" cols="50" placeholder="Μήνυμα" required onkeyup="messageWriting(lbl_message, this)"></textarea><br>
+          <!-- ΕΡΩΤΗΣΗ! ΠΩΣ ΓΙΝΕΤΑΙ ΣΤΑΘΕΡΟΥ ΜΗΚΟΥΣ Π.Χ. 000/100-->
+          <span id="lbl_messageLength" type="text">0/100</span>
+        </p>
+        <input type="button" value="TEST" onclick="btn_submit()"><br><br><br>
+        <input type="submit" value="Αποστολή">
+      </div>
     </form>
   </body>
 </html>

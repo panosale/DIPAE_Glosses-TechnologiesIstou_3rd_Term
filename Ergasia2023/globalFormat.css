@@ -1,13 +1,29 @@
 /* Διαμόρφωση φόρμας Επικοινωνίας (form)*/
 body {
-    /* background-color: lightgreen; */
-    background-image: "sunset.jpg";
+    background-color: lightgreen;
 }
 .communicationForm {
-    width: 50ch;  /* Σταθερό μήκος σε χαρακτήρες */
-    height: 30ch;  /* Σταθερό ύψος σε χαρακτήρες */
+    /* width: 31ch;  Σταθερό μήκος σε χαρακτήρες */
+    z-index: 1;
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
+    position: relative;
+    /* width: 31ch;
+    height: 30ch;  Σταθερό ύψος σε χαρακτήρες */
+}
+.communicationForm #fieldsFilled {
+    position: absolute;
+    z-index: 2;
+    background-color: green;
+}
+
+.communicationForm #sentMessage {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    background: blue;
 }
 
 /* Διαμόρφωση Κεφαλίδας3  (h3)*/
@@ -17,19 +33,13 @@ body {
 
 /* Διαμόρφωση γενικών ετικετών (label)*/
 .communicationForm label {
-    position: relative;
-    width: 30ch;
-    left: 0ch;
-    top: 0ch;
     color: red;
 }
 
 /* Διαμόρφωση πλαισίων Εισαγωγής (input)*/
 .communicationForm input {
-    position: relative;
     width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
     top: 0ch;
-    right: 0cap;
     /* left: 10ch; Σταθερή θέση από αριστερά του form */
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
@@ -39,24 +49,21 @@ body {
 .communicationForm textarea {
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
-    position: absolute;
     width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
-    left: 20ch; /* Σταθερή θέση από αριστερά του form */
+    left: 0ch; /* Σταθερή θέση από αριστερά του form */
     resize: none;
 }
 
 /* Διαμόρφωση πλαισίου (span)*/
-.communicationForm span {
+.communicationForm span { 
+    position: relative; /* ΕΡΩΤΗΣΗ! ΓΙΑΤΙ ΔΕΝ ΠΑΙΖΕΙ ΣΩΣΤΑ; */
     font-size: small;
-    position: relative;
-    left: 47ch; /* Σταθερή θέση από αριστερά του form */
-    top: 14ch; /* Σταθερή θέση από την κορυφή του form */
+    left: 31ch;
 }
 
 /* Διαμόρφωση κουμπιού Υποβολής (submit)*/
 .communicationForm input[type=submit] {
-    position: relative;
-    width: 100%;
+    width: 31ch;
     left: 0;
     top: 13ch;
 }
