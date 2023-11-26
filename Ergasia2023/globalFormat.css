@@ -14,14 +14,19 @@
 /* Διαμόρφωση γενικών ετικετών (label)*/
 .communicationForm label {
     position: relative;
+    width: 30ch;
+    left: 0ch;
+    top: 0ch;
     color: red;
 }
 
 /* Διαμόρφωση πλαισίων Εισαγωγής (input)*/
 .communicationForm input {
-    position: absolute;
+    position: relative;
     width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
-    left: 20ch; /* Σταθερή θέση από αριστερά του form */
+    top: 0ch;
+    right: 0cap;
+    /* left: 10ch; Σταθερή θέση από αριστερά του form */
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
 }
