@@ -5,12 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="globalFormat.css">
     <script src="globalBehaviour.js"></script>
-  <script>
-  </script>
   </head>
   <body>
-    <form class="communicationForm" onsubmit="btn_submit(inp_email)">
-      <div id="fieldsFilled">
+    <!-- ΕΡΩΤΗΣΗ: ΠΩΣ ΛΕΙΤΟΥΡΓΕΙ Η onsubmit; -->
+    <form class="contactForm" onsubmit="btn_submit()">
+      <div id="fieldsArea">
         <h3>Επικοινωνία</h3>
         <p>
           <label for="inp_name" id="lbl_name">Ονοματεπώνυμο: *</label><br>
@@ -26,9 +25,9 @@
           <!-- ΕΡΩΤΗΣΗ! ΠΩΣ ΓΙΝΕΤΑΙ ΣΤΑΘΕΡΟΥ ΜΗΚΟΥΣ Π.Χ. 000/100-->
           <span id="lbl_messageLength" type="text">0/100</span>
         </p>
-        <input type="button" value="TEST" onclick="btn_submit()"><br><br><br>
-        <input type="submit" value="Αποστολή">
-      </div>
+        <button type="button" onclick="messageSent()">TEST</button><br><br><br>
+        <button type="submit">ΑΠΟΣΤΟΛΗ</button>
+        </div>
     </form>
   </body>
 </html>

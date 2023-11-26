@@ -1,43 +1,42 @@
 /* Διαμόρφωση φόρμας Επικοινωνίας (form)*/
 body {
     background-color: lightgreen;
+    width: 30ch;
 }
-.communicationForm {
-    /* width: 31ch;  Σταθερό μήκος σε χαρακτήρες */
-    z-index: 1;
+.contactForm {
+    position: relative;
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
-    position: relative;
-    /* width: 31ch;
+    width: fit-content;
+    /* width: 31ch;  Σταθερό μήκος σε χαρακτήρες
     height: 30ch;  Σταθερό ύψος σε χαρακτήρες */
 }
-.communicationForm #fieldsFilled {
-    position: absolute;
-    z-index: 2;
-    background-color: green;
+/* FOR DEL? - START*/
+.contactForm #fieldsArea {
+    width: fit-content;
 }
+/* FOR DEL? - END */
 
-.communicationForm #sentMessage {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    top: 0;
-    left: 0;
+.contactForm #sentMessage {
+    top: 0ch;
+    left: 0ch;
     background: blue;
 }
 
 /* Διαμόρφωση Κεφαλίδας3  (h3)*/
-.communicationForm h3 {
+.contactForm h3 {
+    top: 0ch;
+    left: 0ch;
     text-align: center;
 }
 
 /* Διαμόρφωση γενικών ετικετών (label)*/
-.communicationForm label {
+.contactForm label {
     color: red;
 }
 
 /* Διαμόρφωση πλαισίων Εισαγωγής (input)*/
-.communicationForm input {
+.contactForm input {
     width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
     top: 0ch;
     /* left: 10ch; Σταθερή θέση από αριστερά του form */
@@ -45,8 +44,23 @@ body {
     font-size: medium;
 }
 
+/* Διαμόρφωση κουμπιού Υποβολής (submit)*/
+/* ΔΕΝ ΧΡΕΙΑΖΕΤΑΙ */
+/* .contactForm input[type=submit] {
+    width: 31ch;
+    left: 0;
+    top: 13ch;
+} */
+
+.contactForm button {
+    font-size: medium;
+    width: 31ch;
+    left: 0;
+    top: 13ch;
+}
+
 /* Διαμόρφωση πλαισίου Εισαγωγής Μηνύματος (textarea)*/
-.communicationForm textarea {
+.contactForm textarea {
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
     width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
@@ -55,17 +69,15 @@ body {
 }
 
 /* Διαμόρφωση πλαισίου (span)*/
-.communicationForm span { 
+.contactForm span { 
     position: relative; /* ΕΡΩΤΗΣΗ! ΓΙΑΤΙ ΔΕΝ ΠΑΙΖΕΙ ΣΩΣΤΑ; */
     font-size: small;
     left: 31ch;
 }
 
-/* Διαμόρφωση κουμπιού Υποβολής (submit)*/
-.communicationForm input[type=submit] {
-    width: 31ch;
-    left: 0;
-    top: 13ch;
+.contactForm messageSent {
+    font-size: xx-large;
+    font-style: oblique;
 }
 
 /*  ΤΑ ΠΑΡΑΚΑΤΩ ΕΙΝΑΙ ΓΙΑ ΔΙΑΓΡΑΦΗ
@@ -82,7 +94,7 @@ body {
     text-align: left;
     width: 30%;
 } 
-.communicationForm .requiredFieldFilled {
+.contactForm .requiredFieldFilled {
     color: black;
 } */
 

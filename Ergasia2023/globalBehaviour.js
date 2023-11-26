@@ -29,10 +29,26 @@ function messageWriting(labelName, messageFieldName){
   }
   document.getElementById("lbl_messageLength").innerText = messageFieldName.value.length + "/100";
 }
-
-function btn_submit(inputFieldName) {
-  let tmp = document.getElementById("fieldsToFill");
-  tmp.style.backgroundColor = "red";
-  //alert("*** ΜΗΝΥΜΑ ΠΡΟΣΟΜΕΙΩΣΗΣ ***\n***** ΝΑ ΑΛΛΑΧΤΕΙ ΣΕ ΑΥΤΟ ΠΟΥ ΖΗΤΑΕΙ Η ΑΣΚΗΣΗ *****\n\nΤο μήνυμα σας στάλθηκε με επιτυχία στη διεύθυνση: \n" + document.getElementById("inp_email").value);
+function messageSent() { // ΓΑΙ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ
+  var tmpDiv = document.getElementById("fieldsArea");
+  tmpDiv.style.display = "none";
+  setTimeout(() => {
+    if (tmpDiv.style.display === "none")
+      tmpDiv.style.display = "block";
+    else
+      tmpDiv.style.display = "none";
+    }, 2000);
+}
+function btn_submit() {
+  messageSent();
+  // var tmpDiv = document.getElementById("fieldsArea");
+  // tmpDiv.style.display = "none";
+  // setTimeout(() => {
+  //   if (tmpDiv.style.display === "none")
+  //     tmpDiv.style.display = "block";
+  //   else
+  //     tmpDiv.style.display = "none";
+  //   }, 2000);
+//  alert("*** ΜΗΝΥΜΑ ΠΡΟΣΟΜΕΙΩΣΗΣ ***\n***** ΝΑ ΑΛΛΑΧΤΕΙ ΣΕ ΑΥΤΟ ΠΟΥ ΖΗΤΑΕΙ Η ΑΣΚΗΣΗ *****\n\nΤο μήνυμα σας στάλθηκε με επιτυχία στη διεύθυνση: \n" + document.getElementById("inp_email").value);
 }
   
