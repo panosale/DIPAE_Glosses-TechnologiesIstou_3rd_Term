@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 8 - Άσκηση 8.2</title>
+  <script>
+    function myClickOnListRow(selectedElement) { 
+      if (selectedElement.target.tagName == "li")
+        selectedElement.target.innerHTML = "Με επέλεξες!!!";
+    }
+  </script>
+</head>
+<body>
+  <ul onclick="myClickOnListRow(event)">
+    <li>Γραμμή 1</li>
+    <li>Γραμμή 2</li>
+    <li>Γραμμή 3</li>
+    <li>Γραμμή 4</li>
+    <li>Γραμμή 5</li>
+    <li>Γραμμή 6</li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 8 - Άσκηση 8.3</title>
+  <script>
+    var myMaxClicks = 0;
+    function myClickOnListRow(selectedElement) { 
+      if (myMaxClicks < 3){
+        selectedElement.innerHTML = "Με επέλεξες!!!";
+        myMaxClicks = myMaxClicks + 1;
+      }
+      else{
+        selectedElement.target.onclick = "false"; //fsdfdssdfsd
+        alert("Επέλεξες το μέγιστο πλήθος γραμμών.")
+      }
+    }
+  </script>
+</head>
+<body>
+  <ul id="myList">
+    <li onclick="myClickOnListRow(event.target)">Γραμμή 1</li>
+    <li onclick="myClickOnListRow(event.target)">Γραμμή 2</li>
+    <li onclick="myClickOnListRow(event.target)">Γραμμή 3</li>
+    <li onclick="myClickOnListRow(event.target)">Γραμμή 4</li>
+    <li onclick="myClickOnListRow(event.target)">Γραμμή 5</li>
+    <li onclick="myClickOnListRow(event.target)">Γραμμή 6</li>
+  </ul>
+</body>
+</html>
