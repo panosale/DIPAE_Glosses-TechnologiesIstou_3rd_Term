@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 8 - Άσκηση 8.5</title>
+<style>
+  .customcolors {
+    color: red;
+    background-color: yellow;
+  }
+</style>
+<script>
+    function myChangeColors() {
+      const myAllElements = document.getElementsByTagName("a"); // Επιλογή τον elements τύπου <a>
+      for (i = 0; i < myAllElements.length; i++) // Αλλαγή των χαρακτηριστικών σε όλα τα elements τύπου <a>
+        myAllElements[i].setAttribute("class", "customcolors");
+    }
+  </script>
+</head>
+<body>
+  <select id="mySelectElement">
+    <option value="H1">H1</option>
+    <option value="H2">H2</option>
+    <option value="H3">H3</option>
+    <option value="P">P</option>
+    <option value="SPAN">SPAN</option>
+  </select>
+  <select id="mySelectColor">
+    <option value="Red">red</option>
+    <option value="Green">green</option>
+    <option value="Blue">blue</option>
+  </select>
+  <br>
+  <br>
+  <br>
+  <input id="create" type="button" value="Δημιουργία" onclick="myChangeColors()">
+  <div id="pnlCreate">
+
+  </div>
+  
+</body>
+</html>
