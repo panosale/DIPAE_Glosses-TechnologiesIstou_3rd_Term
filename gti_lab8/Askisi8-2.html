@@ -4,8 +4,11 @@
 <title>Lab 8 - Άσκηση 8.2</title>
   <script>
     function myClickOnListRow(selectedElement) { 
-      if (selectedElement.target.tagName == "li")
-        selectedElement.target.innerHTML = "Με επέλεξες!!!";
+      selectedElement.target.innerHTML = "Με επέλεξες!!!";
+    }
+    function myMouseOver(selectedElement) { 
+      document.getElementById("info1").value = selectedElement.target.tagName;
+      document.getElementById("info2").value = selectedElement.target.innerHTML;
     }
   </script>
 </head>

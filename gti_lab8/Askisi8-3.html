@@ -6,24 +6,24 @@
     var myMaxClicks = 0;
     function myClickOnListRow(selectedElement) { 
       if (myMaxClicks < 3){
-        selectedElement.innerHTML = "Με επέλεξες!!!";
+        selectedElement.target.innerHTML = "Με επέλεξες!!!";
         myMaxClicks = myMaxClicks + 1;
       }
       else{
-        selectedElement.target.onclick = "false"; //fsdfdssdfsd
-        alert("Επέλεξες το μέγιστο πλήθος γραμμών.")
+        selectedElement.target.onclick = "false";
+        alert("Επέλεξες το μέγιστο πλήθος γραμμών.");
       }
     }
   </script>
 </head>
 <body>
-  <ul id="myList">
-    <li onclick="myClickOnListRow(event.target)">Γραμμή 1</li>
-    <li onclick="myClickOnListRow(event.target)">Γραμμή 2</li>
-    <li onclick="myClickOnListRow(event.target)">Γραμμή 3</li>
-    <li onclick="myClickOnListRow(event.target)">Γραμμή 4</li>
-    <li onclick="myClickOnListRow(event.target)">Γραμμή 5</li>
-    <li onclick="myClickOnListRow(event.target)">Γραμμή 6</li>
+  <ul id="myList" onclick="myClickOnListRow(event)">
+    <li>Γραμμή 1</li>
+    <li>Γραμμή 2</li>
+    <li>Γραμμή 3</li>
+    <li>Γραμμή 4</li>
+    <li>Γραμμή 5</li>
+    <li>Γραμμή 6</li>
   </ul>
 </body>
 </html>

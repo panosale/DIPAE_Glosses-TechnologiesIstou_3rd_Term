@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 8 - Άσκηση 8.4</title>
+<style>
+  .customcolors {
+    color: red;
+    background-color: yellow;
+  }
+</style>
+<script>
+    function myChangeColors() {
+      const myAllElements = document.getElementsByTagName("a"); // Επιλογή τον elements τύπου <a>
+      for (i = 0; i < myAllElements.length; i++) // Αλλαγή των χαρακτηριστικών σε όλα τα elements τύπου <a>
+        myAllElements[i].setAttribute("class", "customcolors");
+    }
+  </script>
+</head>
+<body>
+    <a href="../gti_lab8/Askisi8-1.html">Άσκηση 8.1</a><br>
+    <a href="../gti_lab8/Askisi8-2.html">Άσκηση 8.2</a><br>
+    <a href="../gti_lab8/Askisi8-3.html">Άσκηση 8.3</a><br>
+    <br>
+    <input id="changeColors" type="button" value="Change colors" onclick="myChangeColors()">
+</body>
+</html>
