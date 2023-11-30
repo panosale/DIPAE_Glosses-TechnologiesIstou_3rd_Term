@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 8 - Άσκηση 8.5 v1</title>
+<!-- <style> ΓΙΑ ΔΙΑΓΡΑΦΗ
+  .customcolors {
+    color: red;
+    background-color: yellow;
+  }
+</style> -->
+<script>
+  function createMyElement() {
+    let selectedTypeOfElement = document.getElementById("selectedElement").value;
+    let selectedColor = document.getElementById("selectedColor").value;
+    let newElementToCreate = document.createElement(selectedTypeOfElement);
+    let newStyleToCreate = document.createAttribute("style");
+    newElementToCreate.innerText = selectedTypeOfElement + " created succefully.";
+    newStyleToCreate.value = "color:" + selectedColor;
+    //alert(newStyleToCreate); // ΓΙΑ ΔΟΚΙΜΕΣ
+    if (document.getElementById("pnlCreate").childNodes.length < 1) {
+      document.getElementById("pnlCreate").appendChild(newElementToCreate);
+      document.getElementById("pnlCreate").setAttributeNode(newStyleToCreate);
+    }
+    else {
+      document.getElementById("pnlCreate").replaceChild(newElementToCreate, document.getElementById("pnlCreate").childNodes[0]);
+      document.getElementById("pnlCreate").setAttributeNode(newStyleToCreate);
+    }
+  }
+</script>
+</head>
+<body>
+  <select id="selectedElement">
+    <option value="H1">H1</option>
+    <option value="H2">H2</option>
+    <option value="H3">H3</option>
+    <option value="P">P</option>
+    <option value="SPAN">SPAN</option>
+  </select>
+  <select id="selectedColor">
+    <option value="red">red</option>
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+  </select>
+  <br>
+  <br>
+  <br>
+  <input id="create" type="button" value="Δημιουργία" onclick="createMyElement()">
+  <br>
+  <br>
+  <br>
+  <div id="pnlCreate"></div>
+  
+</body>
+</html>
