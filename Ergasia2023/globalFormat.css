@@ -1,13 +1,14 @@
 /* Διαμόρφωση φόρμας Επικοινωνίας (form)*/
 body {
     background-color: lightgreen;
-    width: 30ch;
+    width: 99%;
 }
 .contactForm {
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
     width: fit-content;
+    background-color: lightblue;
     /* width: 31ch;  Σταθερό μήκος σε χαρακτήρες
     height: 30ch;  Σταθερό ύψος σε χαρακτήρες */
 }
@@ -100,7 +101,7 @@ body {
 
 .menu h1 {
 	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size:16px;
+	font-size:20px;
 	font-weight:bold;
 	margin:0;
 	padding:0;
@@ -115,11 +116,12 @@ body {
 	
 #tabs {
 	float:left;
-	width:100%;
-	background:#D4DAE7;
-	font-size:93%;
-	line-height:normal;
-	border-bottom:1px solid #333B66;
+	width:98%;
+	background:lightskyblue;
+	font-size:200%;
+	/* line-height:normal; */
+    border-top: 1px solid blue;;
+	border-bottom:1px solid blue;
 	padding: 20px 20px 0px 20px;
 	}
 
@@ -137,32 +139,38 @@ body {
 
 #tabs a {
 	float:left;
-	background:url("tableft.gif") no-repeat left top;
+	/* background:url("tableft.gif") no-repeat left top; */
 	margin:0;
 	padding:0 0 0 4px;
 	text-decoration:none;
 	}
 
 #tabs a span {
-	float:left;
-	display:block;
-	background:url("tabright.gif") no-repeat right top;
-	padding:5px 15px 4px 6px;
-	color:#999;
+	float: none;
+	display:flex;
+	/* background:url("tabright.gif") no-repeat right top; */
+	padding: 5px 50px 5px 50px;
+	color:darkgreen;
 	}
 
-/* Commented Backslash Hack hides rule from IE5-Mac \*/
-#tabs a span {float:none;}
-/* End IE5-Mac hack */
-
+#selected_tab a span {
+    float: none;
+    display:flex;
+    font-family: 'Courier New', Courier, monospace;
+    /* background:url("tabright.gif") no-repeat right top; */
+    padding: 5px 50px 5px 50px;
+    color: yellow;
+    }
+    
 #tabs a:hover span {
-	color:#ECB546;
+	color: darkblue;
+    left:  100px;
 	}
 
 #tabs a:hover {
 	background-position:0% -42px;
 	}
 
-#tabs a:hover span {
+/* #tabs a:hover span {
 	background-position:100% -42px;
-	}
+	} */

@@ -29,7 +29,7 @@ function messageWriting(labelName, messageFieldName){
   }
   document.getElementById("lbl_messageLength").innerText = messageFieldName.value.length + "/100";
 }
-function messageSent() { // ΓΑΙ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ
+function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ
   var tmpDiv = document.getElementById("fieldsArea");
   tmpDiv.style.display = "none";
   setTimeout(() => {
