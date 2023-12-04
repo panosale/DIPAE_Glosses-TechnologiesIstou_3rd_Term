@@ -30,7 +30,7 @@ function messageWriting(labelName, messageFieldName){
   document.getElementById("lbl_messageLength").innerText = messageFieldName.value.length + "/100";
 }
 function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ
-  var tmpDiv = document.getElementById("fieldsArea");
+  var tmpDiv = document.getElementsByName("fieldsArea");
   tmpDiv.style.display = "none";
   setTimeout(() => {
     if (tmpDiv.style.display === "none")
