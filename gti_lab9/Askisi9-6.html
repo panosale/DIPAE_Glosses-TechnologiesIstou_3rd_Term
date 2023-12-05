@@ -2,53 +2,69 @@
 <html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Lab 9 - Άσκηση 9.6</title>
-  <script>
-    const myArray = new Array([5][5]);
-    function fillArray() {
-        for (i=0; i < myArray[i]; i++)
-            for (j=0 j < myArray[i][j]; j++)
-                document.getElementById("myTable").rows[i].cells[j].style.backgroundColor = "red";
-    }
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 15px;
+  }
+  </style>
+<script>
+  function myFillArray() {
+    const myArray = document.getElementById("tbl_myTable");
+    //alert(myArray.rows[0].cells[0].innerText);
+    for (i=0; i < myArray.rows.length; i++)
+        for (j=0; j < myArray.rows[i].cells.length; j++) {
+          n = Math.random() * 10;
+          if (n < 5 )
+            myArray.rows[i].cells[j].style.background = "red";
+          else
+          myArray.rows[i].cells[j].style.background = "green";
+        }
+  }
 </script>
 </head>
 <body>
-    <table id="myTable" style="border: solid;">
+    <table id="tbl_myTable" style="border:inset; padding: 5px;">
         <tr>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
         <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    </tr>
-                  </table>      
-    <input id="fill" type="button" onclick="fillArray()" value="Fill array">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    <br>
+    <input id="btn_fill" type="button" onclick="myFillArray()" value="Fill array">
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 9 - Άσκηση 9.2</title>
+  <script>
+    var i = 0;
+    const picsArray = [
+                      ["pic00.jpg", 0, 0], 
+                      ["pic01.jpg", 0, 0], 
+                      ["pic02.jpg", 0, 0], 
+                      ["pic03.jpg", 0, 0],
+                    ];
+    function myPrevious() { 
+      if (i > 0)
+        i--;
+      else
+        i = picsArray.length - 1;
+      document.getElementById("img_myImage").src = picsArray[i][0];
+      picsArray[i][1] = document.getElementById("img_myImage").width;
+      picsArray[i][2] = document.getElementById("img_myImage").height;
+      //alert(": " + document.getElementById("img_myImage").width + " X " + document.getElementById("img_myImage").height);
+      document.getElementById("spn_imageDimensions").innerText = "i= " + i + ", " + picsArray[i][0] + ": " + picsArray[i][1] + " X " + picsArray[i][2];
+      //alert(picsArray.toString());
+    }
+    function myNext() {
+      if (i < picsArray.length - 1)
+        i++;
+      else
+        i = 0;
+      document.getElementById("img_myImage").src = picsArray[i][0];
+      picsArray[i][1] = document.getElementById("img_myImage").width;
+      picsArray[i][2] = document.getElementById("img_myImage").height;
+      //alert(": " + document.getElementById("img_myImage").width + " X " + document.getElementById("img_myImage").height);
+      document.getElementById("spn_imageDimensions").innerText = "i= " + i + ", " + picsArray[i][0] + ": " + picsArray[i][1] + " X " + picsArray[i][2];
+      //alert(picsArray.toString());
+    }
+  </script>
+</head>
+<body>
+  <span id="spn_imageDimensions"> </span><br><br>
+  <!-- <span id="imageWigth">Image width:</span><br>
+  <span id="imageHeight">Image height:</span><br> -->
+  <img id="img_myImage" src="pic00.jpg"><br><br>
+  <input id="btn_previousButton" type="button" onclick="myPrevious()" value="<< Previous">
+  <input id="btn_nextButton" type="button" onclick="myNext()" value="Next >>">
+</body>
+</html>

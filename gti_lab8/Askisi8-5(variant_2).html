@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Lab 8 - Άσκηση 8.5 v2</title>
+<title>Lab 8 - Άσκηση 8.5 v1</title>
 <!-- <style> ΓΙΑ ΔΙΑΓΡΑΦΗ
   .customcolors {
     color: red;
@@ -10,22 +10,26 @@
 </style> -->
 <script>
   function createMyElement() {
-    let selectedTypeOfElement = document.getElementById("selectedElement").value;
-    let selectedColor = document.getElementById("selectedColor").value;
+    var selectedTypeOfElement = document.getElementById("selectedElement").value;
+    var selectedColor = document.getElementById("selectedColor").value;
+    const newElementToCreate = document.createElement(selectedTypeOfElement);
+    var newAttributeToCreate = document.createAttribute("style");
+    newElementToCreate.innerHTML = selectedTypeOfElement + " created succefully with " + selectedColor + " color.";
+//    newAttributeToCreate.value = "color:" + selectedColor;
+    document.getElementById("pnlCreate").appendChild(newElementToCreate);
+    newElementToCreate.setAttribute(newAttributeToCreate);
+    alert(newElementToCreate.tagName);
     
-    // let newElementToCreate = document.createElement(selectedTypeOfElement);
-    // let newStyleToCreate = document.createAttribute("style");
-  //  newElementToCreate.innerText = selectedTypeOfElement + " created succefully.";
-  //  newStyleToCreate.value = "color:" + selectedColor;
-    // alert(selectedTypeOfElement); // ΓΙΑ ΔΟΚΙΜΕΣ
-    //  if (document.getElementById("pnlCreate").childNodes.length < 1) {
-    //    //document.getElementById("pnlCreate").appendChild(selectedTypeOfElement);
-    //    document.getElementById("pnlCreate").setAttributeNode;
-    //  }
-    //  else {
-    //    //document.getElementById("pnlCreate").replaceChild(newElementToCreate, document.getElementById("pnlCreate").childNodes[0]);
-    //    document.getElementById("pnlCreate").setAttributeNode(newStyleToCreate);
-    //  }
+
+    //alert(newAttributeToCreate); // ΓΙΑ ΔΟΚΙΜΕΣ
+    // if (document.getElementById("pnlCreate").childNodes.length < 1) {
+    //   document.getElementById("pnlCreate").appendChild(newElementToCreate);
+    //   document.getElementById("pnlCreate").setAttributeNode(newAttributeToCreate);
+    // }
+    // else {
+    //   document.getElementById("pnlCreate").replaceChild(newElementToCreate, document.getElementById("pnlCreate").childNodes[0]);
+    //   document.getElementById("pnlCreate").setAttributeNode(newAttributeToCreate);
+    // }
   }
 </script>
 </head>
@@ -49,7 +53,7 @@
   <br>
   <br>
   <br>
-  <div id="pnlCreate">gfsdgsdfgsfd</div>
+  <div id="pnlCreate" style="padding:16px;background-color:lightgray"></div>
   
 </body>
 </html>

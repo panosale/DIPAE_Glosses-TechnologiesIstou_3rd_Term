@@ -14,7 +14,7 @@
     let selectedColor = document.getElementById("selectedColor").value;
     let newElementToCreate = document.createElement(selectedTypeOfElement);
     let newStyleToCreate = document.createAttribute("style");
-    newElementToCreate.innerText = selectedTypeOfElement + " created succefully.";
+    newElementToCreate.innerText = selectedTypeOfElement + " created succefully with " + selectedColor + " color.";
     newStyleToCreate.value = "color:" + selectedColor;
     //alert(newStyleToCreate); // ΓΙΑ ΔΟΚΙΜΕΣ
     if (document.getElementById("pnlCreate").childNodes.length < 1) {
