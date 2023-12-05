@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 9 - Άσκηση 9.6</title>
+  <script>
+    const myArray = new Array([5][5]);
+    function fillArray() {
+        for (i=0; i < myArray[i]; i++)
+            for (j=0 j < myArray[i][j]; j++)
+                document.getElementById("myTable").rows[i].cells[j].style.backgroundColor = "red";
+    }
+</script>
+</head>
+<body>
+    <table id="myTable" style="border: solid;">
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    </tr>
+                  </table>      
+    <input id="fill" type="button" onclick="fillArray()" value="Fill array">
+</body>
+</html>

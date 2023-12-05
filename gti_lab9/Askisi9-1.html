@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 9 - Άσκηση 9.1</title>
+  <script>
+    var currentPos = 0;
+    const picsArray = new Array("pic00.jpg", "pic01.jpg", "pic02.jpg", "pic03.jpg");
+    function myPrevious() { 
+      if (currentPos > 0)
+        currentPos--;
+      else
+        currentPos = picsArray.length - 1;
+      document.getElementById("myImage").src = picsArray[currentPos];
+    }
+    function myNext() {
+      if (currentPos < picsArray.length-1)
+        currentPos++;
+      else
+        currentPos = 0;
+      document.getElementById("myImage").src = picsArray[currentPos];
+    }
+  </script>
+</head>
+<body>
+    <img id="myImage" src="pic00.jpg" width="500px" height="300px"><br>
+    <input id="previousButton" type="button" onclick="myPrevious()" value="<< Previous">
+    <input id="nextButton" type="button" onclick="myNext()" value="Next >>">
+</body>
+</html>
