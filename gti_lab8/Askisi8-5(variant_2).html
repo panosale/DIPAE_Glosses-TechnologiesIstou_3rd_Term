@@ -13,23 +13,9 @@
     var selectedTypeOfElement = document.getElementById("selectedElement").value;
     var selectedColor = document.getElementById("selectedColor").value;
     const newElementToCreate = document.createElement(selectedTypeOfElement);
-    var newAttributeToCreate = document.createAttribute("style");
     newElementToCreate.innerHTML = selectedTypeOfElement + " created succefully with " + selectedColor + " color.";
-//    newAttributeToCreate.value = "color:" + selectedColor;
     document.getElementById("pnlCreate").appendChild(newElementToCreate);
-    newElementToCreate.setAttribute(newAttributeToCreate);
-    alert(newElementToCreate.tagName);
-    
-
-    //alert(newAttributeToCreate); // ΓΙΑ ΔΟΚΙΜΕΣ
-    // if (document.getElementById("pnlCreate").childNodes.length < 1) {
-    //   document.getElementById("pnlCreate").appendChild(newElementToCreate);
-    //   document.getElementById("pnlCreate").setAttributeNode(newAttributeToCreate);
-    // }
-    // else {
-    //   document.getElementById("pnlCreate").replaceChild(newElementToCreate, document.getElementById("pnlCreate").childNodes[0]);
-    //   document.getElementById("pnlCreate").setAttributeNode(newAttributeToCreate);
-    // }
+    newElementToCreate.setAttribute("style", "color:" + selectedColor);
   }
 </script>
 </head>
@@ -53,7 +39,8 @@
   <br>
   <br>
   <br>
-  <div id="pnlCreate" style="padding:16px;background-color:lightgray"></div>
+  <div id="pnlCreate">
+  </div>
   
 </body>
 </html>
