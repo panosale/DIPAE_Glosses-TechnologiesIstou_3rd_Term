@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Άσκηση 9.5</title>
+    <script>
+      function myAdd() {
+        if (document.getElementById("inp_text").value != ""){
+          var tmpElem = document.getElementById("sel_selectionList");
+          var newOption = document.createElement("option");
+          newOption.text = document.getElementById("inp_text").value;
+          tmpElem.options.add(newOption, 1);
+          document.getElementById("inp_text").value = "";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <input id="inp_text" type="text">
+      <input id="btn_add" type="button" value="Προσθήκη" onclick="myAdd()"><br><br>
+      <select id="sel_selectionList" type="listbox">
+      </select>
+    </form>
+  </body>
+</html>

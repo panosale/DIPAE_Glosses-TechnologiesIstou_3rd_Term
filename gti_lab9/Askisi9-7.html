@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Άσκηση 9.7</title>
+    <script>
+      var buttonStatus = true;
+      function myColor() {
+        alert(document.getElementById("sel_selectionList").type)
+      }
+      function myShow() {
+        if (buttonStatus){
+          document.getElementById("div_imagesList").style.display = "block";
+          document.getElementById("btn_show").setAttribute("value", "Εξαφάνιση")
+          for (i = 0; i < document.images.length; i++) {
+            document.getElementById("div_imagesList").innerHTML = document.getElementById("div_imagesList").innerHTML + 
+              "image [" + i + "] source: " + document.images[i].src + "<br>";
+          }
+        }
+        else {
+          document.getElementById("div_imagesList").style.display = "none";
+          document.getElementById("btn_show").setAttribute("value", "Εμφάνιση");
+          document.getElementById("div_imagesList").innerHTML = "";
+        }
+        buttonStatus = !buttonStatus;
+      }
+    </script>
+  </head>
+  <body>
+    <select id="sel_selectionList">
+      <option>1ο Επίπεδο</option>
+      <option>2ο Επίπεδο</option>
+    </select>
+    <input id="btn_color" type="button" value="Χρωματισμός" onclick="myColor()"><br><br>
+    <h1>Άσκηση 9.7</h1>
+    <h2>Άσκηση 9.7</h2>
+    <h1>Άσκηση 9.7</h1>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Άσκηση 9.3</title>
+<script>
+    function myChangeColors() {
+      let myDomain = document.location.hostname;
+      for (i = 0; i < document.links.length; i++) {
+        if (myDomain == document.links[i].hostname)
+          document.links[i].style.backgroundColor = "lightgreen";
+        else
+          document.links[i].style.backgroundColor = "red";
+      }
+    }
+  </script>
+</head>
+<body>
+    <input id="btn_color" type="button" value="Χρωμάτισε" onclick="myChangeColors()"><br><br>
+    <a href="../gti_lab8/Askisi8-1.html">Άσκηση 8.1</a><br>
+    <a href="https://www.in.gr">in.gr</a><br>
+    <a href="../gti_lab8/Askisi8-2.html">Άσκηση 8.2</a><br>
+    <a href="../gti_lab8/Askisi8-3.html">Άσκηση 8.3</a><br>
+    <a href="https://www.news247.gr">news247.gr</a><br>
+    <a href="../gti_lab9/Askisi9-1.html">Άσκηση 9.1</a><br>
+    <a href="https://www.mtv.com">mtv.com</a><br>
+    <a href="https://www.reuters.com">reuters.com</a><br><br>
+</body>
+</html>

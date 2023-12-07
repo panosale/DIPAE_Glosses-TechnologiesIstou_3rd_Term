@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Άσκηση 9.4</title>
+    <script>
+      var buttonStatus = true;
+      function myShow() {
+        if (buttonStatus){
+          document.getElementById("div_imagesList").style.display = "block";
+          document.getElementById("btn_show").setAttribute("value", "Εξαφάνιση")
+          for (i = 0; i < document.images.length; i++) {
+            document.getElementById("div_imagesList").innerHTML = document.getElementById("div_imagesList").innerHTML + 
+              "image [" + i + "] source: " + document.images[i].src + "<br>";
+          }
+        }
+        else {
+          document.getElementById("div_imagesList").style.display = "none";
+          document.getElementById("btn_show").setAttribute("value", "Εμφάνιση");
+          document.getElementById("div_imagesList").innerHTML = "";
+        }
+        buttonStatus = !buttonStatus;
+      }
+    </script>
+  </head>
+  <body>
+    <input id="btn_show" type="button" value="Εμφάνιση" onclick="myShow()"><br><br>
+    <div id="div_imagesList" style="padding: 10px; background-color: aqua; display: none;"></div>
+    <img id="myImage1" src="pic00.jpg" width="500px" height="300px"><br>
+    <img id="myImage2" src="pic01.jpg" width="500px" height="300px"><br>
+    <img id="myImage3" src="pic02.jpg" width="500px" height="300px"><br>
+    <img id="myImage4" src="pic03.jpg" width="500px" height="300px"><br>
+  </body>
+</html>

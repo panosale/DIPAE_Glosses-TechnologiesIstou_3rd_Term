@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Lab 8 - Άσκηση 8.5 v1</title>
-<!-- <style> ΓΙΑ ΔΙΑΓΡΑΦΗ
-  .customcolors {
-    color: red;
-    background-color: yellow;
-  }
-</style> -->
+<title>Άσκηση 8.5 v1</title>
 <script>
   function createMyElement() {
-    var selectedTypeOfElement = document.getElementById("selectedElement").value;
-    var selectedColor = document.getElementById("selectedColor").value;
-    const newElementToCreate = document.createElement(selectedTypeOfElement);
-    newElementToCreate.innerHTML = selectedTypeOfElement + " created succefully with " + selectedColor + " color.";
+    //var selectedTypeOfElement = document.getElementById("selectedElement").value;
+    //var selectedColor = document.getElementById("selectedColor").value;
+    const newElementToCreate = document.createElement(document.getElementById("sel_selectedElement").value);
+    newElementToCreate.innerHTML = document.getElementById("sel_selectedElement").value + " created succefully with " + document.getElementById("sel_selectedColor").value + " color.";
     document.getElementById("pnlCreate").appendChild(newElementToCreate);
-    newElementToCreate.setAttribute("style", "color:" + selectedColor);
+    newElementToCreate.setAttribute("style", "color:" + document.getElementById("sel_selectedColor").value);
   }
 </script>
 </head>
 <body>
-  <select id="selectedElement">
-    <option value="H1">H1</option>
-    <option value="H2">H2</option>
-    <option value="H3">H3</option>
-    <option value="P">P</option>
-    <option value="SPAN">SPAN</option>
+  <select id="sel_selectedElement">
+    <option value="h1">h1</option>
+    <option value="h2">h2</option>
+    <option value="h3">h3</option>
+    <option value="p">p</option>
+    <option value="span">span</option>
   </select>
-  <select id="selectedColor">
+  <select id="sel_selectedColor">
     <option value="red">red</option>
     <option value="green">green</option>
     <option value="blue">blue</option>
@@ -35,11 +29,12 @@
   <br>
   <br>
   <br>
-  <input id="create" type="button" value="Δημιουργία" onclick="createMyElement()">
+  <button id="btn_create" onclick="createMyElement()">Δημιουργία</button>
+  <!-- <input id="btn_create" type="button" value="Δημιουργία" onclick="createMyElement()"> -->
   <br>
   <br>
   <br>
-  <div id="pnlCreate">
+  <div id="pnlCreate" style="padding:16px;background-color:lightgray">
   </div>
   
 </body>
