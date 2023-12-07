@@ -5,33 +5,37 @@
     <title>Άσκηση 9.7</title>
     <script>
       var buttonStatus = true;
+      var buttonText = "Χρωματισμός"
       function myColor() {
-        alert(document.getElementById("sel_selectionList").type)
-      }
-      function myShow() {
+        const selectedElements = document.getElementsByTagName("h" + (document.getElementById("sel_selectionList").selectedIndex + 1));
         if (buttonStatus){
-          document.getElementById("div_imagesList").style.display = "block";
-          document.getElementById("btn_show").setAttribute("value", "Εξαφάνιση")
-          for (i = 0; i < document.images.length; i++) {
-            document.getElementById("div_imagesList").innerHTML = document.getElementById("div_imagesList").innerHTML + 
-              "image [" + i + "] source: " + document.images[i].src + "<br>";
-          }
+          buttonText = "Αποxρωματισμός"
+          for (i = 0; i < selectedElements.length; i++)
+            selectedElements.item(i).style.backgroundColor = "yellow";
         }
         else {
-          document.getElementById("div_imagesList").style.display = "none";
-          document.getElementById("btn_show").setAttribute("value", "Εμφάνιση");
-          document.getElementById("div_imagesList").innerHTML = "";
+          buttonText = "Xρωματισμός"
+          for (i = 0; i < selectedElements.length; i++)
+          selectedElements.item(i).style.backgroundColor = "white";
         }
         buttonStatus = !buttonStatus;
+        document.getElementById("btn_color").setAttribute("value", buttonText)
+      }
+      function myChangedSelection() {
+        // ΝΑ ΓΙΝΟΥΝ ΔΙΟΡΘΩΣΕΙΣ ΕΔΩ
+        // buttonText = "Αποχρωματισμός"
+        //alert(document.getElementById("sel_selectionList").selectedIndex);
       }
     </script>
   </head>
   <body>
-    <select id="sel_selectionList">
+    <select id="sel_selectionList" onchange="myChangedSelection()">
       <option>1ο Επίπεδο</option>
       <option>2ο Επίπεδο</option>
     </select>
     <input id="btn_color" type="button" value="Χρωματισμός" onclick="myColor()"><br><br>
+    <h1>Άσκηση 9.7</h1>
+    <h2>Άσκηση 9.7</h2>
     <h1>Άσκηση 9.7</h1>
     <h2>Άσκηση 9.7</h2>
     <h1>Άσκηση 9.7</h1>
