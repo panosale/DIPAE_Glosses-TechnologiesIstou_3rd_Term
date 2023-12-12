@@ -22,9 +22,9 @@
       document.getElementById("tbl_table").deleteRow(-1);
     }
     function myDeleteColumn() {
-      var firstTableRow = document.getElementById("tbl_table");
-      for (i = 0; i < firstTableRow.rows.length; i++) {
-        firstTableRow.rows[i].deleteCell(-1);
+      var myTable = document.getElementById("tbl_table");
+      for (i = 0; i < myTable.rows.length; i++) {
+        myTable.rows[i].deleteCell(-1);
       }
     }
   </script>
