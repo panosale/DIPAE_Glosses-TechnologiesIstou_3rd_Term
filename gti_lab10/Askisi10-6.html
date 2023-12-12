@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Άσκηση 10.6</title>
+  <script>
+    function myCreateTable() {
+      var myTable = document.getElementById("tbl_table");
+      var myRows = document.getElementById("inp_rows").value;
+      var myColumns = document.getElementById("inp_columns").value;
+      var cell1;
+      var row;
+      myTable.innerHTML = "";
+      for (i=0; i < myRows; i++) {
+        row = myTable.insertRow(i);
+        for (j=0; j < myColumns; j++){
+          cell1 = row.insertCell(j);
+          cell1.innerHTML = i + "-" + j;
+        }
+      }
+    }
+    function myDeleteRow() {
+      document.getElementById("tbl_table").deleteRow(-1);
+    }
+    function myDeleteColumn() {
+      var firstTableRow = document.getElementById("tbl_table");
+      for (i = 0; i < firstTableRow.rows.length; i++) {
+        firstTableRow.rows[i].deleteCell(-1);
+      }
+    }
+  </script>
+</head>
+<body>
+    <label for="myRows">Give rows:</label>
+    <input type="text" id="inp_rows" name="myRows">
+    <label for="myColumns">Give columns:</label>
+    <input type="text" id="inp_columns" name="myColumns">
+    <input id="btn_createTable" type="button" onclick="myCreateTable()" value="Δημιουργία πίνακα">
+    <input id="btn_deleteRow" type="button" onclick="myDeleteRow()" value="Διέγραψε γραμμή">
+    <input id="btn_deleteCol" type="button" onclick="myDeleteColumn()" value="Διέγραψε στήλη">
+    <table id="tbl_table" border="1">
+    </table>
+</body>
+</html>
