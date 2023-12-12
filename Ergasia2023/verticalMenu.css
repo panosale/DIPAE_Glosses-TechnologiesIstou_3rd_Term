@@ -1,0 +1,56 @@
+/* ΔΙΑΜΌΡΦΩΣΗ ΚΑΘΕΤΟΥ ΜΕΝΟΥ ΕΠΙΛΟΓΩΝ */
+#vertTabs {
+	float:none;
+    position: relative;
+	width:15ch;
+    height: 50ch;
+    top: 18ch;
+	background:lightblue;
+	font-size:110%;
+    border-top: 1px solid blue;;
+	border-bottom:1px solid blue;
+	padding: 10px 20px 10px 20px;
+	}
+
+#vertTabs ul {
+	margin:0;
+	list-style:none;
+	}
+
+#vertTabs li {
+	padding: 10% 0 0 2%;
+	/* margin:0; */
+	}
+
+#vertTabs a {
+	/* float:left; */
+	/* margin:0;
+	padding:0 0 0 4px; */
+	text-decoration:none;
+	}
+
+#vertTabs a span {
+    font-size: 140%;
+	/* float: none; */
+	/* display:flex;
+	padding: 5px 50px 5px 10px; */
+	color:darkgreen;
+	}
+
+#selected_tab a span {
+    float: none;
+    display:flex;
+    font-family: 'Courier New', Courier, monospace;
+    /* background:url("tabright.gif") no-repeat right top; */
+    padding: 5px 50px 5px 50px;
+    color: yellow;
+    }
+    
+#vertTabs a:hover span {
+	color: darkblue;
+    left:  100px;
+	}
+
+#vertTabs a:hover {
+	background-position:0% -42px;
+	}

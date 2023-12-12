@@ -2,8 +2,10 @@
 <html>
     <head>
         <title>Χόμπι & Δραστηριότητες</title>
-        <link rel="stylesheet" href="globalFormat.css">
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <link rel="stylesheet" href="globalFormat.css">
+        <link rel="stylesheet" href="verticalMenu.css">
+        <script src="globalBehaviour.js"></script>
     </head>
     <body>
         <ul id="tabs">
@@ -13,13 +15,20 @@
             <li><a href="other_interests.html"><span style="color: darkblue;">Χόμπι & Δραστηριότητες</span></a></li>
             <li><a href="contact.html"><span>Επικοινωνία</span></a></li>
         </ul>
-        <h1>Φωτογραφία</h1>
-        <div class="common" id="infoDiv">
-            <p class="common">Ασχλούμαι ερασιτεχνικά με τη φωτογραφία και προσπαθώ να απαθανατίζω, συνήθως τη φύση, σε κάθε αυκαιρία που μου δίνεται.</p>
-            <img src="PANO_20230418_174909.jpg"><br><br>
-            <img src="PANO_20230419_194026.jpg"><br><br>
-            <img src="PANO_20230419_201414.jpg"><br>
+        <ul id="vertTabs">
+            <li><a href="photograpfy.html"><span>Φωτογραφία</span></a></li>
+            <li><a href="photograpfy.html"><span>Μουσική</span></a></li>
+            <li><a href="photograpfy.html"><span>Ταξίδια</span></a></li>
+        </ul>
+        <div class="common" id="div_myInfo" style="size: fit-content; height: 560px">
+            <div class="common" id="div_myImages" style="width: 90%; height: 560px; border: none">
+                <span>Ασχολούμαι ερασιτεχνικά με τη φωτογραφία και προσπαθώ να απαθανατίζω οτιδήποτε μου κηνεί το ενδιαφέρον. Το αγαπημένο μου θέμα είναι τοπία και η φύση.</span><br>
+                <span>Μερικά δείγματα της δουλειάς μου υπάρχουν παρακάτω.</span><br><br>
+                <input id="previousButton" type="button" onclick="previousImage()" value="<< Προηγούμενη">
+                <input id="nextButton" type="button" onclick="nextImage()" value="Επόμενη >>"><br><br>
+                <img id="img_myImages" src="images\PANO_20230418_174909.jpg">
+            </div>
+            <p><a href="https://www.flickr.com/photos/panagosal" target="_blank">Εδώ</a> μπορείς να δεις ακόμα περισσότερα.</p>
         </div>
-        
     </body>
 </html>

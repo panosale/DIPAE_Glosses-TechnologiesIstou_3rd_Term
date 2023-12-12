@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Άσκηση 10.5</title>
+  <script>
+    function myCreateTable() {
+      var myTable = document.getElementById("tbl_table");
+      var myRows = document.getElementById("inp_rows").value;
+      var myColumns = document.getElementById("inp_columns").value;
+      myTable.innerHTML = "";
+      for (i=0; i < myRows; i++) {
+        var row = myTable.insertRow(0);
+        for (j=0; j < myColumns; j++){
+          var cell1 = row.insertCell(j);
+          cell1.innerHTML = j + "-" + i;
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+    <label for="myRows">Give rows:</label>
+    <input type="text" id="inp_rows" name="myRows">
+    <label for="myColumns">Give columns:</label>
+    <input type="text" id="inp_columns" name="myColumns">
+    <input id="btn_createTable" type="button" onclick="myCreateTable()" value="Δημιουργία πίνακα">
+    <table id="tbl_table" border="1">
+    </table>
+</body>
+</html>

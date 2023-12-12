@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Άσκηση 10.2</title>
+  <script>
+    var currentPos = 0;
+    var myInterval;
+    const picsArray = new Array("pic00.jpg", "pic01.jpg", "pic02.jpg", "pic03.jpg");
+    function slideShow() {
+      currentPos++;
+      if (currentPos == picsArray.length)
+        currentPos = 0;
+      // if (currentPos < picsArray.length-1)
+      //   currentPos++;
+      // else
+      //   currentPos = 0;
+      document.getElementById("myImage").src = picsArray[currentPos];
+    }
+    function myStart() {
+      clearInterval(myInterval);
+      myInterval = setInterval(slideShow, parseInt(document.getElementById("inp_TimeIntervalSetting").value));
+    }
+    function myStop() {
+      clearInterval(myInterval);
+    }
+  </script>
+</head>
+<body>
+    <img id="myImage" src="pic00.jpg" width="500px" height="300px"><br>
+    <label for="myTimeIntervalSetting">Give time interval:</label>
+    <input type="text" id="inp_TimeIntervalSetting" name="myTimeIntervalSetting" value="1000">
+    <input id="startButton" type="button" onclick="myStart()" value="Start">
+    <input id="stopButton" type="button" onclick="myStop()" value="Stop">
+</body>
+</html>
