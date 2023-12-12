@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Lab 8 - Άσκηση 8.5 v1</title>
+<!-- <style> ΓΙΑ ΔΙΑΓΡΑΦΗ
+  .customcolors {
+    color: red;
+    background-color: yellow;
+  }
+</style> -->
+<script>
+  function createMyElement() {
+    var selectedTypeOfElement = document.getElementById("selectedElement").value;
+    var selectedColor = document.getElementById("selectedColor").value;
+    const newElementToCreate = document.createElement(selectedTypeOfElement);
+    var newAttributeToCreate = document.createAttribute("style");
+    newElementToCreate.innerHTML = selectedTypeOfElement + " created succefully with " + selectedColor + " color.";
+//    newAttributeToCreate.value = "color:" + selectedColor;
+    document.getElementById("pnlCreate").appendChild(newElementToCreate);
+    newElementToCreate.setAttribute(newAttributeToCreate);
+    alert(newElementToCreate.tagName);
+    
+
+    //alert(newAttributeToCreate); // ΓΙΑ ΔΟΚΙΜΕΣ
+    // if (document.getElementById("pnlCreate").childNodes.length < 1) {
+    //   document.getElementById("pnlCreate").appendChild(newElementToCreate);
+    //   document.getElementById("pnlCreate").setAttributeNode(newAttributeToCreate);
+    // }
+    // else {
+    //   document.getElementById("pnlCreate").replaceChild(newElementToCreate, document.getElementById("pnlCreate").childNodes[0]);
+    //   document.getElementById("pnlCreate").setAttributeNode(newAttributeToCreate);
+    // }
+  }
+</script>
+</head>
+<body>
+  <select id="selectedElement">
+    <option value="H1">H1</option>
+    <option value="H2">H2</option>
+    <option value="H3">H3</option>
+    <option value="P">P</option>
+    <option value="SPAN">SPAN</option>
+  </select>
+  <select id="selectedColor">
+    <option value="red">red</option>
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+  </select>
+  <br>
+  <br>
+  <br>
+  <input id="create" type="button" value="Δημιουργία" onclick="createMyElement()">
+  <br>
+  <br>
+  <br>
+  <div id="pnlCreate" style="padding:16px;background-color:lightgray"></div>
+  
+</body>
+</html>
