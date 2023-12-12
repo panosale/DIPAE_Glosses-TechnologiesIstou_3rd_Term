@@ -7,12 +7,14 @@
       var myTable = document.getElementById("tbl_table");
       var myRows = document.getElementById("inp_rows").value;
       var myColumns = document.getElementById("inp_columns").value;
+      var cell1;
+      var row;
       myTable.innerHTML = "";
       for (i=0; i < myRows; i++) {
-        var row = myTable.insertRow(0);
+        row = myTable.insertRow(i);
         for (j=0; j < myColumns; j++){
-          var cell1 = row.insertCell(j);
-          cell1.innerHTML = j + "-" + i;
+          cell1 = row.insertCell(j);
+          cell1.innerHTML = i + "-" + j;
         }
       }
     }
