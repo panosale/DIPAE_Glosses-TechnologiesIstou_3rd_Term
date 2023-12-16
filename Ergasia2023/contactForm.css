@@ -1,18 +1,16 @@
 /* ΔΙΑΜΌΡΦΩΣΗ ΦΟΡΜΑΣ ΕΠΙΚΟΙΝΩΝΙΑΣ */
 .contactDiv {
     position: relative;
+    width: 27ch;
+    height: 29ch;
+    /* ΗΤΑΝ...
     width: 33ch;
     height: 38ch;
+    ...ΕΓΙΝΕ ΑΛΛΑΓΗ ΕΠΕΙΔΗ ΔΕΝ ΦΑΙΝΟΤΑΝ ΚΑΛΑ ΣΕ FIREFOX-LINUX */
     font-size: large;
     background-color: lightblue;
     border: 1px solid blue;
     padding: 5px;
-}
-
-.contactDiv #sentMessage {
-    top: 0ch;
-    left: 0ch;
-    background: blue;
 }
 
 /* Διαμόρφωση Κεφαλίδας3 (h3)*/
@@ -32,8 +30,6 @@
 .contactDiv button {
     font-size: medium;
     width: 31ch;
-    left: 0;
-    top: 13ch;
 }
 
 /* Διαμόρφωση πλαισίου Εισαγωγής Μηνύματος (textarea)*/
@@ -48,7 +44,10 @@
 .contactDiv.textLengthInfo span { 
     position: relative;
     font-size: small;
+    left: 80%;
+    /* ΗΤΑΝ...
     left: 83%;
+    ...ΕΓΙΝΕ ΑΛΛΑΓΗ ΕΠΕΙΔΗ ΔΕΝ ΦΑΙΝΟΤΑΝ ΚΑΛΑ ΣΕ FIREFOX-LINUX */
 }
 /* .contactDiv messageSent {
     font-size: xx-large;
@@ -61,8 +60,8 @@
 }
   
 .contactDiv input + span::before {
-    position: absolute;
-    right: -20px;
+    position: relative;
+    right: -10px;
     /* top: 5px; */
 }
   
@@ -85,9 +84,9 @@
 }
   
 .contactDiv textarea + span::before {
-    position: absolute;
-    right: -20px;
-    /* top: 5px; */
+    position: relative;
+    right: -10px;
+    top: -65px;
 }
   
 .contactDiv textarea:invalid {
@@ -152,5 +151,12 @@
     border: 1px solid red;
     padding: 5px;
 }
+
+.contactDiv #sentMessage {
+    top: 0ch;
+    left: 0ch;
+    background: blue;
+}
+
 
 */
