@@ -2,7 +2,7 @@
 // ΕΝΟΤΗΤΑ: ΧΟΜΠΙ & ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ - "ΦΩΤΟΓΡΑΦΙΑ"
 var currentPos = 0;
 const imagesPath = "images\\";
-const picsArray = new Array("PANO_20230418_174909.jpg", "PANO_20230419_194026.jpg", "PANO_20230419_201414.jpg", "Dsc00939.jpg", "IMG_4452.JPG", "IMG_1662.JPG", "IMG_0695.JPG", "MpleTzami.jpg", "IMG_9563.JPG", "IMG_9537.JPG");
+const picsArray = new Array("PANO_20230418_174909.jpg", "PANO_20230419_194026.jpg", "PANO_20230419_201414.jpg", "Dsc00939.jpg", "IMG_4452.JPG", "IMG_1662.JPG", "IMG_0695.JPG", "MpleTzami.JPG", "IMG_9563.JPG", "IMG_9537.JPG");
 function previousImage() { 
   if (currentPos > 0)
     currentPos--;
