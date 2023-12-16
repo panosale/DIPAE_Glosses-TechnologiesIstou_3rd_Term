@@ -2,7 +2,7 @@
 .contactDiv {
     position: relative;
     width: 27ch;
-    height: 29ch;
+    height: 32ch;
     /* ΗΤΑΝ...
     width: 33ch;
     height: 38ch;
@@ -10,7 +10,7 @@
     font-size: large;
     background-color: lightblue;
     border: 1px solid blue;
-    padding: 5px;
+    padding: 0px 0px 10px 10px
 }
 
 /* Διαμόρφωση Κεφαλίδας3 (h3)*/

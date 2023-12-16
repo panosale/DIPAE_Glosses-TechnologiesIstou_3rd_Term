@@ -48,7 +48,7 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
   else {
     var tmpDiv = document.getElementById("div_fieldsArea");
     var tmpElement = document.createElement("h2");
-    tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία."
+    tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "\n*Λειτουργια προσωμείωσης."
     tmpElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 30ch; height: 5ch; text-align: center;");
     document.getElementById("frm_contactForm").appendChild(tmpElement);
     tmpDiv.style.display = "none";
