@@ -14,26 +14,26 @@
       <li><a href="other_interests.html"><span>Χόμπι & Δραστηριότητες</span></a></li>
       <li><a href="contact.html"><span>Επικοινωνία</span></a></li>
     </ul>
-    <form class="contactForm" onsubmit="btn_submit()">
-        <div class="center" id="fieldsArea">
-          <h3>Επικοινωνία</h3>
+    <h1>Επικοινωνία</h1>
+    <!-- <form class="contactForm" onsubmit="btn_submit()"> -->
+        <div class="contactForm" id="fieldsArea">
           <p>
-            <label for="inp_name" id="lbl_name">Ονοματεπώνυμο: *</label><br>
-            <input id="inp_name" name="inp_name" type="text" placeholder="Ονοματεπώνυμο" required onkeyup="checkRequiredField(lbl_name, this)">
+            <label for="input_name" id="lbl_name">Ονοματεπώνυμο: *</label><br>
+            <input id="inp_name" name="input_name" type="text" placeholder="Ονοματεπώνυμο" required onkeyup="checkRequiredField(lbl_name, this)">
           </p>
           <p>
-            <label for="inp_email" id="lbl_email">email: *</label><br>
-            <input id="inp_email" name="inp_email" type="email" placeholder="email" required onkeyup="checkRequiredField(lbl_email, this)">
+            <label for="input_email" id="lbl_email">email: *</label><br>
+            <input id="inp_email" name="input_email" type="email" placeholder="email" required onkeyup="checkRequiredField(lbl_email, this)">
           </p>
           <p>
             <label for="inp_message" id="lbl_message">Μήνυμα: *</label><br>
-            <textarea id="inp_message" name="inp_message" type="textarea" maxlength="100" rows="4" cols="50" placeholder="Μήνυμα" required onkeyup="messageWriting(lbl_message, this)"></textarea><br>
+            <textarea id="inp_message" name="input_message" type="textarea" maxlength="100" rows="4" cols="50" placeholder="Μήνυμα" required onkeyup="messageWriting(lbl_message, this)"></textarea><br>
             <!-- ΕΡΩΤΗΣΗ! ΠΩΣ ΓΙΝΕΤΑΙ ΣΤΑΘΕΡΟΥ ΜΗΚΟΥΣ Π.Χ. 000/100 -->
             <span id="lbl_messageLength" type="text">0/100</span>
           </p>
           <button type="button" onclick="messageSent()">TEST</button><br><br><br>
           <button type="submit">ΑΠΟΣΤΟΛΗ</button>
         </div>
-      </form>
+      <!-- </form> -->
   </body>
 </html>

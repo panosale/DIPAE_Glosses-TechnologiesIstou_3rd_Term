@@ -1,37 +1,33 @@
+html {
+    background-image: "Dsc00939.jpg";
+    mask-image: "Dsc00939.jpg";
+}
 body {
     background-color: lightgreen;
     width: 99%;
 }
 
+h1 {
+    color: blue;
+}
 .common p {
     font-size: larger;
 }
 
-/* ΔΙΑΜΌΡΦΩΣΗ ΚΕΝΤΡΙΚΟΥ ΜΕΝΟΥ ΕΠΙΛΟΓΩΝ */
-.menu h1 {
-	/* font-family:Verdana, Arial, Helvetica, sans-serif; */
-	font-size:20px;
-	font-weight:bold;
-	margin:0;
-	padding:0;
-	}
+.common span {
+    font-size: larger;
+}
 
-.menu hr {
-	border:none;
-	border-top:1px solid #CCCCCC;
-	height:1px;
-	margin-bottom:25px;
-	}
-	
+/* ΔΙΑΜΌΡΦΩΣΗ ΚΕΝΤΡΙΚΟΥ ΜΕΝΟΥ ΕΠΙΛΟΓΩΝ */
 #tabs {
 	float:left;
+    position: relative;
 	width:98%;
 	background:lightblue;
 	font-size:200%;
-	/* line-height:normal; */
     border-top: 1px solid blue;;
 	border-bottom:1px solid blue;
-	padding: 20px 20px 0px 20px;
+	padding: 10px 20px 10px 20px;
 	}
 
 #tabs ul {
@@ -62,39 +58,23 @@ body {
 	color:darkgreen;
 	}
 
-#selected_tab a span {
-    float: none;
-    display:flex;
-    font-family: 'Courier New', Courier, monospace;
-    /* background:url("tabright.gif") no-repeat right top; */
-    padding: 5px 50px 5px 50px;
-    color: yellow;
-    }
-    
 #tabs a:hover span {
 	color: darkblue;
     left:  100px;
 	}
 
-#tabs a:hover {
-	background-position:0% -42px;
-	}
-
 /* ΔΙΑΜΌΡΦΩΣΗ ΦΟΡΜΑΣ ΕΠΙΚΟΙΝΩΝΙΑΣ */
 .contactForm {
-    position: absolute;
-    top: 12%; /* ΝΑ ΓΙΝΕΙ ΑΛΛΑΓΗ ΕΔΩ */
-    left: 69%;
+    position: relative;
+    top: 19%; /* ΝΑ ΓΙΝΕΙ ΑΛΛΑΓΗ ΕΔΩ */
+    width: 31ch;
+    height: 45ch;
     /* font-family: Arial, Helvetica, sans-serif; */
     font-size: large;
     background-color: lightblue;
-}
-
-.contactForm .center {
     border: 1px solid blue;
     padding: 5px;
-  }
-
+}
 
 .contactForm #sentMessage {
     top: 0ch;
@@ -109,11 +89,6 @@ body {
     text-align: center;
 }
 
-/* Διαμόρφωση γενικών ετικετών (label)*/
-.contactForm label {
-    color: red;
-}
-
 /* Διαμόρφωση πλαισίων Εισαγωγής (input)*/
 .contactForm input {
     width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
@@ -121,6 +96,12 @@ body {
     /* left: 10ch; Σταθερή θέση από αριστερά του form */
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
+}
+.contactForm input:invalid {
+    background-color: lightpink;
+}
+.contactForm input:valid {
+    background-color: white;
 }
 
 .contactForm button {
@@ -135,8 +116,15 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
     width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
-    left: 0ch; /* Σταθερή θέση από αριστερά του form */
+    left: 0ch; /* Σταθερή θέση από αριστερά του div */
     resize: none;
+    style: "maxlength=100ch";
+}
+.contactForm textarea:invalid {
+    background-color: lightpink;
+}
+.contactForm textarea:valid {
+    background-color: white;
 }
 
 /* Διαμόρφωση πλαισίου (span)*/
@@ -152,6 +140,21 @@ body {
 }
 
 /*  ΤΑ ΠΑΡΑΚΑΤΩ ΕΙΝΑΙ ΓΙΑ ΔΙΑΓΡΑΦΗ
+.menu h1 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	}
+
+.menu hr {
+	border:none;
+	border-top:1px solid #CCCCCC;
+	height:1px;
+	margin-bottom:25px;
+	}
+	
 .smallInputBoxEmptyFormat {
     width: 30%;
     color: red;
@@ -176,6 +179,11 @@ body {
     top: 13ch;
 } */
 
+/* Διαμόρφωση γενικών ετικετών (label)*/
+/* .contactForm label {
+    color: red;
+}
+ */
 
 /* #tabs a:hover span {
 	background-position:100% -42px;
@@ -183,3 +191,15 @@ body {
     /* .contactForm #fieldsArea {
     width: fit-content;
 } */
+/* #tabs a:hover {
+	background-position:0% -42px;
+	}
+ */
+ /* #selected_tab a span {
+    float: none;
+    display:flex;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px 50px 5px 50px;
+    color: yellow;
+    } */
+    

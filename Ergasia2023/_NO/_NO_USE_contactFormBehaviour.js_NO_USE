@@ -1,0 +1,50 @@
+// ΕΝΟΤΗΤΑ "ΕΠΙΚΟΙΝΩΝΙΑ"
+function messageWriting(labelName, messageFieldName) {
+  if (document.getElementById(messageFieldName.id).value == "")
+    document.getElementById(labelName.id).style.color = "red";
+  else {
+    document.getElementById(labelName.id).style.color = "black";
+  }
+  document.getElementById("lbl_messageLength").innerText = messageFieldName.value.length + "/100";
+}
+function clearContactFields() {
+  document.getElementById("inp_name").value = "";
+  document.getElementById("inp_email").value = "";
+  document.getElementById("inp_message").value = "";
+}
+// function inputLooseFocus(obj){
+//   if (obj.value.length == 0){
+//     allFilled = false;
+//   } else {
+//     allFilled = true;
+//   }
+// }
+function checkFilledContactFields() {
+  var allFilled = false;
+  var e = document.getElementById("inp_name");
+  if (e.value.length != 0)
+    allFilled = true;
+  // if (document.getElementById("inp_email").value.length != 0)
+  //   allFilled = true;
+  // if (document.getElementById("inp_message").value.length != 0)
+  //   allFilled = true;
+  return allFilled;
+}
+function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή ΧΡΗΣΗ
+  var tmpDiv = document.getElementById("div_fieldsArea");
+  tmpDiv.style.display = "none";
+  clearContactFields();
+  var e = document.getElementById("inp_name");
+  alert(e.value.length);
+  setTimeout(() => {
+    if (tmpDiv.style.display === "none")
+      tmpDiv.style.display = "block";
+    else {
+      tmpDiv.style.display = "none";
+    }
+  }, 1000);
+}
+function btn_submit() {
+  messageSent();
+  alert("*** ΜΗΝΥΜΑ ΠΡΟΣΟΜΕΙΩΣΗΣ ***\n***** ΝΑ ΑΛΛΑΧΤΕΙ ΣΕ ΑΥΤΟ ΠΟΥ ΖΗΤΑΕΙ Η ΑΣΚΗΣΗ *****\n\nΤο μήνυμα σας στάλθηκε με επιτυχία στη διεύθυνση: \n" + document.getElementById("inp_email").value);
+}

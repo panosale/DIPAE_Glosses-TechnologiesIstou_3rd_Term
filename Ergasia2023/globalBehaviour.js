@@ -1,26 +1,5 @@
-function checkRequiredField(labelName, inputFieldName) { // ΜΑΛΛΟΝ ΔΕΝ ΧΡΕΙΑΖΕΤΑΙ
-//  alert(document.getElementById(inputFieldName.id).ariaLabel.value);
-      // if (document.getElementById(inputFieldName.id.label).value == "")
-      //   document.getElementById(inputFieldName.id.label).style.color = "red";
-      // else
-      //   document.getElementById(inputFieldName.id.label).style.color = "black";
-
-  // switch (labelName.id) {
-  //   case ("lbl_name"):
-  //     if (document.getElementById(inputFieldName.id).value == "")
-  //       document.getElementById(labelName.id).style.color = "red";
-  //     else
-  //       document.getElementById(labelName.id).style.color = "black";
-  //     break;
-  //   case ("lbl_email"):
-  //     if (document.getElementById(inputFieldName.id).value == "")
-  //       document.getElementById(labelName.id).style.color = "red";
-  //     else
-  //       document.getElementById(labelName.id).style.color = "black";
-  //     break;
-  // }
-}
-// ΓΙΑ ΤΗ ΔΙΑΧΕΙΡΙΣΗ ΤΩΝ ΦΩΤΟΓΡΑΦΙΩΝ ΣΤΗΝ ΕΝΟΤΗΤΑ ΧΟΜΠΙ & ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ
+// ΓΕΝΙΚΑ
+// ΕΝΟΤΗΤΑ: ΧΟΜΠΙ & ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ - "ΦΩΤΟΓΡΑΦΙΑ"
 var currentPos = 0;
 const imagesPath = "images\\";
 const picsArray = new Array("PANO_20230418_174909.jpg", "PANO_20230419_194026.jpg", "PANO_20230419_201414.jpg", "Dsc00939.jpg", "IMG_4452.JPG", "IMG_1662.JPG", "IMG_0695.JPG", "MpleTzami.jpg", "IMG_9563.JPG", "IMG_9537.JPG");
@@ -39,33 +18,81 @@ function nextImage() {
   document.getElementById("img_myImages").src = imagesPath + picsArray[currentPos];
 }
 
-function clearAllElementsFromMainElement(elmnt) {
-  elmnt.innerHTML = "";
-}
-function messageWriting(labelName, messageFieldName){
-  if (document.getElementById(messageFieldName.id).value == "")
-    document.getElementById(labelName.id).style.color = "red";
-  else {
-    document.getElementById(labelName.id).style.color = "black";
-  }
+// ΕΝΟΤΗΤΑ: ΕΠΙΚΟΙΝΩΝΙΑ
+function messageWriting(labelName, messageFieldName) {
+  // if (document.getElementById(messageFieldName.id).value == "")
+  //   document.getElementById(labelName.id).style.color = "red";
+  // else {
+  //   document.getElementById(labelName.id).style.color = "black";
+  // }
   document.getElementById("lbl_messageLength").innerText = messageFieldName.value.length + "/100";
 }
-function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ
-  // const contactDivElements = document.getElementById("fieldsArea").children;
-  // alert(contactDivElements[4].className);
-  var originalState = $("#fieldsArea").html();
-  clearAllElementsFromMainElement(document.getElementById("fieldsArea"));
-  setTimeout(() => {
-    
-    if (tmpDiv.style.display === "none")
-      tmpDiv.style.display = "block";
-    else
-      tmpDiv.style.display = "none";
-    }, 2000);
-    $("#fieldsArea").html(originalState);
+function clearContactFields() {
+  document.getElementById("inp_name").value = "";
+  document.getElementById("inp_email").value = "";
+  document.getElementById("inp_message").value = "";
+  document.getElementById("lbl_messageLength").innerText = "0/100"
 }
+function checkFilledContactFields() {
+  if (document.getElementById("inp_name").value.length == 0)
+    return false;
+  if (document.getElementById("inp_email").value.length == 0)
+    return false;
+  if (document.getElementById("inp_message").value.length == 0)
+    return false;
+  return true;
+}
+function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή ΧΡΗΣΗ
+  if (!checkFilledContactFields())
+    alert("Παρακαλώ συμπληρώστε όλα τα απαραίτητα πεδία.");
+  else {
+    var tmpDiv = document.getElementById("div_fieldsArea");
+    var tmpElement = document.createElement("h2");
+    tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία."
+    tmpElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 30ch; height: 5ch; text-align: center;");
+    document.getElementById("frm_contactForm").appendChild(tmpElement);
+    tmpDiv.style.display = "none";
+    // alert("Το μήνυμα εστάλη.")
+    setTimeout(() => {
+    if (tmpDiv.style.display === "none") {
+      tmpDiv.style.display = "block";
+      document.getElementById("frm_contactForm").removeChild(tmpElement);
+    }
+    else {
+      tmpDiv.style.display = "none";
+    }
+    }, 3000);
+    clearContactFields();
+  }
+}
+// ΤΟ ΠΑΡΑΚΑΤΩ ΜΠΟΡΕΙ ΝΑ ΧΡΗΣΙΜΟΠΟΙΗΘΕΙ ΑΝ ΚΑΝΟΥΜΕ ΧΡΗΣΗ ΤΗΣ ΙΔΙΟΤΗΤΑΣ ΤΟΥ form onsubmit()
 function btn_submit() {
   messageSent();
   alert("*** ΜΗΝΥΜΑ ΠΡΟΣΟΜΕΙΩΣΗΣ ***\n***** ΝΑ ΑΛΛΑΧΤΕΙ ΣΕ ΑΥΤΟ ΠΟΥ ΖΗΤΑΕΙ Η ΑΣΚΗΣΗ *****\n\nΤο μήνυμα σας στάλθηκε με επιτυχία στη διεύθυνση: \n" + document.getElementById("inp_email").value);
 }
-  
+
+// ΧΡΗΣΙΜΗ ΔΙΑΔΙΚΑΣΙΑ ΓΙΑ ΤΗΝ ΕΠΙΣΤΡΟΦΗ ΤΟΥ ΕΠΙΛΕΓΜΕΝΟΥ ΣΤΟΙΧΕΙΟΥ li ΜΙΑΣ ΛΙΣΤΑΣ - ΑΡΧΗ
+// ΕΔΩ ΔΕΝ ΧΡΕΙΑΖΕΤΑΙ
+var smallMenuChoice;
+function clearAllElementsFromMainElement(elmnt) {
+  elmnt.innerHTML = "";
+}
+function saveCurrentChoice(evt) {
+  var tmpItems = document.querySelectorAll("#smallerTabs li"), 
+  tmpTab = [], tmpIndex;
+  // alert(tmpItems.length);
+  for(var i = 0; i < tmpItems.length; i++) {
+      tmpTab.push(tmpItems[i].innerHTML);
+  }
+  for(var i = 0; i < tmpItems.length; i++) {
+      tmpItems[i].onclick = function() {
+          //  alert("clicked");
+          tmpIndex = tmpTab.indexOf(this.innerHTML);
+          smallMenuChoice = tmpIndex;
+      }
+    }
+}
+function smallMenuSelection() {
+  alert(smallMenuChoice);  
+}
+// ΧΡΗΣΙΜΗ ΔΙΑΔΙΚΑΣΙΑ ΓΙΑ ΤΗΝ ΕΠΙΣΤΡΟΦΗ ΤΟΥ ΕΠΙΛΕΓΜΕΝΟΥ ΣΤΟΙΧΕΙ li ΜΙΑΣ ΛΙΣΤΑΣ - ΤΕΛΟΣ

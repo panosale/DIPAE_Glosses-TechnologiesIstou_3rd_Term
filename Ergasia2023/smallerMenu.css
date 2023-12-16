@@ -1,0 +1,37 @@
+/* ΔΙΑΜΌΡΦΩΣΗ ΚΑΘΕΤΟΥ ΜΕΝΟΥ ΕΠΙΛΟΓΩΝ */
+#smallerTabs {
+	float:left;
+    position: relative;
+	width:98%;
+	background:lightblue;
+	font-size:150%;
+    border-top: 1px solid blue;;
+	border-bottom:1px solid blue;
+	margin:0 0 50px 0;
+}
+
+#smallerTabs ul {
+	margin:0;
+	/* list-style:none; */
+}
+
+#smallerTabs li {
+	display:inline;
+}
+
+#smallerTabs a {
+	float:left;
+	padding: 5px 30px 5px 0px;
+	text-decoration:none;
+}
+
+#smallerTabs a span {
+	float: none;
+	display:flex;
+	padding: 5px 50px 5px 35px;
+	color:darkgreen;
+}
+
+#smallerTabs a:hover span {
+	color: darkblue;
+}

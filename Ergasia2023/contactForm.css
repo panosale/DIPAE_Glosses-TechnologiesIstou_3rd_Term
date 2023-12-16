@@ -1,0 +1,156 @@
+/* ΔΙΑΜΌΡΦΩΣΗ ΦΟΡΜΑΣ ΕΠΙΚΟΙΝΩΝΙΑΣ */
+.contactDiv {
+    position: relative;
+    width: 33ch;
+    height: 38ch;
+    font-size: large;
+    background-color: lightblue;
+    border: 1px solid blue;
+    padding: 5px;
+}
+
+.contactDiv #sentMessage {
+    top: 0ch;
+    left: 0ch;
+    background: blue;
+}
+
+/* Διαμόρφωση Κεφαλίδας3 (h3)*/
+.contactDiv h3 {
+    top: 0ch;
+    left: 0ch;
+    text-align: center;
+}
+
+/* Διαμόρφωση πλαισίων Εισαγωγής (input)*/
+.contactDiv input {
+    width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
+    top: 0ch;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+.contactDiv button {
+    font-size: medium;
+    width: 31ch;
+    left: 0;
+    top: 13ch;
+}
+
+/* Διαμόρφωση πλαισίου Εισαγωγής Μηνύματος (textarea)*/
+.contactDiv textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
+    left: 0ch; /* Σταθερή θέση από αριστερά του div */
+    resize: none;
+}
+/* Διαμόρφωση πλαισίου (span)*/
+.contactDiv.textLengthInfo span { 
+    position: relative;
+    font-size: small;
+    left: 83%;
+}
+/* .contactDiv messageSent {
+    font-size: xx-large;
+    font-style: oblique;
+} */
+
+/* Νεότερη μορφοποίηση εμφάνισης υποχρεωτικών πεδίων */
+.contactDiv input + span {
+    position: relative;
+}
+  
+.contactDiv input + span::before {
+    position: absolute;
+    right: -20px;
+    /* top: 5px; */
+}
+  
+.contactDiv input:invalid {
+    border: 2px solid red;
+}
+  
+.contactDiv input:invalid + span::before {
+    content: '✖';
+    color: red;
+}
+
+.contactDiv input:valid + span::before {
+    content: '✓';
+    color: green;
+}
+
+.contactDiv textarea + span {
+    position: relative;
+}
+  
+.contactDiv textarea + span::before {
+    position: absolute;
+    right: -20px;
+    /* top: 5px; */
+}
+  
+.contactDiv textarea:invalid {
+    border: 2px solid red; /* το border είναι 2 στα άλλα spans. εδώ θέλει έλεγχο */
+}
+  
+.contactDiv textarea:invalid + span::before {
+    content: '✖';
+    color: red;
+}
+  
+.contactDiv textarea:valid + span::before {
+    content: '✓';
+    color: green;
+}
+
+.contactDiv textarea:valid {
+    border: 2px solid;
+}
+
+
+/* Αρχική μορφοποίηση εμφάνισης υποχρεωτικών πεδίων - ΓΙΑ ΔΙΑΓΡΑΦΗ ΑΝ ΠΑΙΖΕΙ ΚΑΛΑ Η νεότερη*/
+.contactDiv input:invalid {
+    background-color: lightpink;
+}
+.contactDiv input:valid {
+    background-color: white;
+}
+
+.contactDiv textarea:invalid {
+    background-color: lightpink;
+}
+.contactDiv textarea:valid {
+    background-color: white;
+}
+
+
+  /* ΔΕΝ ΧΡΕΙΑΖΕΤΑΙ */
+/* .contactDiv input[type=submit] {
+    width: 31ch;
+    left: 0;
+    top: 13ch;
+} */
+
+/* Διαμόρφωση γενικών ετικετών (label)*/
+/* .contactDiv label {
+    color: red;
+}
+
+.contactDiv .requiredFieldFilled {
+    color: black;
+}
+*/
+/*
+.contactForm {
+    position: relative;
+    top: 19%;
+    width: 31ch;
+    height: 45ch;
+    font-size: large;
+    background-color: lightblue;
+    border: 1px solid red;
+    padding: 5px;
+}
+
+*/
