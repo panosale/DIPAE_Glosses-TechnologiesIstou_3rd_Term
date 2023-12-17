@@ -1,8 +1,9 @@
 /* ΔΙΑΜΌΡΦΩΣΗ ΦΟΡΜΑΣ ΕΠΙΚΟΙΝΩΝΙΑΣ */
 .contactDiv {
-    position: relative;
+    position: absolute;
     width: 310px;
     height: 370px;
+    left: 800px;
     /* ΗΤΑΝ...
     width: 33ch;
     height: 38ch;

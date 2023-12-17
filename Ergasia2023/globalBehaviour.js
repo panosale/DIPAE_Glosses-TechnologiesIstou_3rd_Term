@@ -50,13 +50,13 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
     var tmpElement = document.createElement("h2");
     tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "\n*Λειτουργια προσωμείωσης."
     tmpElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 30ch; height: 5ch; text-align: center;");
-    document.getElementById("frm_contactForm").appendChild(tmpElement);
+    document.getElementById("div_ContactForm").appendChild(tmpElement);
     tmpDiv.style.display = "none";
     // alert("Το μήνυμα εστάλη.")
     setTimeout(() => {
     if (tmpDiv.style.display === "none") {
       tmpDiv.style.display = "block";
-      document.getElementById("frm_contactForm").removeChild(tmpElement);
+      document.getElementById("div_ContactForm").removeChild(tmpElement);
     }
     else {
       tmpDiv.style.display = "none";
