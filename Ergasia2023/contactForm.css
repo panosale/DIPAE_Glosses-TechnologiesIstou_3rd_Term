@@ -1,16 +1,16 @@
 /* ΔΙΑΜΌΡΦΩΣΗ ΦΟΡΜΑΣ ΕΠΙΚΟΙΝΩΝΙΑΣ */
-.mainContactDiv {
+.contactDiv {
     /* position: relative; */
     /* top: 19%; */
     width: 800px;
-    height: 380px;
+    height: 400px;
     /* font-size: large;
     background-color: lightblue;
     border: 1px solid red;
     padding: 0px; */
 }
 
-.contactDiv {
+.contactDiv div {
     position: relative;
     width: 310px;
     height: 370px;
