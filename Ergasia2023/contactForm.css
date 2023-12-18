@@ -1,9 +1,22 @@
 /* ΔΙΑΜΌΡΦΩΣΗ ΦΟΡΜΑΣ ΕΠΙΚΟΙΝΩΝΙΑΣ */
+.mainContactDiv {
+    /* position: relative; */
+    /* top: 19%; */
+    width: 800px;
+    height: 380px;
+    /* font-size: large;
+    background-color: lightblue;
+    border: 1px solid red;
+    padding: 0px; */
+}
+
 .contactDiv {
-    position: absolute;
+    position: relative;
     width: 310px;
     height: 370px;
-    left: 800px;
+    top: 0;
+    left: 800;
+    /* left: 800px; */
     /* ΗΤΑΝ...
     width: 33ch;
     height: 38ch;
@@ -142,17 +155,6 @@
 }
 */
 /*
-.contactForm {
-    position: relative;
-    top: 19%;
-    width: 31ch;
-    height: 45ch;
-    font-size: large;
-    background-color: lightblue;
-    border: 1px solid red;
-    padding: 5px;
-}
-
 .contactDiv #sentMessage {
     top: 0ch;
     left: 0ch;
