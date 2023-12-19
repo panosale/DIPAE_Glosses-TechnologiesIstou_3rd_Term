@@ -22,7 +22,14 @@ h2 {
 .common span {
     font-size: larger;
 }
-
+.bottomDiv {
+	position: absolute;
+	width: 99%;
+	height: 47px;
+	top: 93%;
+	/* border: solid 1px; */
+	/* background-color: whitesmoke; */
+}
 /* ΔΙΑΜΌΡΦΩΣΗ ΚΕΝΤΡΙΚΟΥ ΜΕΝΟΥ ΕΠΙΛΟΓΩΝ */
 #tabs {
 	float:left;
