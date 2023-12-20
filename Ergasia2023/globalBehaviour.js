@@ -48,8 +48,8 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
   else {
     var tmpDiv = document.getElementById("div_fieldsArea");
     var tmpElement = document.createElement("h2");
-    tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "\n*Λειτουργία προσομοίωσης."
-    tmpElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 30ch; height: 5ch; text-align: center;");
+    tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "<br>*Λειτουργία προσομοίωσης."
+    tmpElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 520px; text-align: center; padding: 30px 0");
     document.getElementById("div_ContactForm").appendChild(tmpElement);
     tmpDiv.style.display = "none";
     // alert("Το μήνυμα εστάλη.")

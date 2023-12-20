@@ -1,14 +1,21 @@
 body {
-    background-color: lightgreen;
+    background-color: gray;
     width: 99%;
 }
 
 h1 {
-    color: blue;
+    color: black;
 }
 
 h2 {
-    color: blue;
+    color: black;
+}
+.common {
+	height: 560px;;
+	border: solid 2px;
+	border-radius: 20px;
+	background-color: lightgray;
+	padding: 20px 30px 20px 30px;
 }
 .common p {
 
@@ -19,14 +26,16 @@ h2 {
     size: fit-content;
     height: 400px;
 }
-.common span {
+/* .common span {
     font-size: larger;
-}
+} */
 .bottomDiv {
 	position: absolute;
-	width: 99%;
+	width: 97%;
 	height: 47px;
 	top: 92%;
+	padding-left: 15px;
+	padding-right: 10px;
 	/* border: solid 1px; */
 	/* background-color: whitesmoke; */
 }
@@ -35,10 +44,11 @@ h2 {
 	float:left;
     position: relative;
 	width:98%;
-	background:lightblue;
+	background:rgb(255, 185, 160);
 	font-size:200%;
+	border-radius: 15px;
     border-top: 1px solid blue;;
-	border-bottom:1px solid blue;
+	border-bottom: 1px solid blue;
 	padding: 10px 20px 10px 20px;
     margin: 2% 0 30px 0;
 }

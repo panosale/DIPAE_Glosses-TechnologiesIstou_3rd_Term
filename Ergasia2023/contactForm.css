@@ -12,8 +12,8 @@
 
 .contactDiv div {
     position: relative;
-    width: 310px;
-    height: 370px;
+    width: 330px;
+    height: 420px;
     top: 0;
     left: 800;
     /* left: 800px; */
@@ -24,7 +24,8 @@
     font-size: large;
     background-color: lightblue;
     border: 1px solid blue;
-    padding: 0px 0px 10px 10px
+    border-radius: 7px;
+    padding: 0px 10px 10px 20px
 }
 
 /* Διαμόρφωση Κεφαλίδας3 (h3)*/
@@ -40,6 +41,7 @@
     top: 0ch;
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
+    border-radius: 5px;
 }
 .contactDiv button {
     font-size: medium;
@@ -52,6 +54,7 @@
     font-size: medium;
     width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
     left: 0ch; /* Σταθερή θέση από αριστερά του div */
+    border-radius: 5px;
     resize: none;
 }
 /* Διαμόρφωση πλαισίου (span)*/
