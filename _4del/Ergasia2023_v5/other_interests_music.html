@@ -4,34 +4,30 @@
         <title>Χόμπι & Δραστηριότητες</title>
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
         <link rel="stylesheet" href="globalFormat.css">
-        <!-- <link rel="stylesheet" href="smallerMenu.css"> -->
+        <link rel="stylesheet" href="smallerMenu.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="globalBehaviour.js"></script>
-        <!-- <script src="effects.js"></script> -->
+        <script src="effects.js"></script>
     </head>
     <body>
-        <ul class="tabs">
+        <ul id="tabs">
             <li><a href="about.html"><span>Σχετικά</span></a></li>
             <li><a href="education.html"><span>Εκπαίδευση</span></a></li>
             <li><a href="career.html"><span>Επαγγελματική πορεία</span></a></li>
             <li><a href="other_interests_photography.html"><span style="color: darkblue;">Χόμπι & Δραστηριότητες</span></a></li>
             <li><a href="contact.html" onclick="myMove()"><span>Επικοινωνία</span></a></li>
         </ul>
-        <div class="topDiv">
-            <h2>Χόμπι & Δραστηριότητες</h2>
-        </div>
-        <div class="common">
-            <ul class="smallerTabs" id="ul_smallerTabs">
-                <li><a href="other_interests_photography.html"><span>Φωτογραφία</span></a></li>
-                <li><a href="other_interests_music.html"><span style="color: blue;">Μουσική</span></a></li>
-                <li><a href="other_interests_travels.html"><span>Ταξίδια</span></a></li>
-            </ul><br><br><br>
-            <!-- <div id="div_myInfo"> -->
+        <h2>Χόμπι & Δραστηριότητες</h2>
+        <ul id="smallerTabs">
+            <li><a href="other_interests_photography.html"><span>Φωτογραφία</span></a></li>
+            <li><a href="other_interests_music.html"><span style="color: blue;">Μουσική</span></a></li>
+            <li><a href="other_interests_travels.html"><span>Ταξίδια</span></a></li>
+        </ul>
+        <div class="common" id="div_myInfo">
             <p>Παρακολούθησα μαθήματα ηλεκτρικής κιθάρας από το 2002 έως το 2009.</p>
-            <!-- </div> -->
-            <div class="bottomDiv">
-                <a href="mailto:panaalev1@iee.ihu.gr" style="position: inherit; left: 97.5%"><i class="fa fa-envelope fa-3x" style="color: blue;"></i></a>
-            </div>
+        </div>
+        <div class="bottomDiv">
+            <a href="mailto:panaalev1@iee.ihu.gr" style="position: inherit; left: 97.5%"><i class="fa fa-envelope fa-3x" style="color: blue;"></i></a>
         </div>
     </body>
 </html>

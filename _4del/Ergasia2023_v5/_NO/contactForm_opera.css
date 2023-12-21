@@ -1,30 +1,18 @@
-/* ΔΙΑΜΌΡΦΩΣΗ ΦΟΡΜΑΣ ΕΠΙΚΟΙΝΩΝΙΑΣ */
+/* ΔΙΑΜΌΡΦΩΣΗ ΦΟΡΜΑΣ ΕΠΙΚΟΙΝΩΝΙΑΣ ΓΙΑ OPERA BROWSER */
 .contactDiv {
     position: relative;
-    top: 0;
-    width: 340px;
-	border: solid 2px;
-	border-radius: 20px;
-	background-color: lightgray;
-	padding: 50px 30px 50px 30px;
-    /* padding-top: 10px;
-    padding-bottom: 10px; */
-    /* height: fit-content; */
-}
-
-.contactDiv div {
-    position: relative;
-    top: 0;
+    width: 35ch;
+    height: 37ch;
+    /* ΗΤΑΝ...
+    width: 33ch;
+    height: 38ch;
+    ...ΕΓΙΝΕ ΑΛΛΑΓΗ ΕΠΕΙΔΗ ΔΕΝ ΦΑΙΝΟΤΑΝ ΚΑΛΑ ΣΕ FIREFOX-LINUX */
     font-size: large;
     background-color: lightblue;
     border: 1px solid blue;
-    border-radius: 7px;
-    padding-left: 5%;
+    padding: 0px 0px 10px 10px
 }
 
-.contactDiv p {
-    position: relative;
-}
 /* Διαμόρφωση Κεφαλίδας3 (h3)*/
 .contactDiv h3 {
     top: 0ch;
@@ -38,11 +26,8 @@
     top: 0ch;
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
-    border-radius: 5px;
 }
 .contactDiv button {
-    position: relative;
-    top: 50%;
     font-size: medium;
     width: 31ch;
 }
@@ -53,9 +38,47 @@
     font-size: medium;
     width: 30ch; /* Σταθερό μήκος σε χαρακτήρες */
     left: 0ch; /* Σταθερή θέση από αριστερά του div */
-    border-radius: 5px;
     resize: none;
 }
+/* Διαμόρφωση πλαισίου (span)*/
+.contactDiv.textLengthInfo span { 
+    position: relative;
+    font-size: small;
+    left: 80%;
+    /* ΗΤΑΝ...
+    left: 83%;
+    ...ΕΓΙΝΕ ΑΛΛΑΓΗ ΕΠΕΙΔΗ ΔΕΝ ΦΑΙΝΟΤΑΝ ΚΑΛΑ ΣΕ FIREFOX-LINUX */
+}
+/* .contactDiv messageSent {
+    font-size: xx-large;
+    font-style: oblique;
+} */
+
+/* Νεότερη μορφοποίηση εμφάνισης υποχρεωτικών πεδίων */
+.contactDiv input + span {
+    position: relative;
+}
+  
+.contactDiv input + span::before {
+    position: relative;
+    right: -10px;
+    /* top: 5px; */
+}
+  
+.contactDiv input:invalid {
+    border: 2px solid red;
+}
+  
+.contactDiv input:invalid + span::before {
+    content: '✖';
+    color: red;
+}
+
+.contactDiv input:valid + span::before {
+    content: '✓';
+    color: green;
+}
+
 .contactDiv textarea + span {
     position: relative;
 }
@@ -84,32 +107,8 @@
     border: 2px solid;
 }
 
-/* Νεότερη μορφοποίηση εμφάνισης υποχρεωτικών πεδίων */
-.contactDiv input + span {
-    position: relative;
-}
-  
-.contactDiv input + span::before {
-    position: relative;
-    right: -10px;
-    /* top: 5px; */
-}
-  
-.contactDiv input:invalid {
-    border: 2px solid red;
-}
-  
-.contactDiv input:invalid + span::before {
-    content: '✖';
-    color: red;
-}
 
-.contactDiv input:valid + span::before {
-    content: '✓';
-    color: green;
-}
-
-/* Αρχική μορφοποίηση εμφάνισης υποχρεωτικών πεδίων - ΑΝ ΔΙΑΓΡΑΦΟΥΝ ΤΑ ΠΑΡΑΚΑΤΩ ΤΑ ΠΛΑΙΣΙΑ ΚΕΙΜΕΝΟΥ ΓΙΝΟΝΤΑΙ ΛΕΥΚΑ*/
+/* Αρχική μορφοποίηση εμφάνισης υποχρεωτικών πεδίων - ΓΙΑ ΔΙΑΓΡΑΦΗ ΑΝ ΠΑΙΖΕΙ ΚΑΛΑ Η νεότερη*/
 .contactDiv input:invalid {
     background-color: lightpink;
 }
@@ -142,23 +141,22 @@
 }
 */
 /*
+.contactForm {
+    position: relative;
+    top: 19%;
+    width: 31ch;
+    height: 45ch;
+    font-size: large;
+    background-color: lightblue;
+    border: 1px solid red;
+    padding: 5px;
+}
+
 .contactDiv #sentMessage {
     top: 0ch;
     left: 0ch;
     background: blue;
 }
-*/
-/* Διαμόρφωση πλαισίου (span)*/
-/* .contactDiv.textLengthInfo span { 
-    position: relative;
-    font-size: small;
-    left: 80%; */
-    /* ΗΤΑΝ...
-    left: 83%;
-    ...ΕΓΙΝΕ ΑΛΛΑΓΗ ΕΠΕΙΔΗ ΔΕΝ ΦΑΙΝΟΤΑΝ ΚΑΛΑ ΣΕ FIREFOX-LINUX */
-/* } */
-/* .contactDiv messageSent {
-    font-size: xx-large;
-    font-style: oblique;
-} */
 
+
+*/

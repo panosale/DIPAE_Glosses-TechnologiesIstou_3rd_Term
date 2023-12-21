@@ -25,13 +25,13 @@ function messageWriting(labelName, messageFieldName) {
   // else {
   //   document.getElementById(labelName.id).style.color = "black";
   // }
-  document.getElementById("lbl_messageLength").innerText = messageFieldName.value.length;// + "/100";
+  document.getElementById("lbl_messageLength").innerText = messageFieldName.value.length + "/100";
 }
 function clearContactFields() {
   document.getElementById("inp_name").value = "";
   document.getElementById("inp_email").value = "";
   document.getElementById("inp_message").value = "";
-  document.getElementById("lbl_messageLength").innerText = "0";
+  document.getElementById("lbl_messageLength").innerText = "0/100"
 }
 function checkFilledContactFields() {
   if (document.getElementById("inp_name").value.length == 0)
@@ -49,16 +49,14 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
     var tmpDiv = document.getElementById("div_fieldsArea");
     var tmpElement = document.createElement("h2");
     tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "<br>*Λειτουργία προσομοίωσης."
-    tmpElement.setAttribute("class", "contactDiv");
     tmpElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 520px; text-align: center; padding: 30px 0");
-    document.getElementById("div_contactForm").setAttribute("style", "width: fit-content;")
-    document.getElementById("div_contactForm").appendChild(tmpElement);
+    document.getElementById("div_ContactForm").appendChild(tmpElement);
     tmpDiv.style.display = "none";
     // alert("Το μήνυμα εστάλη.")
     setTimeout(() => {
     if (tmpDiv.style.display === "none") {
       tmpDiv.style.display = "block";
-      document.getElementById("div_contactForm").removeChild(tmpElement);
+      document.getElementById("div_ContactForm").removeChild(tmpElement);
     }
     else {
       tmpDiv.style.display = "none";

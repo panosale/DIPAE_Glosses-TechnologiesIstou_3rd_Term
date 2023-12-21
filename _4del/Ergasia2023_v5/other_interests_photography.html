@@ -10,30 +10,27 @@
         <script src="effects.js"></script>
     </head>
     <body>
-        <ul class="tabs">
+        <ul id="tabs">
             <li><a href="about.html"><span>Σχετικά</span></a></li>
             <li><a href="education.html"><span>Εκπαίδευση</span></a></li>
             <li><a href="career.html"><span>Επαγγελματική πορεία</span></a></li>
             <li><a href="other_interests_photography.html"><span style="color: darkblue;">Χόμπι & Δραστηριότητες</span></a></li>
             <li><a href="contact.html" onclick="myMove()"><span>Επικοινωνία</span></a></li>
         </ul>
-        <div class="topDiv">
-            <h2>Χόμπι & Δραστηριότητες</h2>
-        </div>
+        <h2>Χόμπι & Δραστηριότητες</h2>
+        <ul id="smallerTabs">
+            <li><a href="other_interests_photography.html"><span style="color: blue;">Φωτογραφία</span></a></li>
+            <li><a href="other_interests_music.html"><span>Μουσική</span></a></li>
+            <li><a href="other_interests_travels.html"><span>Ταξίδια</span></a></li>
+        </ul>
         <div class="common" id="div_myInfo">
-            <ul class="smallerTabs" id="ul_smallerTabs">
-                <li><a href="other_interests_photography.html"><span style="color: blue;">Φωτογραφία</span></a></li>
-                <li><a href="other_interests_music.html"><span>Μουσική</span></a></li>
-                <li><a href="other_interests_travels.html"><span>Ταξίδια</span></a></li>
-            </ul><br><br><br>
             <div id="div_myImages">
                 <p>Ασχολούμαι ερασιτεχνικά με τη φωτογραφία και προσπαθώ να απαθανατίζω οτιδήποτε μου κηνεί το ενδιαφέρον. Το αγαπημένο μου θέμα είναι τα τοπία και η φύση.<br>
-                    Μερικά δείγματα της δουλειάς μου μπορείς να δεις παρακάτω, αλλά και <a href="https://www.flickr.com/photos/panagosal" target="_blank">εδώ</a>.
-                </p><br>
-            <input id="previousButton" type="button" onclick="previousImage()" value="<< Προηγούμενη">
-            <input id="nextButton" type="button" onclick="nextImage()" value="Επόμενη >>"><br>
-            <img id="img_myImages" src="images\PANO_20230418_174909.jpg" style="height: 99%; border-radius: 10px; padding-top: 15px;">
-        </div>
+                Μερικά δείγματα της δουλειάς μου μπορείς να δεις παρακάτω, αλλά και <a href="https://www.flickr.com/photos/panagosal" target="_blank">εδώ</a>.</p>
+                <input id="previousButton" type="button" onclick="previousImage()" value="<< Προηγούμενη">
+                <input id="nextButton" type="button" onclick="nextImage()" value="Επόμενη >>"><br><br>
+                <img id="img_myImages" src="images\PANO_20230418_174909.jpg" style="height: 99%; border-radius: 10px;">
+            </div>
         </div>
         <div class="bottomDiv">
             <a href="https://www.flickr.com/photos/panagosal" target="_blank"><i class="fa fa-flickr fa-3x" style="color: white;"></i></a>
