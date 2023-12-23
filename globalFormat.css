@@ -16,7 +16,8 @@ h1 {
 	align-content: center;
 	padding-left: 40px;
 	padding-right: 40px;
-	border-radius: 15px;
+	border-radius: 0px 15px 15px 15px;
+	/* border-radius: 15px; */
 	background-color: lightgray;
 	/* position: relative;
 	top: 20%;
@@ -46,7 +47,7 @@ h1 {
     font-size: larger;
 	border: solid 2px;
 	margin: 5px;
-	border-radius: 15px;
+	border-radius: 0px 15px 15px 15px;
 	background-color: lightgray;
 	padding: 10px 30px 10px 30px;
 }
@@ -78,10 +79,11 @@ h1 {
 	width:98%;
 	background:rgb(255, 185, 160);
 	font-size:200%;
-	border-radius: 15px;
+	/* border-radius: 15px; */
+	border-radius: 0px 15px 15px 15px;
     border-top: 1px solid blue;;
 	border-bottom: 1px solid blue;
-	padding: 10px 20px 10px 20px;
+	padding: 10px 20px 5px 20px;
     margin-bottom:20px;
 }
 
@@ -123,7 +125,7 @@ h1 {
 	width:98%;
 	background:rgb(255, 185, 160);
 	font-size:150%;
-	border-radius: 7px;
+	border-radius: 0pc 7px 7px 7px;
     border-top: 1px solid blue;;
 	border-bottom:1px solid blue;
 	margin:0 0 0 0;
