@@ -68,6 +68,7 @@
   
 .contactDiv textarea:invalid {
     border: 2px solid red; /* το border είναι 2 στα άλλα spans. εδώ θέλει έλεγχο */
+    /* border: 2px solid red; το border είναι 2 στα άλλα spans. εδώ θέλει έλεγχο */
 }
   
 .contactDiv textarea:invalid + span::before {
@@ -81,7 +82,8 @@
 }
 
 .contactDiv textarea:valid {
-    border: 2px solid;
+    border-color: green;
+    /* border: 2px solid; */
 }
 
 /* Νεότερη μορφοποίηση εμφάνισης υποχρεωτικών πεδίων */
@@ -115,6 +117,7 @@
 }
 .contactDiv input:valid {
     background-color: white;
+    border-color: green;
 }
 
 .contactDiv textarea:invalid {

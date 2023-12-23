@@ -26,19 +26,19 @@
       <div id="div_fieldsArea">
           <p>
             <label id="lbl_name" for="input_name">Ονοματεπώνυμο:</label><br>
-            <input id="inp_name" name="input_name" type="text" placeholder="Ονοματεπώνυμο" required><span></span><br><br>
+            <input id="inp_name" name="input_name" type="text" placeholder="Ονοματεπώνυμο" required value="fdasfasfas"><span></span><br><br>
             <label id="lbl_email" for="input_email">email:</label><br>
-            <input id="inp_email" name="input_email" type="text" placeholder="email" required><span></span><br><br>
+            <input id="inp_email" name="input_email" type="text" placeholder="email" required value="fdasfasfas"><span></span><br><br>
             <!-- Μπορεί να χρησιμοποιηθεί το type="email" για καλύτερο έλεγχο -->
             <!-- <input id="inp_email" name="input_email" type="email" placeholder="email" required><span></span> -->
             <label for="inp_message" id="lbl_message">Μήνυμα:</label><br>
-            <textarea id="inp_message" name="input_message" type="textarea" maxlength="100" rows="4" cols="50" placeholder="Μήνυμα" required 
-              onkeyup="messageWriting(lbl_message, this)"></textarea><span></span><br>
+            <textarea id="inp_message" name="input_message" type="textarea" maxlength="100" rows="4" cols="50" placeholder="Μήνυμα" required
+              onkeyup="messageWriting(lbl_message, this)">fdasfasfas</textarea><span></span><br>
             <!-- ΗΤΑΝ...
             <span id="lbl_messageLength" type="text" style="position: relative; font-size: small; left: 83%;">0/100</span>
             ...ΕΓΙΝΕ ΑΛΛΑΓΗ ΕΠΕΙΔΗ ΔΕΝ ΦΑΙΝΟΤΑΝ ΚΑΛΑ ΣΕ FIREFOX-LINUX -->
-            <span id="lbl_messageLength" type="text" style="position: relative; min-width: 3ch; display: inline-block; text-align: right; font-size: small; top: -5px; left: 235px;">0</span>
-            <span type="text" style="position: relative; font-size: small; top: -5px; left: 230px;">/100</span><br><br>
+            <span id="lbl_messageLength" type="text" style="position: relative; min-width: 3ch; display: inline-block; text-align: right; font-size: small; top: 0px; left: 220px;">0</span>
+            <span type="text" style="position: relative; font-size: small; top: 0px; left: 215px;">/100</span><br><br>
             <button id="btn_Send" type="button" onclick="messageSent()">ΑΠΟΣΤΟΛΗ</button>
           </p>
           <!-- <button type="submit">ΑΠΟΣΤΟΛΗ</button> -->

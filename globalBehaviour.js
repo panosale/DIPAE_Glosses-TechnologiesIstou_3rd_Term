@@ -51,7 +51,7 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
     tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "<br>*Λειτουργία προσομοίωσης."
     tmpElement.setAttribute("class", "contactDiv");
     tmpElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 520px; text-align: center; padding: 30px 0");
-    document.getElementById("div_contactForm").setAttribute("style", "width: fit-content;")
+    // document.getElementById("div_contactForm").setAttribute("style", "width: fit-content;")
     document.getElementById("div_contactForm").appendChild(tmpElement);
     tmpDiv.style.display = "none";
     // alert("Το μήνυμα εστάλη.")
