@@ -5,8 +5,10 @@
     width: 340px;
 	border: solid 2px;
 	border-radius: 20px;
+    border-radius: 0px 15px 15px 15px;
 	background-color: lightgray;
 	padding: 50px 30px 50px 30px;
+	margin: 5px;
     /* padding-top: 10px;
     padding-bottom: 10px; */
     /* height: fit-content; */
@@ -18,7 +20,7 @@
     font-size: large;
     background-color: lightblue;
     border: 1px solid blue;
-    border-radius: 7px;
+    border-radius: 10px;
     padding-left: 5%;
 }
 
