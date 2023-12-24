@@ -55,10 +55,10 @@ h1 {
 	/* display:block; */
 
 }
-/* .common div {
-    size: fit-content;
-    height: 400px;
-} */
+.common div {
+    /* width: fit-content; */
+    /* height: 400px; */
+}
 /* .common span {
     font-size: larger;
 } */
@@ -66,7 +66,8 @@ h1 {
 	position: absolute;
 	width: 97%;
 	height: 47px;
-	top: 92%;
+	bottom: 25px;
+	/* top: 92%; */
 	padding-left: 15px;
 	padding-right: 10px;
 	/* border: solid 1px; */

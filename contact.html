@@ -26,14 +26,14 @@
       <div id="div_fieldsArea">
           <p>
             <label id="lbl_name" for="input_name">Ονοματεπώνυμο:</label><br>
-            <input id="inp_name" name="input_name" type="text" placeholder="Ονοματεπώνυμο" required value="ΓΙΑ ΔΟΚΙΜΕΣ"><span></span><br><br>
+            <input id="inp_name" name="input_name" type="text" placeholder="Ονοματεπώνυμο" required><span></span><br><br>
             <label id="lbl_email" for="input_email">email:</label><br>
-            <input id="inp_email" name="input_email" type="text" placeholder="email" required value="ΓΙΑ ΔΟΚΙΜΕΣ"><span></span><br><br>
+            <input id="inp_email" name="input_email" type="email" placeholder="email" required><span></span><br><br>
             <!-- Μπορεί να χρησιμοποιηθεί το type="email" για καλύτερο έλεγχο -->
             <!-- <input id="inp_email" name="input_email" type="email" placeholder="email" required><span></span> -->
             <label for="inp_message" id="lbl_message">Μήνυμα:</label><br>
             <textarea id="inp_message" name="input_message" type="textarea" maxlength="100" rows="4" cols="50" placeholder="Μήνυμα" required
-              onkeyup="messageWriting(lbl_message, this)">ΓΙΑ ΔΟΚΙΜΕΣ</textarea><span></span><br>
+              onkeyup="messageWriting(lbl_message, this)"></textarea><span></span><br>
             <!-- ΗΤΑΝ...
             <span id="lbl_messageLength" type="text" style="position: relative; font-size: small; left: 83%;">0/100</span>
             ...ΕΓΙΝΕ ΑΛΛΑΓΗ ΕΠΕΙΔΗ ΔΕΝ ΦΑΙΝΟΤΑΝ ΚΑΛΑ ΣΕ FIREFOX-LINUX -->

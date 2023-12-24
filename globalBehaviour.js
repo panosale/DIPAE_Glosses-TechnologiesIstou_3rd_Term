@@ -8,14 +8,14 @@ function previousImage() {
     currentPos--;
   else
     currentPos = picsArray.length - 1;
-  document.getElementById("img_myImages").src = imagesPath + picsArray[currentPos];
+  document.getElementById("img_currentImage").src = imagesPath + picsArray[currentPos];
 }
 function nextImage() {
   if (currentPos < picsArray.length-1)
     currentPos++;
   else
     currentPos = 0;
-  document.getElementById("img_myImages").src = imagesPath + picsArray[currentPos];
+  document.getElementById("img_currentImage").src = imagesPath + picsArray[currentPos];
 }
 
 // ΕΝΟΤΗΤΑ: ΕΠΙΚΟΙΝΩΝΙΑ
@@ -36,7 +36,8 @@ function clearContactFields() {
 function checkFilledContactFields() {
   if (document.getElementById("inp_name").value.length == 0)
     return false;
-  if (document.getElementById("inp_email").value.length == 0)
+  // if (document.getElementById("inp_email").value.length == 0)
+  if (!document.getElementById("inp_email").checkValidity())
     return false;
   if (document.getElementById("inp_message").value.length == 0)
     return false;
@@ -48,10 +49,11 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
   else {
     var tmpDiv = document.getElementById("div_fieldsArea");
     var tmpElement = document.createElement("h2");
-    tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "<br>*Λειτουργία προσομοίωσης."
+    tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία.";
+    // tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "<br>*Λειτουργία προσομοίωσης.";
     tmpElement.setAttribute("class", "contactDiv");
     tmpElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 520px; text-align: center; padding: 30px 0");
-    // document.getElementById("div_contactForm").setAttribute("style", "width: fit-content;")
+    document.getElementById("div_contactForm").setAttribute("style", "width: fit-content; background-color: lightgreen")
     document.getElementById("div_contactForm").appendChild(tmpElement);
     tmpDiv.style.display = "none";
     // alert("Το μήνυμα εστάλη.")
@@ -59,6 +61,7 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
     if (tmpDiv.style.display === "none") {
       tmpDiv.style.display = "block";
       document.getElementById("div_contactForm").removeChild(tmpElement);
+      document.getElementById("div_contactForm").setAttribute("style", "width: 340px")
     }
     else {
       tmpDiv.style.display = "none";
