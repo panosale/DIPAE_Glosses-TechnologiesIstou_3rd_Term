@@ -85,7 +85,8 @@ h1 {
     border-top: 1px solid blue;;
 	border-bottom: 1px solid blue;
 	padding: 10px 20px 5px 20px;
-    margin-bottom:20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .tabs ul {
