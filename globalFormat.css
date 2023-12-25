@@ -63,7 +63,7 @@ h1 {
     font-size: larger;
 } */
 .bottomDiv {
-	position: absolute;
+	position: fixed;
 	width: 97%;
 	height: 47px;
 	bottom: 25px;
