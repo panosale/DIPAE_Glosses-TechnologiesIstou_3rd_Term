@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Άσκηση 11.2</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+    }
+  </style>
+  <script>
+  function addRow() {
+    // alert("askisi 11-2");
+    document.getElementById("tbl_imagesTable").addRow(1)
+  }
+  </script>
+  </head>
+    <body>
+      <input id="btn_add" type="button" onclick="addRow()" value="Προσθήκη">
+      <div id="div_array" style="height: 5ch; font-size: xx-large; padding-top: 20px;">
+      </div>
+      <table id="tbl_imagesTable" style="border:inset; padding: 5px;" onclick="checkNumber(event)">
+      </table>
+      <br>
+    </body>
+</html>
