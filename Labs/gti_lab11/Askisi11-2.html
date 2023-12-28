@@ -4,26 +4,85 @@
   <title>Άσκηση 11.2</title>
   <style>
     table, th, td {
-      border: 1px solid black;
+      border: 2px solid black;
       border-collapse: collapse;
     }
     th, td {
-      padding: 15px;
+      padding: 5px;
+    }
+    td {
+      width: 30ch;
     }
   </style>
   <script>
-  function addRow() {
-    // alert("askisi 11-2");
-    document.getElementById("tbl_imagesTable").addRow(1)
-  }
+    // Global μεταβλητή για την αρίθμηση των γραμμών του πίνακα. 
+    // Προστείθεται σαν suffix στα ids όλων των νέων Elements που δημιουργουνται ανά γραμμή
+    // Στο button Element προστείθεται μόνο το row_index για να μπορεί να γίνει αντιστοίχιση με τη γραμμή του πίνακα στην οποία έκανε κλικ ο χρήστης
+    var row_index = 0
+    function addRow() { 
+      // Προσθήκη γραμμής στον πίνακα
+      let row = document.getElementById("tbl_imagesTable").insertRow();;
+      
+      // Δημιουργία του input Element
+      let cell = row.insertCell(0);
+      let new_input = document.createElement("input");
+      new_input.setAttribute("id", "inp_no" + row_index);
+      new_input.setAttribute("style", "width:40ch");
+      cell.appendChild(new_input);
+
+      // Δημιουργία του button Element
+      cell = row.insertCell(1);
+      let new_button = document.createElement("button");
+      new_button.setAttribute("id", row_index);
+      new_button.setAttribute("onclick", "showImage(this)");
+      new_button.innerHTML = "Φόρτωση εικόνας";
+      cell.appendChild(new_button);
+      
+      // Δημιουργία του img Element
+      cell = row.insertCell(2);
+      let new_image = document.createElement("img");
+      new_image.setAttribute("id", "img_no" + row_index);
+      new_image.setAttribute("style", "width: 40ch; height: 150px")
+      cell.appendChild(new_image);
+
+      // Αύξηση του δείκτη των γραμμών του πίνακα
+      row_index++;
+    }
+    function showImage(obj) { // Φόρτωση της εικόνας στο 3ο κελί του πίνακα
+      let image_filename = document.getElementById("inp_no" + obj.id).value;
+      document.getElementById("img_no" + obj.id).src = image_filename;
+    }
+    var currentPos = 0;
+    var myInterval;
+    var picsArray;
+    function slideShow() {
+      // alert(row_index);
+      currentPos++;
+      // if (currentPos == picsArray.length)
+      //   currentPos = 0;
+      // document.getElementById("img_slideShow").src = picsArray[currentPos];
+    }
+    function myStart() {
+      for (var i = 0; i < document.images.length; i++)
+        console.log(document.images[i].src);
+        // picsArray[i] = document.getElementById("tbl_imagesTable").rows[i].cells[0].innerHTML;
+      myInterval = setInterval(slideShow, 1000);
+    }
+    function myStop() {
+      clearInterval(myInterval);
+    }
+
   </script>
   </head>
     <body>
-      <input id="btn_add" type="button" onclick="addRow()" value="Προσθήκη">
-      <div id="div_array" style="height: 5ch; font-size: xx-large; padding-top: 20px;">
+      <input id="btn_add" type="button" onclick="addRow()" value="Προσθήκη"><br><br><br>
+      <div id="div_slideShowArea" style="position: absolute; border: solid 1px; left:1200px; padding: 10px;">
+        <input id="startButton" type="button" onclick="myStart()" value="Start">
+        <input id="stopButton" type="button" onclick="myStop()" value="Stop"><br><br>
+        <img id="img_slideShow" width="500px" height="300px"><br>  
       </div>
-      <table id="tbl_imagesTable" style="border:inset; padding: 5px;" onclick="checkNumber(event)">
+      <table id="tbl_imagesTable">
       </table>
       <br>
-    </body>
+      </body>
 </html>

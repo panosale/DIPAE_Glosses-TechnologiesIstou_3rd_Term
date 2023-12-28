@@ -28,7 +28,7 @@
     for (i=0; i < gameArray.rows.length; i++)
         for (j=0; j < gameArray.rows[i].cells.length; j++) {
           gameArray.rows[i].cells[j].innerHTML = Math.ceil((Math.random() * 100));
-          gameArray.style = "background-color: white";
+          gameArray.rows[i].cells[j].style = "background-color: white";
         }
     gameInterval = setInterval(updateTimer, 1000);
     // ΓΙΑ ΕΛΕΓΧΟ ΤΟΥ ΠΙΝΑΚΑ ΚΑΙ ΔΙΑΓΡΑΦΗ
@@ -67,25 +67,25 @@
   }
 </script>
 </head>
-<body>
+<body onload="btn_fill.focus()">
   <input id="btn_fill" type="button" onclick="startGame()" value="Εκκίνηση παιχνιδιού">
-  <div id="div_randomNumber" style="height: 5ch; font-size: xx-large; padding-top: 20px;">
+  <div id="div_randomNumber" style="height: 1ch; font-size: xx-large; padding: 30px 0px 40px 0px;">
     
   </div>
   <table id="tbl_gameTable" style="border:inset; padding: 5px;" onclick="checkNumber(event)">
-        <tr>
+        <tr style="height: 5ch;">
           <td></td> <td></td> <td></td> <td></td> <td></td>
         </tr>
-        <tr>
+        <tr style="height: 5ch;">
           <td></td> <td></td> <td></td> <td></td> <td></td>
         </tr>
-        <tr>
+        <tr style="height: 5ch;">
           <td></td> <td></td> <td></td> <td></td> <td></td>
         </tr>
-        <tr>
+        <tr style="height: 5ch;">
           <td></td> <td></td> <td></td> <td></td> <td></td>
         </tr>
-        <tr>
+        <tr style="height: 5ch;">
           <td></td> <td></td> <td></td> <td></td> <td></td>
         </tr>
       </table>
