@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html id="html_thisHTML"><head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Άσκηση 11.2</title>
   <style>
@@ -11,10 +11,11 @@
       padding: 5px;
     }
     td {
-      width: 30ch;
+      width: 44ch;
     }
   </style>
   <script>
+
     // Global μεταβλητή για την αρίθμηση των γραμμών του πίνακα. 
     // Προστείθεται σαν suffix στα ids όλων των νέων Elements που δημιουργουνται ανά γραμμή
     // Στο button Element προστείθεται μόνο το row_index για να μπορεί να γίνει αντιστοίχιση με τη γραμμή του πίνακα στην οποία έκανε κλικ ο χρήστης
@@ -27,7 +28,7 @@
       let cell = row.insertCell(0);
       let new_input = document.createElement("input");
       new_input.setAttribute("id", "inp_no" + row_index);
-      new_input.setAttribute("style", "width:40ch");
+      new_input.setAttribute("style", "width:96%");
       cell.appendChild(new_input);
 
       // Δημιουργία του button Element
@@ -42,7 +43,7 @@
       cell = row.insertCell(2);
       let new_image = document.createElement("img");
       new_image.setAttribute("id", "img_no" + row_index);
-      new_image.setAttribute("style", "width: 40ch; height: 150px")
+      new_image.setAttribute("style", "height: 150px")
       cell.appendChild(new_image);
 
       // Αύξηση του δείκτη των γραμμών του πίνακα
@@ -52,37 +53,73 @@
       let image_filename = document.getElementById("inp_no" + obj.id).value;
       document.getElementById("img_no" + obj.id).src = image_filename;
     }
+    // Επιπλέον λειτουργία - SlideShow των εικόνων
     var currentPos = 0;
     var myInterval;
-    var picsArray;
+    var picsArray = [];
+    function fillPicsArray(){
+      console.log("Images.lenght: " + document.getElementById("tbl_imagesTable").rows.length);
+      for (var i = 0; i < document.getElementById("tbl_imagesTable").rows.length; i++){
+        picsArray[i] = document.getElementById("img_no" + i).src;
+      }
+      myStart();
+    }
     function slideShow() {
-      // alert(row_index);
       currentPos++;
-      // if (currentPos == picsArray.length)
-      //   currentPos = 0;
-      // document.getElementById("img_slideShow").src = picsArray[currentPos];
+      if (currentPos == picsArray.length)
+        currentPos = 0;
+      document.getElementById("img_slideShow").src = picsArray[currentPos];
     }
     function myStart() {
-      for (var i = 0; i < document.images.length; i++)
-        console.log(document.images[i].src);
-        // picsArray[i] = document.getElementById("tbl_imagesTable").rows[i].cells[0].innerHTML;
       myInterval = setInterval(slideShow, 1000);
     }
     function myStop() {
       clearInterval(myInterval);
     }
-
+    // ΓΕΝΙΚΕΣ functions - ΑΡΧΗ
+    // Η παρακάτω μπορεί να χρησιμοποιηθεί γενικά σε όλες τις ασκήσεις.
+    // Πρέπει να οριστεί: <html id="html_thisHTML">
+    // Και να δημιουργηθούν τα:
+    // <div id="div_showCode" style="position: absolute; border: solid 1px; width: 500px; height: 500px; top: 470px; left:60%; padding: 10px;">
+    //    <button id="btn_showCode" onclick="showCode()">Εμφάνιση κώδικα HTML</button><br>
+    // </div> // Το <div> είναι προεραιτικό. Η θέση μπορεί να αλλάξει.
+    var codeShown = false;
+    function showCode() {
+      if (codeShown) {
+        btn_showCode.innerText = "Εμφάνιση κώδικα HTML";
+        let sds = document.getElementById("area_htmlCode");
+        document.getElementById("div_showCode").removeChild(sds);
+      }
+      else {
+        let tmp_elm = document.createElement("textarea");
+        // let tmp_elm = document.createElement("iframe");
+        // let tmp_width = window.innerWidth-30 + "px";
+        // tmp_elm.setAttribute("srcdoc", html_thisHTML.outerHTML);
+        tmp_elm.setAttribute("id", "area_htmlCode");
+        tmp_elm.setAttribute("style", "position: absolute; width: inherit; height: 450px; left: 10px");
+        div_showCode.appendChild(tmp_elm);
+        area_htmlCode.value = html_thisHTML.outerHTML;
+        btn_showCode.innerText = "Απόκρυψη κώδικα HTML";
+      }
+      codeShown = !codeShown;
+    }
+    // ΓΕΝΙΚΕΣ functions - ΤΕΛΟΣ
   </script>
   </head>
-    <body>
-      <input id="btn_add" type="button" onclick="addRow()" value="Προσθήκη"><br><br><br>
-      <div id="div_slideShowArea" style="position: absolute; border: solid 1px; left:1200px; padding: 10px;">
-        <input id="startButton" type="button" onclick="myStart()" value="Start">
-        <input id="stopButton" type="button" onclick="myStop()" value="Stop"><br><br>
-        <img id="img_slideShow" width="500px" height="300px"><br>  
-      </div>
-      <table id="tbl_imagesTable">
-      </table>
-      <br>
-      </body>
+  <body>
+    <button id="btn_add" type="button">Προσθήκη</button><br><br><br>
+    <div id="div_slideShowArea" style="position: absolute; border: solid 1px; left:60%; padding: 10px;">
+      <input id="startButton" type="button" onclick="fillPicsArray()" value="Start">
+      <input id="stopButton" type="button" onclick="myStop()" value="Stop"><br><br>
+      <img id="img_slideShow" width="500px" height="300px"><br><br>
+    </div>
+    <div id="div_showCode" style="position: absolute; border: solid 1px; width: 500px; height: 500px; top: 470px; left:60%; padding: 10px;">
+      <button id="btn_showCode" onclick="showCode()">Εμφάνιση κώδικα HTML</button><br><br>
+    </div>
+    <table id="tbl_imagesTable">
+    </table><br>
+  </body>
+  <script>
+    btn_add.addEventListener("click", addRow, 0 );
+  </script>
 </html>
