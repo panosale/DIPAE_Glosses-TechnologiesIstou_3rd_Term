@@ -11,7 +11,7 @@
       padding: 5px;
     }
     td {
-      width: 44ch;
+      width: 42ch;
     }
   </style>
   <script>
@@ -28,7 +28,7 @@
       let cell = row.insertCell(0);
       let new_input = document.createElement("input");
       new_input.setAttribute("id", "inp_no" + row_index);
-      new_input.setAttribute("style", "width:96%");
+      new_input.setAttribute("style", "width: 97%");
       cell.appendChild(new_input);
 
       // Δημιουργία του button Element
@@ -36,6 +36,7 @@
       let new_button = document.createElement("button");
       new_button.setAttribute("id", row_index);
       new_button.setAttribute("onclick", "showImage(this)");
+      new_button.setAttribute("style", "width: 99%; height: 20ch;");
       new_button.innerHTML = "Φόρτωση εικόνας";
       cell.appendChild(new_button);
       
@@ -96,7 +97,7 @@
         // let tmp_width = window.innerWidth-30 + "px";
         // tmp_elm.setAttribute("srcdoc", html_thisHTML.outerHTML);
         tmp_elm.setAttribute("id", "area_htmlCode");
-        tmp_elm.setAttribute("style", "position: absolute; width: inherit; height: 450px; left: 10px");
+        tmp_elm.setAttribute("style", "position: absolute; width: inherit; height: 370px; left: 10px");
         div_showCode.appendChild(tmp_elm);
         area_htmlCode.value = html_thisHTML.outerHTML;
         btn_showCode.innerText = "Απόκρυψη κώδικα HTML";
@@ -108,12 +109,12 @@
   </head>
   <body>
     <button id="btn_add" type="button">Προσθήκη</button><br><br><br>
-    <div id="div_slideShowArea" style="position: absolute; border: solid 1px; left:60%; padding: 10px;">
+    <div id="div_slideShowArea" style="position: absolute; border: solid 1px; top: 20px; left:71%; padding: 10px;">
       <input id="startButton" type="button" onclick="fillPicsArray()" value="Start">
       <input id="stopButton" type="button" onclick="myStop()" value="Stop"><br><br>
       <img id="img_slideShow" width="500px" height="300px"><br><br>
     </div>
-    <div id="div_showCode" style="position: absolute; border: solid 1px; width: 500px; height: 500px; top: 470px; left:60%; padding: 10px;">
+    <div id="div_showCode" style="position: absolute; border: solid 1px; width: 500px; height: 420px; top: 430px; left:71%; padding: 10px;">
       <button id="btn_showCode" onclick="showCode()">Εμφάνιση κώδικα HTML</button><br><br>
     </div>
     <table id="tbl_imagesTable">

@@ -84,8 +84,9 @@
           // let tmp_width = window.innerWidth-30 + "px";
           // tmp_elm.setAttribute("srcdoc", html_thisHTML.outerHTML);
           tmp_elm.setAttribute("id", "area_htmlCode");
-          tmp_elm.setAttribute("style", "position: absolute; width: 200ch; height: 400px; left: 10px");
-          html_thisHTML.appendChild(tmp_elm);
+          tmp_elm.setAttribute("style", "position: absolute; width: inherit; height: 750px; left: 10px");
+          // tmp_elm.setAttribute("style", "position: absolute; width: 200ch; height: 400px; left: 10px");
+          div_showCode.appendChild(tmp_elm);
           area_htmlCode.value = html_thisHTML.outerHTML;
           btn_showCode.innerText = "Απόκρυψη κώδικα HTML";
         }
@@ -117,6 +118,8 @@
     <br>
     <div id="div_remainingTime" style="height: 5ch; font-size: xx-large; padding-top: 20px;"></div><br><br>
     <!-- Το παρακάτω button μπορεί να χρησιμοποιηθεί γενικά σε όλες τις ασκήσεις. -->
-    <button id="btn_showCode" onclick="showCode()">Εμφάνιση κώδικα HTML</button><br>
-  </body>
+    <div id="div_showCode" style="position: absolute; border: solid 1px; width: 1000px; height: 800px; top: 50px; left:800px; padding: 10px;">
+      <button id="btn_showCode" onclick="showCode()">Εμφάνιση κώδικα HTML</button><br>
+    </div>
+    </body>
 </html>
