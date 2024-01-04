@@ -56,7 +56,6 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
     document.getElementById("div_contactForm").setAttribute("style", "width: fit-content; background-color: lightgreen")
     document.getElementById("div_contactForm").appendChild(tmpElement);
     tmpDiv.style.display = "none";
-    // alert("Το μήνυμα εστάλη.")
     setTimeout(() => {
     if (tmpDiv.style.display === "none") {
       tmpDiv.style.display = "block";
