@@ -17,6 +17,9 @@ h1 {
 	padding-right: 40px;
 	border-radius: 0px 15px 15px 15px;
 	background-color: lightgray;
+	margin-bottom: 5px;
+	border: solid 2px darkgray;
+	box-shadow: 5px 5px 10px lightblue;
 }
 .topDiv h2 {
     color: blue;
@@ -29,11 +32,12 @@ h1 {
 	font-size: larger;
 	width: fit-content;
     font-size: larger;
-	border: solid 2px;
-	margin: 5px;
+	border: solid 2px darkgray;
+	margin: 10px 5px 15px 5px;
 	border-radius: 0px 15px 15px 15px;
 	background-color: lightgray;
 	padding: 10px 30px 10px 30px;
+	box-shadow: 5px 5px 10px lightblue;
 }
 .common a {
 
@@ -108,7 +112,7 @@ h1 {
 	border-radius: 0pc 7px 7px 7px;
     border-top: 1px solid blue;;
 	border-bottom:1px solid blue;
-	margin:3px 0 0 0;
+	margin: 6px 0 0 0;
 }
 
 .smallerTabs ul {

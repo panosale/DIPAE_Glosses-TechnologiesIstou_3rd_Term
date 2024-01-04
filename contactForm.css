@@ -3,15 +3,13 @@
     position: relative;
     top: 0;
     width: 340px;
-	border: solid 2px;
+	border: solid 2px darkgray;
 	border-radius: 20px;
     border-radius: 0px 15px 15px 15px;
 	background-color: lightgray;
 	padding: 50px 30px 50px 30px;
 	margin: 5px;
-    /* padding-top: 10px;
-    padding-bottom: 10px; */
-    /* height: fit-content; */
+	box-shadow: 5px 5px 10px lightblue;
 }
 
 .contactDiv div {
@@ -22,6 +20,7 @@
     border: 1px solid blue;
     border-radius: 10px;
     padding-left: 5%;
+	box-shadow: 10px 10px 10px darkgray;
 }
 
 .contactDiv p {
@@ -70,7 +69,6 @@
   
 .contactDiv textarea:invalid {
     border: 2px solid red; /* το border είναι 2 στα άλλα spans. εδώ θέλει έλεγχο */
-    /* border: 2px solid red; το border είναι 2 στα άλλα spans. εδώ θέλει έλεγχο */
 }
   
 .contactDiv textarea:invalid + span::before {
@@ -85,7 +83,6 @@
 
 .contactDiv textarea:valid {
     border-color: green;
-    /* border: 2px solid; */
 }
 
 /* Νεότερη μορφοποίηση εμφάνισης υποχρεωτικών πεδίων */
@@ -128,42 +125,3 @@
 .contactDiv textarea:valid {
     background-color: white;
 }
-
-
-  /* ΔΕΝ ΧΡΕΙΑΖΕΤΑΙ */
-/* .contactDiv input[type=submit] {
-    width: 31ch;
-    left: 0;
-    top: 13ch;
-} */
-
-/* Διαμόρφωση γενικών ετικετών (label)*/
-/* .contactDiv label {
-    color: red;
-}
-
-.contactDiv .requiredFieldFilled {
-    color: black;
-}
-*/
-/*
-.contactDiv #sentMessage {
-    top: 0ch;
-    left: 0ch;
-    background: blue;
-}
-*/
-/* Διαμόρφωση πλαισίου (span)*/
-/* .contactDiv.textLengthInfo span { 
-    position: relative;
-    font-size: small;
-    left: 80%; */
-    /* ΗΤΑΝ...
-    left: 83%;
-    ...ΕΓΙΝΕ ΑΛΛΑΓΗ ΕΠΕΙΔΗ ΔΕΝ ΦΑΙΝΟΤΑΝ ΚΑΛΑ ΣΕ FIREFOX-LINUX */
-/* } */
-/* .contactDiv messageSent {
-    font-size: xx-large;
-    font-style: oblique;
-} */
-
