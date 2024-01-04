@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <title>Test progress bar</title>
+        <script type="text/javascript">
+            var myInterval, myIntervalInSeconds;
+            var secondsBarRan = 0;
+            var innerWidth = 299;
+            function updateSeconds() {
+                secondsBarRan++;
+                document.getElementById("span_secondsBarRan").innerHTML = secondsBarRan;
+                
+            }
+            function progressStarted() {
+                if (innerWidth > 0)
+                    document.getElementById("div_Inner").style.width = innerWidth-- + "px";
+                else
+                    progressCompleted();
+            }
+            function runBar() {
+                progressCompleted();
+                myInterval = setInterval(progressStarted, inp_secondsToRunBar.value);
+                myIntervalInSeconds = setInterval(updateSeconds, 1000);
+                console.log("pressed.");
+            }
+            function progressCompleted() {
+                clearInterval(myInterval);
+                clearInterval(myIntervalInSeconds);
+                secondsBarRan = 0;
+                span_secondsBarRan.innerHTML = 0;
+                innerWidth = 299;
+                div_Inner.style.width = innerWidth + "px"; 
+                div_Inner.style.backroundcolor= "darkgreen";
+                console.log("Completed");
+            }
+        </script>
+    </head>
+    <body>
+        <label for="inp_secondsToRunBar">Give seconds: </label>
+        <input id="inp_secondsToRunBar" name="inp_secondsToRunBar" type="text" style="margin-right: 40px;" value="20">
+        <button id="btn_RunBar">Run bar</button>
+        <h2>Seconds ran: <span id="span_secondsBarRan">0</span></h2>
+        <div id="div_Outer" style="border: solid 2px; width: 300px; height: 10px; color: lightgreen; background-color: lightgreen; padding: 0; margin: 0;">
+            <div id="div_Inner" style="width: 299px; height: inherit; color: darkgreen; background-color: darkgreen; padding: 0; margin: 0;">
+            </div>
+        </div>
+    </body>
+    <script>
+        btn_RunBar.addEventListener("click", runBar, 0);
+    </script>
+</html>
