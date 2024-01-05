@@ -5,44 +5,49 @@
         <title>Test progress bar</title>
         <script type="text/javascript">
             var myInterval, myIntervalInSeconds;
-            var secondsBarRan = 0;
-            var innerWidth = 299;
+            var msecondsBarRan = 0;
+            var innerWidth = parseInt(div_Inner.style.width);
             function updateSeconds() {
-                secondsBarRan++;
-                document.getElementById("span_secondsBarRan").innerHTML = secondsBarRan;
+                msecondsBarRan++;
+                document.getElementById("span_secondsBarRan").innerHTML = msecondsBarRan;
                 
             }
             function progressStarted() {
                 if (innerWidth > 0)
                     document.getElementById("div_Inner").style.width = innerWidth-- + "px";
                 else
-                    progressCompleted();
+                    progressReset();
             }
             function runBar() {
-                progressCompleted();
-                myInterval = setInterval(progressStarted, inp_secondsToRunBar.value);
+                progressReset();
+                var totalSecondsToBarRun = Math.round((inp_secondsToRunBar.value / parseInt(div_Inner.style.width)) * 1000);
+                myInterval = setInterval(progressStarted, totalSecondsToBarRun);
                 myIntervalInSeconds = setInterval(updateSeconds, 1000);
                 console.log("pressed.");
             }
-            function progressCompleted() {
+            function progressReset() {
+                // alert("load");
                 clearInterval(myInterval);
                 clearInterval(myIntervalInSeconds);
-                secondsBarRan = 0;
+                msecondsBarRan = 0;
                 span_secondsBarRan.innerHTML = 0;
-                innerWidth = 299;
+                div_Outer.style.width = inp_barWidth.value + "px"; 
+                innerWidth = parseInt(div_Outer.style.width) - 1;
                 div_Inner.style.width = innerWidth + "px"; 
                 div_Inner.style.backroundcolor= "darkgreen";
                 console.log("Completed");
             }
         </script>
     </head>
-    <body>
+    <body  onload="progressReset()">
         <label for="inp_secondsToRunBar">Give seconds: </label>
-        <input id="inp_secondsToRunBar" name="inp_secondsToRunBar" type="text" style="margin-right: 40px;" value="20">
+        <input id="inp_secondsToRunBar" name="inp_secondsToRunBar" type="text" style="margin-right: 40px;" value="3"><br><br>
+        <label for="inp_barWidth">Give bar length: </label>
+        <input id="inp_barWidth" name="inp_barWidth " type="text" style="margin-right: 40px;" value="200"><br><br>
         <button id="btn_RunBar">Run bar</button>
         <h2>Seconds ran: <span id="span_secondsBarRan">0</span></h2>
-        <div id="div_Outer" style="border: solid 2px; width: 300px; height: 10px; color: lightgreen; background-color: lightgreen; padding: 0; margin: 0;">
-            <div id="div_Inner" style="width: 299px; height: inherit; color: darkgreen; background-color: darkgreen; padding: 0; margin: 0;">
+        <div id="div_Outer" style="border: solid 2px; width: 500px; height: 10px; color: lightgreen; background-color: lightgreen; padding: 0; margin: 0;">
+            <div id="div_Inner" style="height: inherit; color: darkgreen; background-color: darkgreen; padding: 0; margin: 0;">
             </div>
         </div>
     </body>
