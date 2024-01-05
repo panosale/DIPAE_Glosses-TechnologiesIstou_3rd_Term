@@ -4,13 +4,12 @@
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
         <title>Test progress bar</title>
         <script type="text/javascript">
-            var myInterval, myIntervalInSeconds;
+            var barInterval, barIntervalInSeconds;
             var msecondsBarRan = 0;
             var innerWidth = parseInt(div_Inner.style.width);
             function updateSeconds() {
                 msecondsBarRan++;
                 document.getElementById("span_secondsBarRan").innerHTML = msecondsBarRan;
-                
             }
             function progressStarted() {
                 if (innerWidth > 0)
@@ -19,31 +18,33 @@
                     progressReset();
             }
             function runBar() {
+                // ΝΑ ΓΙΝΕΙ ΕΛΕΓΧΟΣ ΑΝ ΤΡΕΧΕΙ ΣΩΣΤΑ ΓΙΑ ΜΕΓΑΛΟ ΜΗΚΟΣ ΜΠΑΡΑΣ (π.χ. >500)
                 progressReset();
                 var totalSecondsToBarRun = Math.round((inp_secondsToRunBar.value / parseInt(div_Inner.style.width)) * 1000);
-                myInterval = setInterval(progressStarted, totalSecondsToBarRun);
-                myIntervalInSeconds = setInterval(updateSeconds, 1000);
-                console.log("pressed.");
+                // console.log(totalSecondsToBarRun);
+                barInterval = setInterval(progressStarted, totalSecondsToBarRun);
+                barIntervalInSeconds = setInterval(updateSeconds, 1000);
+                // console.log("pressed.");
             }
             function progressReset() {
-                // alert("load");
-                clearInterval(myInterval);
-                clearInterval(myIntervalInSeconds);
+                // ΝΑ ΓΙΝΕΙ ΕΛΕΓΧΟΣ ΑΝ ΤΡΕΧΕΙ ΣΩΣΤΑ ΓΙΑ ΜΕΓΑΛΟ ΜΗΚΟΣ ΜΠΑΡΑΣ (π.χ. >500)
+                clearInterval(barInterval);
+                clearInterval(barIntervalInSeconds);
                 msecondsBarRan = 0;
                 span_secondsBarRan.innerHTML = 0;
                 div_Outer.style.width = inp_barWidth.value + "px"; 
                 innerWidth = parseInt(div_Outer.style.width) - 1;
                 div_Inner.style.width = innerWidth + "px"; 
                 div_Inner.style.backroundcolor= "darkgreen";
-                console.log("Completed");
+                // console.log("Completed");
             }
         </script>
     </head>
-    <body  onload="progressReset()">
+    <body onload="progressReset()">
         <label for="inp_secondsToRunBar">Give seconds: </label>
         <input id="inp_secondsToRunBar" name="inp_secondsToRunBar" type="text" style="margin-right: 40px;" value="3"><br><br>
         <label for="inp_barWidth">Give bar length: </label>
-        <input id="inp_barWidth" name="inp_barWidth " type="text" style="margin-right: 40px;" value="200"><br><br>
+        <input id="inp_barWidth" name="inp_barWidth " type="text" style="margin-right: 40px;" value="200" onchange="progressReset()"><br><br>
         <button id="btn_RunBar">Run bar</button>
         <h2>Seconds ran: <span id="span_secondsBarRan">0</span></h2>
         <div id="div_Outer" style="border: solid 2px; width: 500px; height: 10px; color: lightgreen; background-color: lightgreen; padding: 0; margin: 0;">
