@@ -50,11 +50,21 @@ h1 {
 } */
 .bottomDiv {
 	position: fixed;
-	width: 97%;
+	width: 98.5%;
 	height: 47px;
 	bottom: 25px;
 	padding-left: 5px;
 	padding-right: 10px;
+	/* border: solid 1px; */
+}
+.bottomDiv .copyrightInfo {
+	text-align: right;
+	font-size: smaller;
+	/* position: inherit; */
+	/* width: 98.5%; */
+	/* border: solid 1px; */
+	/* padding-top: 2px; */
+	/* padding-right: 5px; */
 }
 /* ΔΙΑΜΌΡΦΩΣΗ ΚΕΝΤΡΙΚΟΥ ΜΕΝΟΥ ΕΠΙΛΟΓΩΝ */
 .tabs {
