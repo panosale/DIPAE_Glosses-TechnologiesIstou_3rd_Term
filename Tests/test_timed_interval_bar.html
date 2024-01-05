@@ -48,9 +48,9 @@
                 //innerWidth = parseInt(div_Outer.style.width) - 1;
                 document.getElementById("div_Inner").style.width = innerWidth + "px";
                 document.getElementById("div_Inner").style.backroundcolor= "darkgreen"; // Έλεγχος αν χρειάζεται αυτή η γραμμή
-                // Το παραπάνω γίνεται και έτσι: 
+                // Τα δυο παραπάνω γίνονται και έτσι: 
                 //div_Inner.style.width = innerWidth + "px"; 
-                //div_Inner.style.backroundcolor= "darkgreen";
+                //div_Inner.style.backroundcolor= "darkgreen"; // Έλεγχος αν χρειάζεται αυτή η γραμμή
             }
         </script>
     </head>
@@ -61,7 +61,7 @@
         <input id="inp_barWidth" name="inp_barWidth " type="text" style="margin-right: 40px;" value="200" onchange="progressReset()"><br><br>
         <button id="btn_RunBar">Run bar</button>
         <h2>Seconds ran: <span id="span_secondsBarRan">0</span></h2>
-        <div id="div_Outer" style="border: solid 2px; width: 500px; height: 10px; color: lightgreen; background-color: lightgreen; padding: 0; margin: 0;">
+        <div id="div_Outer" style="border: solid 2px; height: 10px; color: lightgreen; background-color: lightgreen; padding: 0; margin: 0;">
             <div id="div_Inner" style="height: inherit; color: darkgreen; background-color: darkgreen; padding: 0; margin: 0;">
             </div>
         </div>
