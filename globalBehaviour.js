@@ -60,7 +60,7 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
     if (tmpDiv.style.display === "none") {
       tmpDiv.style.display = "block";
       document.getElementById("div_contactForm").removeChild(tmpElement);
-      document.getElementById("div_contactForm").setAttribute("style", "width: 340px")
+      document.getElementById("div_contactForm").setAttribute("style", "width: 340px");
     }
     else {
       tmpDiv.style.display = "none";

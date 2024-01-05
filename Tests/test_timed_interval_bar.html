@@ -24,7 +24,7 @@
                     progressReset();
             }
             function runBar() {
-                // ΝΑ ΓΙΝΕΙ ΕΛΕΓΧΟΣ ΑΝ ΤΡΕΧΕΙ ΣΩΣΤΑ ΓΙΑ ΜΕΓΑΛΟ ΜΗΚΟΣ ΜΠΑΡΑΣ (π.χ. >500)
+                // ΝΑ ΓΙΝΕΙ ΕΛΕΓΧΟΣ ΑΝ ΤΡΕΧΕΙ ΣΩΣΤΑ ΓΙΑ ΜΕΓΑΛΟ ΜΗΚΟΣ ΜΠΑΡΑΣ (π.χ. >500) ΚΑΙ ΛΙΓΑ ΔΕΥΤΕΡΟΛΕΠΤΑ
                 progressReset();
                 var totalSecondsToBarRun = Math.round((inp_secondsToRunBar.value / parseInt(document.getElementById("div_Inner").style.width)) * 1000);
                 // Το παραπάνω γίνεται και έτσι: 
@@ -33,7 +33,7 @@
                 barIntervalInSeconds = setInterval(updateSeconds, 1000);
             }
             function progressReset() {
-                // ΝΑ ΓΙΝΕΙ ΕΛΕΓΧΟΣ ΑΝ ΤΡΕΧΕΙ ΣΩΣΤΑ ΓΙΑ ΜΕΓΑΛΟ ΜΗΚΟΣ ΜΠΑΡΑΣ (π.χ. >500)
+                // ΝΑ ΓΙΝΕΙ ΕΛΕΓΧΟΣ ΑΝ ΤΡΕΧΕΙ ΣΩΣΤΑ ΓΙΑ ΜΕΓΑΛΟ ΜΗΚΟΣ ΜΠΑΡΑΣ (π.χ. >500) ΚΑΙ ΛΙΓΑ ΔΕΥΤΕΡΟΛΕΠΤΑ
                 clearInterval(barInterval);
                 clearInterval(barIntervalInSeconds);
                 msecondsBarRan = 0;
