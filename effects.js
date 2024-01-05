@@ -1,3 +1,4 @@
+// ΔΕΝ ΧΡΗΣΙΜΟΠΟΙΕΙΤΑΙ - ΑΡΧΗ
 var id = null;
 function myMove() {
   var elem = document.getElementById("div_fieldsArea");
@@ -15,3 +16,5 @@ function myMove() {
   }
   id = null;
 }
+// ΔΕΝ ΧΡΗΣΙΜΟΠΟΙΕΙΤΑΙ - ΤΕΛΟΣ
+
