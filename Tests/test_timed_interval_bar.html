@@ -6,37 +6,51 @@
         <script type="text/javascript">
             var barInterval, barIntervalInSeconds;
             var msecondsBarRan = 0;
-            var innerWidth = parseInt(div_Inner.style.width);
+            var innerWidth = parseInt(document.getElementById("div_Inner").style.width);
+            // Το παραπάνω γίνεται και έτσι: 
+            //var innerWidth = parseInt(div_Inner.style.width);
             function updateSeconds() {
                 msecondsBarRan++;
                 document.getElementById("span_secondsBarRan").innerHTML = msecondsBarRan;
+                // Το παραπάνω γίνεται και έτσι: 
+                //span_secondsBarRan.innerHTML = msecondsBarRan;
             }
             function progressStarted() {
                 if (innerWidth > 0)
                     document.getElementById("div_Inner").style.width = innerWidth-- + "px";
+                    // Το παραπάνω γίνεται και έτσι: 
+                    //div_Inner.style.width = innerWidth-- + "px";
                 else
                     progressReset();
             }
             function runBar() {
                 // ΝΑ ΓΙΝΕΙ ΕΛΕΓΧΟΣ ΑΝ ΤΡΕΧΕΙ ΣΩΣΤΑ ΓΙΑ ΜΕΓΑΛΟ ΜΗΚΟΣ ΜΠΑΡΑΣ (π.χ. >500)
                 progressReset();
-                var totalSecondsToBarRun = Math.round((inp_secondsToRunBar.value / parseInt(div_Inner.style.width)) * 1000);
-                // console.log(totalSecondsToBarRun);
+                var totalSecondsToBarRun = Math.round((inp_secondsToRunBar.value / parseInt(document.getElementById("div_Inner").style.width)) * 1000);
+                // Το παραπάνω γίνεται και έτσι: 
+                //var totalSecondsToBarRun = Math.round((inp_secondsToRunBar.value / parseInt(div_Inner.style.width)) * 1000);
                 barInterval = setInterval(progressStarted, totalSecondsToBarRun);
                 barIntervalInSeconds = setInterval(updateSeconds, 1000);
-                // console.log("pressed.");
             }
             function progressReset() {
                 // ΝΑ ΓΙΝΕΙ ΕΛΕΓΧΟΣ ΑΝ ΤΡΕΧΕΙ ΣΩΣΤΑ ΓΙΑ ΜΕΓΑΛΟ ΜΗΚΟΣ ΜΠΑΡΑΣ (π.χ. >500)
                 clearInterval(barInterval);
                 clearInterval(barIntervalInSeconds);
                 msecondsBarRan = 0;
-                span_secondsBarRan.innerHTML = 0;
-                div_Outer.style.width = inp_barWidth.value + "px"; 
-                innerWidth = parseInt(div_Outer.style.width) - 1;
-                div_Inner.style.width = innerWidth + "px"; 
-                div_Inner.style.backroundcolor= "darkgreen";
-                // console.log("Completed");
+                document.getElementById("span_secondsBarRan").innerHTML = 0;
+                // Το παραπάνω γίνεται και έτσι: 
+                // span_secondsBarRan.innerHTML = 0;
+                document.getElementById("div_Outer").style.width = inp_barWidth.value + "px";
+                // Το παραπάνω γίνεται και έτσι: 
+                //div_Outer.style.width = inp_barWidth.value + "px";
+                innerWidth = parseInt(document.getElementById("div_Outer").style.width) - 1;
+                // Το παραπάνω γίνεται και έτσι: 
+                //innerWidth = parseInt(div_Outer.style.width) - 1;
+                document.getElementById("div_Inner").style.width = innerWidth + "px";
+                document.getElementById("div_Inner").style.backroundcolor= "darkgreen"; // Έλεγχος αν χρειάζεται αυτή η γραμμή
+                // Το παραπάνω γίνεται και έτσι: 
+                //div_Inner.style.width = innerWidth + "px"; 
+                //div_Inner.style.backroundcolor= "darkgreen";
             }
         </script>
     </head>
