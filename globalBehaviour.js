@@ -101,7 +101,7 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
     else {
       tmpDiv.style.display = "none";
     }
-    }, 4000);
+    }, 2000);
     clearContactFields();
   }
 }
