@@ -9,7 +9,7 @@
         <script src="globalBehaviour.js"></script>
         <!-- <script src="effects.js"></script> -->
     </head>
-    <body>
+    <body onload="slideshowStart()">
         <ul class="tabs">
             <li><a href="index.html"><span>Σχετικά</span></a></li>
             <li><a href="education.html"><span>Εκπαίδευση</span></a></li>
@@ -28,12 +28,13 @@
             </ul><br><br><br>
             <!-- <div id="div_myInfo"> -->
             <p>Παρακολούθησα μαθήματα ηλεκτρικής κιθάρας από το 2002 έως το 2009.</p>
-            <p>Οι συναυλίες είναι αναπόσπαστο κομμάτι της ενασχόλησής μου με τη μουσική.</p>
+            <p>Οι συναυλίες είναι αναπόσπαστο κομμάτι της ενασχόλησής μου με τη μουσική (βλ. Slide show παρακάτω).</p>
             <div id="div_myConcertImages" style="padding: 7px 10px;">
                 <input id="btn_stopButton" type="button" onclick="slideshowStop()" value="Παύση Slideshow">
                 <input id="btn_startButton" type="button" onclick="slideshowStart()" value="Εκκίνηση Slideshow"><br>
                 <div id="div_currentImage" style="margin-top: 14px; border-radius: 15px; height: fit-content;">
-                    <img id="img_currentImage" src="images\concerts\2008-06-15_Knopfler_IMG_0057.JPG" style="height: 400px;">
+                    <img id="img_currentImage" src="images\concerts\2008-06-06_Papakonstantinou-Maxairitsas_IMG_0052.jpg" style="height: 450px;"><br>
+                    <span id="span_currentImageInfo">6/6/2008 Βασίλης Παπακωνσταντίνου & Λαυρέντης Μαχαιρίτσας στο ΦΙΞ</span>
                 </div>
             </div>
             <!-- </div> -->
