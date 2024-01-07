@@ -17,6 +17,23 @@ function nextImage() {
     currentPos = 0;
   document.getElementById("img_currentImage").src = imagesPath + picsArray[currentPos];
 }
+// ΕΝΟΤΗΤΑ: ΧΟΜΠΙ & ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ - "ΜΟΥΣΙΚΗ"
+var slideshowCurrentPos = 0;
+var slideshowInterval;
+const concertImagesPath = "images\\concerts\\";
+const slideshowPicsArray = new Array("2008-06-15_Knopfler_IMG_0057.JPG", "PANO_20230419_194026.jpg", "PANO_20230419_201414.jpg", "Dsc00939.jpg", "IMG_4452.JPG", "IMG_1662.JPG", "IMG_0695.JPG", "MpleTzami.JPG", "IMG_9563.JPG", "IMG_9537.JPG");
+function slideShow() {
+  slideshowCurrentPos++;
+  if (slideshowCurrentPos == slideshowPicsArray.length)
+    slideshowCurrentPos = 0;
+  document.getElementById("img_currentImage").src = concertImagesPath + slideshowPicsArray[slideshowCurrentPos];
+}
+function slideshowStart() {
+  slideshowInterval = setInterval(slideShow, 1000);
+}
+function slideshowStop() {
+  clearInterval(slideshowInterval);
+}
 
 // ΕΝΟΤΗΤΑ: ΕΠΙΚΟΙΝΩΝΙΑ
 function messageWriting(labelName, messageFieldName) {
