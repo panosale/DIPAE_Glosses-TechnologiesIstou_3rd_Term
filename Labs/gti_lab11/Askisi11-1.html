@@ -117,4 +117,12 @@
       <button id="btn_showCode" onclick="showCode()">Εμφάνιση κώδικα HTML</button><br>
     </div>
     </body>
+    <script>
+      var tmpElem = document.getElementById("div_showCode");
+      tmpElem.addEventListener("copy", function() {
+          alert("Copy is not possible. This code is shown just fo refernce.");
+          // TODO code here
+        }, true
+      );
+    </script>
 </html>
