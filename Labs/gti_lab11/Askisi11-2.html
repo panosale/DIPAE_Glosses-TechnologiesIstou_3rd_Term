@@ -121,5 +121,11 @@
   </body>
   <script>
     btn_add.addEventListener("click", addRow, 0 );
+    var tmpElem = document.getElementById("div_showCode");
+    tmpElem.addEventListener("copy", function() {
+        alert("ATTENTION!\nCopy is not recommended. This code is shown to you just for refernce and NOT for use.\nΠΡΟΣΟΧΗ!\nΗ αντιγραφή δεν συστείνεται. Ο κώδικας αυτός είναι ορατός μόνο για αναφορά και ΟΧΙ για χρήση.");
+        // TODO code here
+      }, true
+    );
   </script>
 </html>
