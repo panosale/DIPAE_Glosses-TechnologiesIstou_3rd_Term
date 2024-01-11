@@ -55,21 +55,19 @@
       document.getElementById("img_no" + obj.id).src = image_filename;
     }
     // Επιπλέον λειτουργία - SlideShow των εικόνων
-    var currentPos = 0;
+    var currentPos = 1;
     var myInterval;
-    var picsArray = [];
+    var picsArray;
     function fillPicsArray(){
-      console.log("Images.lenght: " + document.getElementById("tbl_imagesTable").rows.length);
-      for (var i = 0; i < document.getElementById("tbl_imagesTable").rows.length; i++){
-        picsArray[i] = document.getElementById("img_no" + i).src;
-      }
+      picsArray = document.getElementsByTagName("IMG");
+      // console.log(picsArray.length);
       myStart();
     }
     function slideShow() {
-      currentPos++;
       if (currentPos == picsArray.length)
-        currentPos = 0;
-      document.getElementById("img_slideShow").src = picsArray[currentPos];
+        currentPos = 1;
+      document.getElementById("img_slideShow").src = picsArray[currentPos].getAttribute("src");
+      currentPos++;
     }
     function myStart() {
       myInterval = setInterval(slideShow, 1000);
