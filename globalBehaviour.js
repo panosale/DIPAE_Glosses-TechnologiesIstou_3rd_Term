@@ -55,6 +55,11 @@ function slideshowStop() {
 }
 
 // ΕΝΟΤΗΤΑ: ΕΠΙΚΟΙΝΩΝΙΑ
+// *************************************** PROGRESS BAR - ΑΡΧΗ ****************************************************
+var innerWidth, tmpDiv;
+var tmpMessageElement;
+var tmpBarElement;
+// *************************************** PROGRESS BAR - ΤΕΛΟΣ ****************************************************
 function messageWriting(labelName, messageFieldName) {
   // if (document.getElementById(messageFieldName.id).value == "")
   //   document.getElementById(labelName.id).style.color = "red";
@@ -80,31 +85,72 @@ function checkFilledContactFields() {
   return true;
 }
 function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή ΧΡΗΣΗ
-  if (!checkFilledContactFields())
-    alert("Παρακαλώ συμπληρώστε όλα τα απαραίτητα πεδία.");
-  else {
-    var tmpDiv = document.getElementById("div_fieldsArea");
-    var tmpElement = document.createElement("h2");
-    tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία.";
-    // tmpElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "<br>*Λειτουργία προσομοίωσης.";
-    tmpElement.setAttribute("class", "contactDiv");
-    tmpElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 520px; text-align: center; padding: 30px 0");
+  if (checkFilledContactFields()) {
+    tmpDiv = document.getElementById("div_fieldsArea");
+    tmpMessageElement = document.createElement("h2");
+    tmpBarElement = document.createElement("h2");
+    tmpMessageElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία.";
+    // tmpMessageElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "<br>*Λειτουργία προσομοίωσης.";
+    tmpMessageElement.setAttribute("class", "contactDiv");
+    tmpMessageElement.setAttribute("id", "h2_Outer");
+    tmpMessageElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 520px; text-align: center; padding: 30px 0");
+
+    tmpBarElement.setAttribute("class", "contactDiv");
+    tmpBarElement.setAttribute("id", "h2_Inner");
+    // tmpBarElement.setAttribute("opacity", "1.5");
+    tmpBarElement.setAttribute("style", "background-color: darkgreen; width: 520px; height: 10px; padding: 1px 0;");
     document.getElementById("div_contactForm").setAttribute("style", "width: fit-content; background-color: lightgreen")
-    document.getElementById("div_contactForm").appendChild(tmpElement);
+    document.getElementById("div_contactForm").appendChild(tmpMessageElement);
+    document.getElementById("div_contactForm").appendChild(tmpBarElement);
     tmpDiv.style.display = "none";
-    setTimeout(() => {
-    if (tmpDiv.style.display === "none") {
-      tmpDiv.style.display = "block";
-      document.getElementById("div_contactForm").removeChild(tmpElement);
-      document.getElementById("div_contactForm").setAttribute("style", "width: 340px");
-    }
-    else {
-      tmpDiv.style.display = "none";
-    }
-    }, 2000);
-    clearContactFields();
-  }
+  // *************************************** PROGRESS BAR - ΑΡΧΗ ****************************************************
+    innerWidth = parseInt(document.getElementById("h2_Inner").style.width);
+    progressReset();
+    runBar();
+  // *************************************** PROGRESS BAR - ΤΕΛΟΣ ****************************************************
+  // ********** ΠΑΛΙΑ ΔΙΑΔΙΚΑΣΙΑ ΧΡΟΝΟΜΕΤΡΗΣΗΣ ΜΗΝΥΜΑΤΟΣ - ΑΡΧΗ **********
+    // setTimeout(() => {
+    // if (tmpDiv.style.display === "none") {
+    //   tmpDiv.style.display = "block";
+    //   document.getElementById("div_contactForm").removeChild(tmpMessageElement);
+    //   document.getElementById("div_contactForm").setAttribute("style", "width: 340px");
+    // }
+    // else {
+    //     tmpDiv.style.display = "none";
+    //   }
+    // }, 2000);
+    // clearContactFields();
+  // ********** ΠΑΛΙΑ ΔΙΑΔΙΚΑΣΙΑ ΧΡΟΝΟΜΕΤΡΗΣΗΣ ΜΗΝΥΜΑΤΟΣ - ΤΕΛΟΣ **********
 }
+  else
+    alert("Παρακαλώ συμπληρώστε όλα τα απαραίτητα πεδία.");
+}
+// *************************************** PROGRESS BAR - ΑΡΧΗ ***************************************************
+var barInterval;
+function progressStarted() {
+  if (innerWidth > 0)
+      document.getElementById("h2_Inner").style.width = innerWidth-- + "px";
+  else{
+      progressReset();
+      tmpDiv.style.display = "block";
+      document.getElementById("div_contactForm").removeChild(tmpMessageElement);
+      document.getElementById("div_contactForm").removeChild(tmpBarElement);
+      document.getElementById("div_contactForm").setAttribute("style", "width: 340px");
+      clearContactFields();
+    }
+  }
+function runBar() {
+  progressReset();
+  barInterval = setInterval(progressStarted, 1);
+}
+function progressReset() {
+  clearInterval(barInterval);
+  innerWidth = parseInt(document.getElementById("h2_Outer").style.width) - 1;
+  document.getElementById("h2_Inner").style.width = innerWidth + "px";
+  document.getElementById("h2_Inner").style.backroundcolor= "darkgreen"; // Έλεγχος αν χρειάζεται αυτή η γραμμή
+}
+
+// *************************************** PROGRESS BAR - ΤΕΛΟΣ ****************************************************
 // ΤΟ ΠΑΡΑΚΑΤΩ ΜΠΟΡΕΙ ΝΑ ΧΡΗΣΙΜΟΠΟΙΗΘΕΙ ΑΝ ΚΑΝΟΥΜΕ ΧΡΗΣΗ ΤΗΣ ΙΔΙΟΤΗΤΑΣ ΤΟΥ form onsubmit()
 function btn_submit() {
   messageSent();
