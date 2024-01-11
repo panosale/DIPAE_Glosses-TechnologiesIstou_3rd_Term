@@ -48,6 +48,7 @@ function slideShow() {
   // console.log(slideshowPicsArray[slideshowCurrentPos][1]);
 }
 function slideshowStart() {
+  clearInterval(slideshowInterval);
   slideshowInterval = setInterval(slideShow, 2000);
 }
 function slideshowStop() {
