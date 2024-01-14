@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html id="html_thisHTML">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Άσκηση 11.1</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 15px;
+      }
+      td {
+        width: 3ch;
+        height: 3ch;
+      }
+    </style>
+    <script>
+      var randomNumber, gameInterval;
+      var secondsLeft = 0;
+      var correctTries = 0;
+      var totalTries = 0;
+      function startGame() {
+        // Αρχικοποίηση μεταβλητών
+        var gameArray = document.getElementById("tbl_gameTable");
+        randomNumber = Math.round((Math.random() * 6) + 3);
+        secondsLeft = 30;
+        clearInterval(gameInterval); // Μηδενισμός του interval σε περίπτωση που κάνει πολλές φορές ο χρήστης κλικ στην Εκκίνηση
+        // Γέμισμα στοιχείων με αρχικές τιμές και καθαρισμός
+        document.getElementById("div_randomNumber").innerHTML = "Κάνε κλικ στα πολλαπλάσια του: " + randomNumber;
+        document.getElementById("div_remainingTime").innerHTML = "Χρόνος που απομένει: " + secondsLeft;
+        for (i=0; i < gameArray.rows.length; i++)
+            for (j=0; j < gameArray.rows[i].cells.length; j++) {
+              gameArray.rows[i].cells[j].innerHTML = Math.ceil((Math.random() * 100));
+              gameArray.rows[i].cells[j].style = "background-color: white";
+            }
+        gameInterval = setInterval(updateTimer, 1000);
+        // ΓΙΑ ΕΛΕΓΧΟ ΤΟΥ ΠΙΝΑΚΑ ΚΑΙ ΔΙΑΓΡΑΦΗ
+        // for (i=0; i < gameArray.rows.length; i++)
+        //     for (j=0; j < gameArray.rows[i].cells.length; j++) {
+        //       if (gameArray.rows[i].cells[j].innerHTML < 20 || gameArray.rows[i].cells[j].innerHTML > 100)
+        //         gameArray.rows[i].cells[j].style.background = "red";
+        //       // if (gameArray.rows[i].cells[j] > 100)
+        //       // gameArray.rows[i].cells[j].style.background = "red";
+        //     }
+
+      }
+      function updateTimer() {
+        if (secondsLeft > 0){
+          secondsLeft--;
+          document.getElementById("div_remainingTime").innerHTML = "Χρόνος που απομένει: " + secondsLeft;
+        }
+        else {
+          var finalScore = (correctTries / totalTries) * 100;
+          alert("* GAME OVER *" + "\nΣυνολικές προσπάθειες: " + totalTries + "\nΣωστές προσπάθειες: " + correctTries + "\nΠοσοστό επιτυχίας: " + finalScore + "%")
+          clearInterval(gameInterval);
+        }
+      }
+      function checkNumber(evt) {
+        if (evt.target.tagName == "TD") { // ΣΕ ΠΕΡΙΠΤΩΣΗ ΠΟΥ ΤΟ border EINAI ΜΕΓΑΛΟ ΠΡΕΠΕΙ ΝΑ ΓΙΝΕΤΑΙ ΑΥΤΟΣ Ο ΕΛΕΓΧΟΣ
+          var selectedCell = evt.target.innerHTML;
+          totalTries++;
+          if (selectedCell % randomNumber == 0) {
+            correctTries++;
+            evt.target.style = "background-color: green";
+          }
+          else {
+            evt.target.style = "background-color: red";
+          }
+        }
+      }
+      // Η παρακάτω μπορεί να χρησιμοποιηθεί γενικά σε όλες τις ασκήσεις.
+      var codeShown = false;
+      function showCode() {
+        if (codeShown) {
+          btn_showCode.innerText = "Εμφάνιση κώδικα HTML";
+          document.getElementById("div_showCode").removeChild(document.getElementById("area_htmlCode"));
+        }
+        else {
+          let tmp_elm = document.createElement("textarea");
+          tmp_elm.setAttribute("id", "area_htmlCode");
+          tmp_elm.setAttribute("style", "position: absolute; width: inherit; height: 750px; left: 10px");
+          div_showCode.appendChild(tmp_elm);
+          area_htmlCode.value = html_thisHTML.outerHTML;
+          btn_showCode.innerText = "Απόκρυψη κώδικα HTML";
+        }
+        codeShown = !codeShown;
+      }
+    </script>
+  </head>
+<body onload="btn_fill.focus()">
+  <input id="btn_fill" type="button" onclick="startGame()" value="Εκκίνηση παιχνιδιού">
+  <div id="div_randomNumber" style="height: 5ch; font-size: xx-large; padding-top: 20px;">
+  </div>
+  <table id="tbl_gameTable" style="border:inset; padding: 5px;" onclick="checkNumber(event)">
+        <tr>
+          <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+        <tr>
+          <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+        <tr>
+          <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+        <tr>
+          <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+        <tr>
+          <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+      </table>
+    <br>
+    <div id="div_remainingTime" style="height: 5ch; font-size: xx-large; padding-top: 20px;"></div><br><br>
+    <!-- Το παρακάτω button μπορεί να χρησιμοποιηθεί γενικά σε όλες τις ασκήσεις. -->
+    <div id="div_showCode" style="position: absolute; border: solid 1px; width: 1000px; height: 800px; top: 50px; left:800px; padding: 10px;">
+      <button id="btn_showCode" onclick="showCode()">Εμφάνιση κώδικα HTML</button><br>
+    </div>
+    </body>
+    <script>
+      var tmpElem = document.getElementById("div_showCode");
+      tmpElem.addEventListener("copy", function() {
+          alert("ATTENTION!\nCopy is not recommended. This code is shown to you just for reference and NOT for use.\nΠΡΟΣΟΧΗ!\nΗ αντιγραφή δεν συστήνεται. Ο κώδικας αυτός είναι ορατός μόνο για αναφορά και ΟΧΙ για χρήση.");
+          // TODO code here
+        }, true
+      );
+    </script>
+</html>
