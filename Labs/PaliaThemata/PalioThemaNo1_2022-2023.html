@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html id="html_thisHTML">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>PalioThema#1_2022-2023</title>
+    <script src="https://nireas.iee.ihu.gr/gti/teachers.js" type="text/javascript"></script>
+    <style>
+      .center-div {
+        position: absolute; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width:450px; 
+        border: solid grey;
+      }
+      table, th, td {
+        border: solid gray;
+        width: 100%;
+      }
+      th {
+        background-color: grey;
+        color: white;
+      }
+    </style>
+    <script>
+      function fillSelects() {
+        var tmpNewOption;
+        tmpNewOption = document.createElement("option");
+        for (var i=0; i < teachers.length; i++) {
+          tmpNewOption = document.createElement("option");
+          tmpNewOption.text = teachers[i];
+          document.getElementById("sel_select2").add(tmpNewOption);
+        }
+        for (var i=0; i < students.length; i++) {
+          tmpNewOption = document.createElement("option");
+          tmpNewOption.text = students[i][0];
+          document.getElementById("sel_select1").add(tmpNewOption);
+          tmpNewOption = document.createElement("option");
+        }
+        for (var i=0; i < 11; i++) {
+          tmpNewOption = document.createElement("option");
+          tmpNewOption.text = i;
+          document.getElementById("sel_select3").add(tmpNewOption);
+        }
+      }
+      function studentSelected(evt) {
+        document.getElementById("par_name").innerHTML = students[evt.target.selectedIndex][1];
+      }
+      function addGrade() {
+        var tmpTable = document.getElementById("tbl_studenstGrades");
+        var tmpRow = tmpTable.insertRow();
+        var tmpCell_Am = tmpRow.insertCell(0);
+        var tmpCell_Name = tmpRow.insertCell(1);
+        var tmpCell_Teacher = tmpRow.insertCell(2);
+        var tmpCell_Grade = tmpRow.insertCell(3);
+        var tmpSelect_Students = document.getElementById("sel_select1");
+        tmpCell_Am.innerHTML = students[tmpSelect_Students.selectedIndex][0];
+        tmpCell_Name.innerHTML = students[tmpSelect_Students.selectedIndex][1];
+        var tmpSelect_Teachers = document.getElementById("sel_select2");
+        tmpCell_Teacher.innerHTML = teachers[tmpSelect_Teachers.selectedIndex];
+        var tmpSelect_Grades = document.getElementById("sel_select3");
+        tmpCell_Grade.innerHTML = tmpSelect_Grades.selectedIndex;
+      }
+      function checkGrade(evt) {
+        if (event.target.tagName == "TD") {
+          if (!isNaN(event.target.innerHTML)) 
+            if (parseInt(event.target.innerHTML) >= 5)
+              event.target.parentElement.style = "background-color: green";
+            else
+              event.target.parentElement.style = "background-color: red";
+        }
+      }
+    </script>
+  </head>
+  <body onload="fillSelects()">
+    <div id="div_upperLeft" style="position: absolute; top: 15px; left: 10px; background-color: yellow; width: 300px; border: solid 4px;">
+      <select id="sel_select1" onchange="studentSelected(event)"></select>
+      <p id="par_name"></p>
+    </div>
+    <div id="div_upperRight" style="position: absolute; top:15px; right: 10px; border: solid 2px green; width: 300px">
+      <select id="sel_select2"></select>
+      <select id="sel_select3"></select><br>
+      <button id="btn_addGrade">Προσθήκη στον πίνακα</button>
+    </div>
+    <div class="center-div" id="div_center">      
+      <table id="tbl_studenstGrades" onclick="checkGrade(event)">
+        <tr>
+          <th>ΑΜ</th>
+          <th>Ονοματεπώνυμο</th>
+          <th>Καθηγητής</th>
+          <th>Βαθμός</th>
+        </tr>
+      </table>
+    </div>
+    <script>
+      document.getElementById("btn_addGrade").addEventListener("click", addGrade);
+    </script>
+  </body>
+</html>

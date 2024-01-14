@@ -1,0 +1,215 @@
+<html>
+    <head>
+<style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      height: 100vh;}
+    
+    .first{
+        background-color: yellow;
+        margin-top: 15px;
+        margin-left: 10px;
+        width: 300px;
+        border: 4px solid black;
+       height: 60px;
+        
+  
+        
+    }
+
+    .second{
+        margin-top: 15px;
+        margin-right: 10px;
+        width: 300px;
+        border: 2px solid green;
+       height: 60px;
+        
+    }
+
+    .third{
+width: 450px;
+
+border:solid gray;
+margin-top: 15px;
+margin-left: 30px;
+margin-right: 30px;
+height: 60px;
+
+
+  
+     
+
+    }
+
+    table {
+        width: 100%;
+        height: 100%;
+        border-collapse: collapse; 
+        
+    }
+
+    th, td {
+        border: 1px solid black; 
+        padding: 8px; 
+        text-align: left; 
+    }
+</style>
+
+<script>
+function addselectors(){
+
+    var studentam = students;
+    var firstDiv=document.querySelector(".first");
+    var select1 = document.createElement('select');
+    var para = document.createElement('p');
+    var defaultOption = document.createElement('option');
+      defaultOption.value = 'default';
+      defaultOption.textContent = 'ΑΜ';
+      select1.appendChild(defaultOption);
+    studentam.forEach(function(row) {
+        var option = document.createElement('option');
+        option.value = row[0]; 
+        option.textContent = row[0]; 
+        select1.appendChild(option);
+      });
+      firstDiv.appendChild(select1);
+
+
+
+    var teachersnames=teachers;
+    var secondDiv= document.querySelector(".second");
+    var select2 = document.createElement('select');
+     var defaultOption2=document.createElement('option');
+     defaultOption2.value='default';
+     defaultOption2.textContent='ΚΑΘΗΓΗΤΗΣ';
+     select2.appendChild(defaultOption2);
+    teachersnames.forEach(function(row){
+        var option=document.createElement('option');
+        option.value=row;
+        option.textContent=row;
+        select2.appendChild(option);
+    });
+secondDiv.appendChild(select2);
+
+
+
+
+
+
+
+
+      var select3 = document.createElement('select');
+      var defaultOption3=document.createElement('option');
+      defaultOption3.value='default';
+     defaultOption3.textContent='ΒΑΘΜΟΣ';
+     select3.appendChild(defaultOption3);
+     studentam.forEach(function(row) {
+        var option = document.createElement('option');
+        option.value = Math.random().toFixed(1)*11; 
+        option.textContent = Math.random().toFixed(1)*11; 
+        select3.appendChild(option);
+      });
+      secondDiv.appendChild(select3);
+
+      select1.setAttribute('onchange', 'updateParagraph()');
+      firstDiv.appendChild(para);
+
+      var button=document.createElement('button');
+      button.textContent='add'
+      secondDiv.appendChild(button);
+      button.onclick = addRow;
+
+
+      var table = document.createElement('table');
+    var thead = document.createElement('thead');
+    var headerRow = document.createElement('tr');
+
+    // Δημιουργία και προσθήκη επικεφαλίδων
+    var headers = ['ΑΜ', 'ΟΝΟΜΑΤΕΠΩΝΥΜΟ', 'ΚΑΘΗΓΗΤΗΣ', 'ΒΑΘΜΟΣ'];
+    headers.forEach(function(headerText) {
+        var header = document.createElement('th');
+        header.textContent = headerText;
+        headerRow.appendChild(header);
+    });
+
+    // Προσθήκη επικεφαλίδας στον πίνακα
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Προσθήκη του πίνακα στον τρίτο div
+    var thirdDiv = document.querySelector('.third');
+    thirdDiv.appendChild(table);
+}
+
+
+
+
+function updateParagraph(){
+    var select1 = document.querySelector(".first select");
+    var selectedValue = select1.options[select1.selectedIndex].value;
+    var para = document.querySelector(".first p");
+    
+    
+    var student = students.find(function(row) {
+        return row[0] === selectedValue;
+    });
+
+    
+    if (student) {
+        para.textContent = student[1]; 
+    }
+}
+
+function addRow(){
+    var table =document.querySelector('.third table');
+    var newrow=table.insertRow();
+
+    var cell1 = newrow.insertCell(0);
+    var cell2 = newrow.insertCell(1);
+    var cell3 = newrow.insertCell(2);
+    var cell4 = newrow.insertCell(3);
+    
+
+    var amValue=document.querySelector(".first select").value;
+    var teacherValue=document.querySelector(".second select").value;
+    var gradeSelect = document.querySelector(".second select:nth-of-type(2)");
+    var gradeValue = gradeSelect.options[gradeSelect.selectedIndex].textContent;
+    var student = students.find(function(row) {
+        return row[0] === amValue;
+    });
+
+    cell1.textContent = amValue !== 'default' ? amValue : 'Άγνωστο';
+    cell2.textContent = student ? student[1] : 'Άγνωστο Ονοματεπώνυμο';
+cell3.textContent = teacherValue !== 'default' ? teacherValue : 'Άγνωστο';
+cell4.textContent = gradeValue !== 'default' ? gradeValue : 'Άγνωστος Βαθμός';
+
+cell4.addEventListener('click', function() {
+        var grade = parseFloat(cell4.textContent);
+        if (grade > 5) {
+            newrow.style.backgroundColor = 'green';
+        } else {
+            newrow.style.backgroundColor = 'red';
+        }
+    });
+
+}
+
+
+
+
+</script>
+</head>
+
+    <body onload="addselectors()">
+     <div class="container">
+        <div class="first"></div>
+       <div class="third"></div> 
+        <div class="second"></div>
+       
+    </div>
+    <script src="https://nireas.iee.ihu.gr/gti/teachers.js">
+        
+    </script>
+    </body>
+</html>
