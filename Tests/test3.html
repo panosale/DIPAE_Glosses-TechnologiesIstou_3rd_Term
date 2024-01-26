@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test #3</title>
+        <!-- <script src="jquery-3.7.1.js"></script> -->
+    </head>
+    <body style="border: 1;">
+        <div style="border: solid; width: 700px; height: 400px;">
+            <input type="image" style="left:20px" src="IEE_logo_v2.svg" onclick="document.getElementById('secretMessage').value = document.getElementById('newSecretMessage').value">
+            <br>
+            <br>
+            <input id="newSecretMessage" type="text" value="type new message here">
+            <br>
+            <br>
+            <input id="secretMessage" type="hidden" value="hidden message #1">
+            <br>
+            <br>
+            <button onclick="alert(document.getElementById('secretMessage').value)">Show hidden message</button>
+        </div>
+    </body>
+</html>

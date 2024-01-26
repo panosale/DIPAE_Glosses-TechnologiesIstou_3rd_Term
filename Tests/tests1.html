@@ -2,19 +2,36 @@
 <html>
     <head>
         <title>Test #1</title>
+        <script src="jquery-3.7.1.js"></script>
     </head>
     <script type="application/javascript">
         function ChangeText() {
             document.getElementById("element2Change").innerText = document.getElementById("newText").value;
+            $("button.continue").html(newText.value);
+        }
+        function myFunction(event){
+            alert(event.currentTarget.tagName);
         }
     </script>
-    <body>
+    <body onclick="myFunction(event)">
         <h1>Test #1</h1>
+        <div>Hey</div>
+        <br>
+        <br>
+        <br>
         <p id="element2Change">Click the button below to change text</p>
         <input id="newText" type="text">
+        <br>
+        <br>
+        <br>
+        <input id="newText2" type="text" onchange="ChangeText()">
         <button onclick="ChangeText()">Change Text</button>
         <br>
+        <br>
+        <br>
         <a href="http://www.it.teithe.gr" onclick="return event.shiftKey">IT</a>
+        <br>
+        <br>
         <br>
         <select name="sbt1">
 
@@ -25,5 +42,21 @@
             <option value="value3">Option 3</option>
    
         </select>
-    </body>
+        <br>
+        <br>
+        <br>
+        <button class="continue">continue</button>
+        <br>
+        <br>
+        <br>
+        <table border="1">
+            <tr>
+                 <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                 <td>&nbsp;</td>
+                 <td>&nbsp;</td>
+            </tr>
+       </table>
+     </body>
 </html>
