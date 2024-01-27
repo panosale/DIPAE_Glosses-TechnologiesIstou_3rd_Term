@@ -21,7 +21,7 @@
     <div class="topDiv">
       <h2>Επικοινωνία</h2>
     </div>
-    <!-- <form id="frm_contactForm" onsubmit="btn_submit()"> -->
+    <!-- <form id="frm_contactForm" onsubmit="messageSent()" action="mailto:panosalevr@hotmail.gr" method="get"> -->
     <div class="contactDiv" id="div_contactForm">
       <div id="div_fieldsArea">
           <p>
@@ -39,6 +39,7 @@
             ...ΕΓΙΝΕ ΑΛΛΑΓΗ ΕΠΕΙΔΗ ΔΕΝ ΦΑΙΝΟΤΑΝ ΚΑΛΑ ΣΕ FIREFOX-LINUX -->
             <span id="lbl_messageLength" type="text" style="position: relative; min-width: 3ch; display: inline-block; text-align: right; font-size: small; top: 0px; left: 220px;">0</span>
             <span type="text" style="position: relative; font-size: small; top: 0px; left: 215px;">/100</span><br><br>
+            <!-- <button id="btn_Send" type="submit">ΑΠΟΣΤΟΛΗ</button> -->
             <button id="btn_Send" type="button" onclick="messageSent()">ΑΠΟΣΤΟΛΗ</button>
           </p>
           <!-- <button type="submit">ΑΠΟΣΤΟΛΗ</button> -->
@@ -54,6 +55,6 @@
       <div class="copyrightInfo">
         <i class="fa fa-copyright"> 2023-2024 Panagiotis Alevropoulos</i>
       </div>
-  </div>               
+    </div>
   </body>
 </html>
