@@ -4,9 +4,12 @@
         <title>Test #2</title>
         <!-- <script src="jquery-3.7.1.js"></script> -->
     </head>
-    <body onclick="alert('body')">
-        <div onclick="event.stopPropagation(), alert('div')" style="border: solid; width: 700px; height: 400px;">
-            <span onclick="alert('span')" style="border: solid;">This is a span</span>
-        </div>
-    </body>
+    <body onclick="myFunction(event)">
+        <div> Hey</div>
+        <script>
+                    function myFunction(event){
+                        alert(event.currentTarget.tagName);
+                    }
+        </script>
+        </body>
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test #4</title>
+        <!-- <script src="jquery-3.7.1.js"></script> -->
+    </head>
+    <body style="border: solid blue 2px;" onclick="alert ('body');">
+
+        <div style="border: solid green 2px;" onclick="event.StopPropagation=true;alert('div');">
+   
+             <span style="border: solid red 2px;" onclick="alert('span')">
+   
+                  Testing
+   
+             </span>
+   
+        </div>
+   
+   </body></html>
