@@ -90,8 +90,8 @@ function messageSent() { // ΓΙΑ ΔΟΚΙΜΕΣ ΚΑΙ ΔΙΑΓΡΑΦΗ Ή Χ�
     tmpDiv = document.getElementById("div_fieldsArea");
     tmpMessageElement = document.createElement("h2");
     tmpBarElement = document.createElement("h2");
-    tmpMessageElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία.";
-    // tmpMessageElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "<br>*Λειτουργία προσομοίωσης.";
+    //tmpMessageElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία.";
+    tmpMessageElement.innerHTML = "Το μήνυμα εστάλη με επιτυχία." + "<br>*Λειτουργία προσομοίωσης.";
     tmpMessageElement.setAttribute("class", "contactDiv");
     tmpMessageElement.setAttribute("id", "h2_Outer");
     tmpMessageElement.setAttribute("style", "color: darkgreen; border: 3px solid; width: 520px; text-align: center; padding: 30px 0");
