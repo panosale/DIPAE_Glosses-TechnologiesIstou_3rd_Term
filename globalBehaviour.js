@@ -1,4 +1,7 @@
 // ΓΕΝΙΚΑ
+function changeLanguage() {
+  alert("Lang changeed to: " + document.getElementById("slct_langSelection").value);
+}
 // ΕΝΟΤΗΤΑ: ΧΟΜΠΙ & ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ - "ΦΩΤΟΓΡΑΦΙΑ"
 var currentPos = 0;
 const imagesPath = "images\\";

@@ -15,7 +15,13 @@
             <li><a href="education.html"><span>Εκπαίδευση</span></a></li>
             <li><a href="career.html"><span>Επαγγελματική πορεία</span></a></li>
             <li><a href="other_interests_photography.html"><span style="color: darkblue;">Χόμπι & Δραστηριότητες</span></a></li>
-            <li><a href="contact.html" onclick="myMove()"><span>Επικοινωνία</span></a></li>
+            <li><a href="contact.html"><span>Επικοινωνία</span></a></li>
+            <li>
+                <select id="slct_langSelection" onchange="changeLanguage()">
+                  <option value="el">EL</option>
+                  <option value="en">EN</option>
+                </select>
+              </li>        
         </ul>
         <div class="topDiv">
             <h2>Χόμπι & Δραστηριότητες</h2>
@@ -30,10 +36,10 @@
             <p>Παρακολούθησα μαθήματα ηλεκτρικής κιθάρας από το 2002 έως το 2009.</p>
             <p>Οι συναυλίες είναι αναπόσπαστο κομμάτι της ενασχόλησής μου με τη μουσική (βλ. Slide show παρακάτω).</p>
             <div id="div_myConcertImages" style="padding: 7px 10px;">
-                <input id="btn_stopButton" type="button" onclick="slideshowStop()" value="Παύση Slideshow">
-                <input id="btn_startButton" type="button" onclick="slideshowStart()" value="Εκκίνηση Slideshow"><br>
-                <div id="div_currentImage" style="margin-top: 14px; border-radius: 15px; height: fit-content;">
-                    <img id="img_currentImage" src="images\concerts\2008-06-06_Papakonstantinou-Maxairitsas_IMG_0052.jpg" style="height: 400px;"><br>
+                <button id="btn_stopButton" type="button" onclick="slideshowStop()">Παύση Slideshow</button>
+                <button id="btn_startButton" type="button" onclick="slideshowStart()">Εκκίνηση Slideshow</button>
+                <div id="div_currentImage" style="margin-top: 14px; height: fit-content;">
+                    <img id="img_currentImage" src="images\concerts\2008-06-06_Papakonstantinou-Maxairitsas_IMG_0052.jpg" style="height: 400px; border-radius: 10px;"><br>
                     <span id="span_currentImageInfo">6/6/2008 Βασίλης Παπακωνσταντίνου & Λαυρέντης Μαχαιρίτσας στο ΦΙΞ</span>
                 </div>
             </div>
@@ -41,7 +47,7 @@
         </div>
         <div class="bottomDiv">
             <a href="mailto:panaalev1@iee.ihu.gr" style="position: inherit; left: 97%"><i class="fa fa-envelope fa-3x" style="color: blue;"></i></a>
-            <p style="margin-bottom: 14px">.</p>
+            <p style="margin-bottom: 14px; color: gray;">.</p>
             <div class="copyrightInfo">
                 <i class="fa fa-copyright"> 2023-2024 Panagiotis Alevropoulos</i>
             </div>

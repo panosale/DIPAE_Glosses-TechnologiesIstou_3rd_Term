@@ -15,7 +15,13 @@
             <li><a href="education.html"><span>Εκπαίδευση</span></a></li>
             <li><a href="career.html"><span>Επαγγελματική πορεία</span></a></li>
             <li><a href="other_interests_photography.html"><span style="color: darkblue;">Χόμπι & Δραστηριότητες</span></a></li>
-            <li><a href="contact.html" onclick="myMove()"><span>Επικοινωνία</span></a></li>
+            <li><a href="contact.html"><span>Επικοινωνία</span></a></li>
+            <li>
+                <select id="slct_langSelection" onchange="changeLanguage()">
+                  <option value="el">EL</option>
+                  <option value="en">EN</option>
+                </select>
+              </li>
         </ul>
         <div class="topDiv">
             <h2>Χόμπι & Δραστηριότητες</h2>
@@ -32,7 +38,7 @@
         </div>
         <div class="bottomDiv">
             <a href="mailto:panaalev1@iee.ihu.gr" style="position: inherit; left: 97%"><i class="fa fa-envelope fa-3x" style="color: blue;"></i></a>
-            <p style="margin-bottom: 14px">.</p>
+            <p style="margin-bottom: 14px; color: gray;">.</p>
             <div class="copyrightInfo">
                 <i class="fa fa-copyright"> 2023-2024 Panagiotis Alevropoulos</i>
             </div>
