@@ -1,6 +1,6 @@
 // ΓΕΝΙΚΑ
 function changeLanguage() {
-  alert("Lang changeed to: " + document.getElementById("slct_langSelection").value);
+  alert("Lang changeed to: " + document.getElementById("country-select").value);
 }
 // ΕΝΟΤΗΤΑ: ΧΟΜΠΙ & ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ - "ΦΩΤΟΓΡΑΦΙΑ"
 var currentPos = 0;

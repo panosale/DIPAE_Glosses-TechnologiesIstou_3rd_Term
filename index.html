@@ -3,9 +3,12 @@
     <head>
         <title>Σχετικά...</title>
         <meta content="text/html; charset=UTF-8; width=device-width, initial-scale=1" http-equiv="Content-Type" name="viewport">
+        <script type="text/javascript" src="jquery-3.7.1.js"></script>
         <link rel="stylesheet" href="globalFormat.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="globalBehaviour.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script type="text/javascript" src="globalBehaviour.js"></script>
         <!-- <script src="effects.js"></script> -->
     </head>
     <body>
@@ -17,9 +20,9 @@
             <li><a href="contact.html"><span>Επικοινωνία</span></a></li>
             <!-- <li><a href="contact.html" onclick="myMove()"><span>Επικοινωνία</span></a></li> -->
             <li>
-                <select id="slct_langSelection" onchange="changeLanguage()">
-                  <option value="el">EL</option>
-                  <option value="en">EN</option>
+                <select id="country-select">
+                  <option value="gr"></option>
+                  <option value="gb"></option>
                 </select>
               </li>
         </ul>
@@ -46,5 +49,26 @@
                 <i class="fa fa-copyright"> 2023-2024 Panagiotis Alevropoulos</i>
             </div>
         </div>               
-    </body>
+        <script>
+            $(document).ready(function() {
+                function formatOption(option) {
+                    if (!option.id) {
+                        return option.text;
+                    }
+                    var imageUrl = 'images/flags/' + option.id + '.png';
+                    var optionWithImage = $(
+                        '<span><img src="' + imageUrl + '" class="img-flag" /> ' + option.text + '</span>'
+                    );
+                    // console.log(optionWithImage);
+                    return optionWithImage;
+                }
+                $('#country-select').change(function() {changeLanguage()});
+                $('#country-select').select2({
+                    templateResult: formatOption,
+                    templateSelection: formatOption,
+                    minimumResultsForSearch: Infinity
+                });
+            });
+        </script>
+        </body>
 </html>
